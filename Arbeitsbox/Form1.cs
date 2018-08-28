@@ -53,7 +53,7 @@ namespace Arbeitsbox
             if (sf.ShowDialog() == DialogResult.OK)
             {
                 // Now here's our save folder
-                string savePath = Path.GetDirectoryName(sf.FileName);
+                savePath = Path.GetDirectoryName(sf.FileName);
                 Console.WriteLine(savePath + " " + haschosen);
                 haschosen = true;
                 textBox1.Text = savePath;
