@@ -1,0 +1,16 @@
+D:\Reposit\Arbeitsbox\Arbeitsbox\bin\Release\Arbeitsbox.exe.config
+D:\Reposit\Arbeitsbox\Arbeitsbox\bin\Release\Arbeitsbox.exe
+D:\Reposit\Arbeitsbox\Arbeitsbox\bin\Release\Arbeitsbox.pdb
+D:\Reposit\Arbeitsbox\Arbeitsbox\bin\Release\Microsoft.WindowsAPICodePack.dll
+D:\Reposit\Arbeitsbox\Arbeitsbox\bin\Release\Microsoft.WindowsAPICodePack.ExtendedLinguisticServices.dll
+D:\Reposit\Arbeitsbox\Arbeitsbox\bin\Release\Microsoft.WindowsAPICodePack.Sensors.dll
+D:\Reposit\Arbeitsbox\Arbeitsbox\bin\Release\Microsoft.WindowsAPICodePack.Shell.dll
+D:\Reposit\Arbeitsbox\Arbeitsbox\bin\Release\Microsoft.WindowsAPICodePack.ShellExtensions.dll
+D:\Reposit\Arbeitsbox\Arbeitsbox\bin\Release\Microsoft.WindowsAPICodePack.xml
+D:\Reposit\Arbeitsbox\Arbeitsbox\obj\Release\Arbeitsbox.Form1.resources
+D:\Reposit\Arbeitsbox\Arbeitsbox\obj\Release\Arbeitsbox.Properties.Resources.resources
+D:\Reposit\Arbeitsbox\Arbeitsbox\obj\Release\Arbeitsbox.csproj.GenerateResource.cache
+D:\Reposit\Arbeitsbox\Arbeitsbox\obj\Release\Arbeitsbox.csproj.CoreCompileInputs.cache
+D:\Reposit\Arbeitsbox\Arbeitsbox\obj\Release\Arbeitsbox.csproj.CopyComplete
+D:\Reposit\Arbeitsbox\Arbeitsbox\obj\Release\Arbeitsbox.exe
+D:\Reposit\Arbeitsbox\Arbeitsbox\obj\Release\Arbeitsbox.pdb
