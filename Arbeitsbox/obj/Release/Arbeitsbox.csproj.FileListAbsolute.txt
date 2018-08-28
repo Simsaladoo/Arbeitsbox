@@ -14,3 +14,4 @@ D:\Reposit\Arbeitsbox\Arbeitsbox\obj\Release\Arbeitsbox.csproj.CoreCompileInputs
 D:\Reposit\Arbeitsbox\Arbeitsbox\obj\Release\Arbeitsbox.csproj.CopyComplete
 D:\Reposit\Arbeitsbox\Arbeitsbox\obj\Release\Arbeitsbox.exe
 D:\Reposit\Arbeitsbox\Arbeitsbox\obj\Release\Arbeitsbox.pdb
+D:\Reposit\Arbeitsbox\Arbeitsbox\bin\Release\Resources\giphyder5p.gif

@@ -14,3 +14,4 @@ D:\Reposit\Arbeitsbox\Arbeitsbox\bin\Debug\Microsoft.WindowsAPICodePack.Shell.dl
 D:\Reposit\Arbeitsbox\Arbeitsbox\bin\Debug\Microsoft.WindowsAPICodePack.ShellExtensions.dll
 D:\Reposit\Arbeitsbox\Arbeitsbox\obj\Debug\Arbeitsbox.csproj.CopyComplete
 D:\Reposit\Arbeitsbox\Arbeitsbox\bin\Debug\Microsoft.WindowsAPICodePack.xml
+D:\Reposit\Arbeitsbox\Arbeitsbox\bin\Debug\Resources\giphyder5p.gif

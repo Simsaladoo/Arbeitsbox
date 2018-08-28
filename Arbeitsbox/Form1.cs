@@ -30,15 +30,17 @@ namespace Arbeitsbox
             InitializeComponent();
             /* Beginning of record */
             haschosen = false;
-            dummyFileName = "Choose a folder";
-            textBox1.Text = "Choose a folder";
+            dummyFileName = "Choose a Directory";
+            textBox1.Text = "Choose a Directory";
             savePath = @"C:\Users\dmiller\Desktop";
             panel1.Visible = false;
-            startingnumber = 0000;
-            endingnumber = 0010;
-            sequence = "ASD";
+            startingnumber = 0;
+            endingnumber = 100;
+            sequence = "AA";
             minlabel.Text = startingnumber.ToString();
             maxlabel.Text = endingnumber.ToString();
+            button3.Enabled = false;
+            button3.BackColor = Color.FromArgb(75, 75, 75);
 
         }
 
@@ -69,13 +71,16 @@ namespace Arbeitsbox
                 wholepath = (savePath + @"\" + sequence + startingnumber);
                 //now update the path to show what we're working with
                 textBox1.Text = (wholepath);
-
+                button3.Enabled = true;
+                button3.BackColor = Color.FromArgb(5, 192, 75);
+                Console.WriteLine("Working...");
             }
 
             else
             {
-                textBox1.Text = "You must first choose a path!";
+                textBox1.Text = "You must first choose a Directory!";
             }
+            
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -86,41 +91,26 @@ namespace Arbeitsbox
 
 
 
+//                  
+//            _________ __                 __  .__                
+//           /   _____//  |______ ________/  |_|__| ____    ____  
+//           \_____  \\   __\__  \\_  __ \   __\  |/    \  / ___\ 
+//           /        \|  |  / __ \|  | \/|  | |  |   |  \/ /_/  >
+//          /_______  /|__| (____  /__|   |__| |__|___|  /\___  / 
+//                  \/           \/                    \//_____/  
+//          
 
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            //make folders
-            //append the sequence name first, then use a loop while to create folders with incrementing #s until !< endingnumber
-
-            var folder = Path.Combine(savePath, "folder");
-            Directory.CreateDirectory(wholepath);
-
-        }
-
-
-
-
-
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-            //use this as prefix for folder name
-
-            sequence = textBox2.Text;
-
-        }
 
         private void button7_Click(object sender, EventArgs e)
         {
             // lower start number
-            if (startingnumber < 0000)
+            if (startingnumber == 0)
             {
                 //do nothing because is zero
                 minlabel.Text = startingnumber.ToString();
                 wholepath = (savePath + @"\" + sequence + startingnumber);
                 //now update the path to show what we're working with
-                textBox1.Text += (wholepath);
+                textBox1.Text = (wholepath);
             }
             else
             {
@@ -131,7 +121,7 @@ namespace Arbeitsbox
                     minlabel.Text = startingnumber.ToString();
                     wholepath = (savePath + @"\" + sequence + startingnumber);
                     //now update the path to show what we're working with
-                    textBox1.Text += (wholepath);
+                    textBox1.Text = (wholepath);
                 }
                 else
                 {
@@ -139,7 +129,7 @@ namespace Arbeitsbox
                     minlabel.Text = startingnumber.ToString();
                     wholepath = (savePath + @"\" + sequence + startingnumber);
                     //now update the path to show what we're working with
-                    textBox1.Text += (wholepath);
+                    textBox1.Text = (wholepath);
                 }
             }
         }
@@ -147,16 +137,7 @@ namespace Arbeitsbox
         private void button6_Click(object sender, EventArgs e)
         {
             // raise starting number
-            if (startingnumber < 0000)
-            {
-                //do nothing because is zero
-                minlabel.Text = startingnumber.ToString();
-                wholepath = (savePath + @"\" + sequence + startingnumber);
-                //now update the path to show what we're working with
-                textBox1.Text += (wholepath);
-
-            }
-            else
+            if(0 == 0)
             {  
                 //Jesus tap-dancing Christ! Shift for hundreds!
 
@@ -171,7 +152,7 @@ namespace Arbeitsbox
                         maxlabel.Text = endingnumber.ToString();
                         wholepath = (savePath + @"\" + sequence + startingnumber);
                         //now update the path to show what we're working with
-                        textBox1.Text += (wholepath);
+                        textBox1.Text = (wholepath);
                     }
                 }
                 else
@@ -185,7 +166,7 @@ namespace Arbeitsbox
                         maxlabel.Text = endingnumber.ToString();
                         wholepath = (savePath + @"\" + sequence + startingnumber);
                         //now update the path to show what we're working with
-                        textBox1.Text += (wholepath);
+                        textBox1.Text = (wholepath);
                     }
                 }
 
@@ -193,34 +174,137 @@ namespace Arbeitsbox
             }
         }
 
+
+        
+//              ___________           .___.__                
+//              \_   _____/ ____    __| _/|__| ____    ____  
+//               |    __)_ /    \  / __ | |  |/    \  / ___\ 
+//               |        \   |  \/ /_/ | |  |   |  \/ /_/  >
+//              /_______  /___|  /\____ | |__|___|  /\___  / 
+//                      \/     \/      \/         \//_____/  
+//              
+
+
+
+
         private void button4_Click(object sender, EventArgs e)
         {
             // lower ending number
-            if (endingnumber < 0000)
+            if (endingnumber == 0)
             {
-                //do nothing because is zero
-                maxlabel.Text = endingnumber.ToString();
+
             }
-            else
-            {
-                endingnumber = (endingnumber) - 0010;
-                maxlabel.Text = endingnumber.ToString();
+            else { 
+
+                 if (Control.ModifierKeys == Keys.Shift)
+                 {
+                     endingnumber = (endingnumber) - 0100;
+                     maxlabel.Text = endingnumber.ToString();
+                 }
+                 else
+                 {
+                     endingnumber = (endingnumber) - 0010;
+                     maxlabel.Text = endingnumber.ToString();
+                 }
             }
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             // raise ending number
-            if (endingnumber < 0000)
+            if (0 == 0)
             {
-                //do nothing because is zero
-                maxlabel.Text = endingnumber.ToString();
-            }
-            else
-            {
-                endingnumber = (endingnumber) + 0010;
-                maxlabel.Text = endingnumber.ToString();
+                if (Control.ModifierKeys == Keys.Shift)
+                {
+                    endingnumber = (endingnumber) + 0100;
+                    maxlabel.Text = endingnumber.ToString();
+                }
+                else
+                {
+                    endingnumber = (endingnumber) + 0010;
+                    maxlabel.Text = endingnumber.ToString();
+                }
+
             }
         }
+
+
+
+
+
+
+
+        //          _________                        __          
+        //          \_   ___ \_______   ____ _____ _/  |_  ____  
+        //          /    \  \/\_  __ \_/ __ \\__  \\   __\/ __ \ 
+        //          \     \____|  | \/\  ___/ / __ \|  | \  ___/ 
+        //           \______  /|__|    \___  >____  /__|  \___  >
+        //                  \/             \/     \/          \/ 
+        //          
+
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            int i = startingnumber;
+            int j = endingnumber;
+
+            //make folders
+            //append the sequence name first, then use a loop while to create folders with incrementing #s until !< endingnumber
+            for (i = startingnumber; i <= j; i+=10)
+            {
+
+
+                if (i < 10)
+                {
+                    // check for number of digits to force 0000 instead of just 0
+
+                    wholepath = (savePath + @"\" + sequence + "000" + i);
+                }
+
+                if (i > 9 && i < 100)
+                {
+                    // check for number of digits to force 0010 instead of just 10
+
+                    wholepath = (savePath + @"\" + sequence + "00" + i);
+                }
+
+                if (i > 99 && i < 1000)
+                {
+                    // check for number of digits to force 0100 instead of just 100
+
+                    wholepath = (savePath + @"\" + sequence + "0" + i);
+                }
+
+                if (i > 999)
+                {
+                    // check for number of digits to force 1000
+
+                    wholepath = (savePath + @"\" + sequence + i);
+                }
+
+
+
+
+                var folder = Path.Combine(savePath, "folder");
+                Directory.CreateDirectory(wholepath);
+                Console.WriteLine(i);
+                Console.WriteLine(wholepath);
+            }
+            Console.WriteLine("Done");
+
+        }
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            //use this as prefix for folder name
+
+            sequence = textBox2.Text;
+            wholepath = (savePath + @"\" + sequence + startingnumber);
+            //now update the path to show what we're working with
+            textBox1.Text = (wholepath);
+
+        }
+
+
+
     }
 }
