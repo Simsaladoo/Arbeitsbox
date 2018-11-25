@@ -233,6 +233,7 @@
             // 
             // richTextBox1
             // 
+            this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.richTextBox1.BackColor = System.Drawing.Color.Black;
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox1.Cursor = System.Windows.Forms.Cursors.No;
@@ -240,7 +241,7 @@
             this.richTextBox1.ForeColor = System.Drawing.SystemColors.Info;
             this.richTextBox1.Location = new System.Drawing.Point(66, 424);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(896, 138);
+            this.richTextBox1.Size = new System.Drawing.Size(881, 138);
             this.richTextBox1.TabIndex = 37;
             this.richTextBox1.Text = "Arbeitsbox opened...";
             // 
@@ -295,6 +296,7 @@
             // 
             // FaunaPanel
             // 
+            this.FaunaPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
             this.FaunaPanel.Controls.Add(this.label1);
             this.FaunaPanel.Controls.Add(this.label2);
             this.FaunaPanel.Controls.Add(this.label3);
@@ -308,7 +310,7 @@
             this.FaunaPanel.Controls.Add(this.button4);
             this.FaunaPanel.Location = new System.Drawing.Point(65, 48);
             this.FaunaPanel.Name = "FaunaPanel";
-            this.FaunaPanel.Size = new System.Drawing.Size(898, 374);
+            this.FaunaPanel.Size = new System.Drawing.Size(882, 374);
             this.FaunaPanel.TabIndex = 41;
             // 
             // label1

@@ -74,3 +74,4 @@ H:\UE4\Splash\Arbeitsbox\Arbeitsbox\obj\Debug\Arbeitsbox.csproj.CoreCompileInput
 H:\UE4\Splash\Arbeitsbox\Arbeitsbox\obj\Debug\Arbeitsbox.csproj.CopyComplete
 H:\UE4\Splash\Arbeitsbox\Arbeitsbox\obj\Debug\Arbeitsbox.exe
 H:\UE4\Splash\Arbeitsbox\Arbeitsbox\obj\Debug\Arbeitsbox.pdb
+H:\UE4\Splash\Arbeitsbox\Arbeitsbox\obj\Debug\Arbeitsbox.csprojAssemblyReference.cache
