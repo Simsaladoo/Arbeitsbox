@@ -4618,26 +4618,6 @@ namespace Arbeitsbox
 
 
 
-            AudioButton.BackColor = Color.Transparent;
-
-
-            ProcessAudioButton.BackColor = Color.Transparent;
-            AudioVisualizerButton.BackColor = Color.Transparent;
-            GeneralButton.BackColor = Color.Transparent;
-            FaunaButton.BackColor = Color.Transparent;
-            AudioButton.BackColor = Color.Transparent;
-            FoliageButton.BackColor = Color.Transparent;
-            OtherButton.BackColor = Color.Transparent;
-
-            button1.BackColor = Color.Transparent;
-            button3.BackColor = Color.Transparent;
-            button2.BackColor = Color.Transparent;
-            button4.BackColor = Color.Transparent;
-            button6.BackColor = Color.Transparent;
-            button7.BackColor = Color.Transparent;
-            button8.BackColor = Color.Transparent;
-            button5.BackColor = Color.Transparent;
-
 
 
         }

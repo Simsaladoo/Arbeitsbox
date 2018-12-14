@@ -38,6 +38,7 @@
             this.FoliageButton = new System.Windows.Forms.Button();
             this.OtherButton = new System.Windows.Forms.Button();
             this.AudioPanel = new System.Windows.Forms.Panel();
+            this.waveformPainter1 = new NAudio.Gui.WaveformPainter();
             this.ProcessAudioButton = new System.Windows.Forms.Button();
             this.AudioVisualizerButton = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
@@ -45,6 +46,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.GeneralPanel = new System.Windows.Forms.Panel();
+            this.waveformPainter2 = new NAudio.Gui.WaveformPainter();
             this.FaunaPanel = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -101,10 +103,10 @@
             // 
             // AudioButton
             // 
-            this.AudioButton.BackColor = System.Drawing.Color.Lime;
+            this.AudioButton.BackColor = System.Drawing.Color.BlueViolet;
             this.AudioButton.FlatAppearance.BorderSize = 0;
             this.AudioButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.AudioButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Chocolate;
+            this.AudioButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.AudioButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AudioButton.Font = new System.Drawing.Font("Morris Roman", 10F);
             this.AudioButton.ForeColor = System.Drawing.Color.White;
@@ -119,10 +121,10 @@
             // 
             // GeneralButton
             // 
-            this.GeneralButton.BackColor = System.Drawing.Color.Lime;
+            this.GeneralButton.BackColor = System.Drawing.Color.Orange;
             this.GeneralButton.FlatAppearance.BorderSize = 0;
             this.GeneralButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.GeneralButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Chocolate;
+            this.GeneralButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.GeneralButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.GeneralButton.Font = new System.Drawing.Font("Morris Roman", 12F);
             this.GeneralButton.ForeColor = System.Drawing.Color.White;
@@ -130,16 +132,16 @@
             this.GeneralButton.Name = "GeneralButton";
             this.GeneralButton.Size = new System.Drawing.Size(64, 50);
             this.GeneralButton.TabIndex = 1;
-            this.GeneralButton.Text = "Gen";
+            this.GeneralButton.Text = "Audio";
             this.GeneralButton.UseVisualStyleBackColor = false;
             this.GeneralButton.Click += new System.EventHandler(this.GeneralButton_Click);
             // 
             // FaunaButton
             // 
-            this.FaunaButton.BackColor = System.Drawing.Color.Lime;
+            this.FaunaButton.BackColor = System.Drawing.Color.Cyan;
             this.FaunaButton.FlatAppearance.BorderSize = 0;
             this.FaunaButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.FaunaButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Chocolate;
+            this.FaunaButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.FaunaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.FaunaButton.Font = new System.Drawing.Font("Morris Roman", 12F);
             this.FaunaButton.ForeColor = System.Drawing.Color.White;
@@ -153,10 +155,10 @@
             // 
             // FoliageButton
             // 
-            this.FoliageButton.BackColor = System.Drawing.Color.Lime;
+            this.FoliageButton.BackColor = System.Drawing.Color.Firebrick;
             this.FoliageButton.FlatAppearance.BorderSize = 0;
             this.FoliageButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.FoliageButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Chocolate;
+            this.FoliageButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.FoliageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.FoliageButton.Font = new System.Drawing.Font("Morris Roman", 12F);
             this.FoliageButton.ForeColor = System.Drawing.Color.White;
@@ -171,10 +173,10 @@
             // 
             // OtherButton
             // 
-            this.OtherButton.BackColor = System.Drawing.Color.Lime;
+            this.OtherButton.BackColor = System.Drawing.Color.RoyalBlue;
             this.OtherButton.FlatAppearance.BorderSize = 0;
             this.OtherButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.OtherButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Chocolate;
+            this.OtherButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.OtherButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.OtherButton.Font = new System.Drawing.Font("Morris Roman", 12F);
             this.OtherButton.ForeColor = System.Drawing.Color.White;
@@ -188,12 +190,23 @@
             // 
             // AudioPanel
             // 
+            this.AudioPanel.Controls.Add(this.waveformPainter1);
             this.AudioPanel.Controls.Add(this.ProcessAudioButton);
             this.AudioPanel.Controls.Add(this.AudioVisualizerButton);
             this.AudioPanel.Location = new System.Drawing.Point(65, 48);
             this.AudioPanel.Name = "AudioPanel";
             this.AudioPanel.Size = new System.Drawing.Size(898, 374);
             this.AudioPanel.TabIndex = 2;
+            // 
+            // waveformPainter1
+            // 
+            this.waveformPainter1.BackColor = System.Drawing.Color.Black;
+            this.waveformPainter1.ForeColor = System.Drawing.Color.Lime;
+            this.waveformPainter1.Location = new System.Drawing.Point(0, 0);
+            this.waveformPainter1.Name = "waveformPainter1";
+            this.waveformPainter1.Size = new System.Drawing.Size(882, 185);
+            this.waveformPainter1.TabIndex = 37;
+            this.waveformPainter1.Text = "waveformPainter1";
             // 
             // ProcessAudioButton
             // 
@@ -287,12 +300,22 @@
             // 
             // GeneralPanel
             // 
+            this.GeneralPanel.Controls.Add(this.waveformPainter2);
             this.GeneralPanel.Controls.Add(this.button1);
             this.GeneralPanel.Controls.Add(this.button2);
             this.GeneralPanel.Location = new System.Drawing.Point(65, 48);
             this.GeneralPanel.Name = "GeneralPanel";
             this.GeneralPanel.Size = new System.Drawing.Size(898, 374);
             this.GeneralPanel.TabIndex = 40;
+            // 
+            // waveformPainter2
+            // 
+            this.waveformPainter2.BackColor = System.Drawing.Color.Black;
+            this.waveformPainter2.Location = new System.Drawing.Point(0, 0);
+            this.waveformPainter2.Name = "waveformPainter2";
+            this.waveformPainter2.Size = new System.Drawing.Size(882, 185);
+            this.waveformPainter2.TabIndex = 38;
+            this.waveformPainter2.Text = "waveformPainter2";
             // 
             // FaunaPanel
             // 
@@ -621,12 +644,12 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(947, 561);
             this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.FaunaPanel);
+            this.Controls.Add(this.MenuPanel);
+            this.Controls.Add(this.AudioPanel);
             this.Controls.Add(this.OtherPanel);
+            this.Controls.Add(this.FaunaPanel);
             this.Controls.Add(this.FoliagePanel);
             this.Controls.Add(this.GeneralPanel);
-            this.Controls.Add(this.AudioPanel);
-            this.Controls.Add(this.MenuPanel);
             this.Font = new System.Drawing.Font("Morris Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -634,7 +657,7 @@
             this.MinimumSize = new System.Drawing.Size(963, 600);
             this.Name = "Form1";
             this.Text = "Arbeitsbox";
-            this.TransparencyKey = System.Drawing.Color.Lime;
+            this.TransparencyKey = System.Drawing.Color.Blue;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Click += new System.EventHandler(this.Form1_Click);
             this.MenuPanel.ResumeLayout(false);
@@ -688,6 +711,8 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private NAudio.Gui.WaveformPainter waveformPainter1;
+        private NAudio.Gui.WaveformPainter waveformPainter2;
     }
 }
 

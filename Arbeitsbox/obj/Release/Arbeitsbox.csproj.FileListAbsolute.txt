@@ -63,7 +63,6 @@ H:\UE4\Splash\Arbeitsbox\Arbeitsbox\bin\Release\Microsoft.WindowsAPICodePack.xml
 H:\UE4\Splash\Arbeitsbox\Arbeitsbox\bin\Release\Newtonsoft.Json.xml
 H:\UE4\Splash\Arbeitsbox\Arbeitsbox\bin\Release\System.Net.Http.Extensions.xml
 H:\UE4\Splash\Arbeitsbox\Arbeitsbox\bin\Release\System.Net.Http.Primitives.xml
-H:\UE4\Splash\Arbeitsbox\Arbeitsbox\obj\Release\Arbeitsbox.csproj.App.config
 H:\UE4\Splash\Arbeitsbox\Arbeitsbox\obj\Release\Arbeitsbox.Form1.resources
 H:\UE4\Splash\Arbeitsbox\Arbeitsbox\obj\Release\Arbeitsbox.Properties.Resources.resources
 H:\UE4\Splash\Arbeitsbox\Arbeitsbox\obj\Release\Arbeitsbox.csproj.GenerateResource.cache
@@ -73,3 +72,7 @@ H:\UE4\Splash\Arbeitsbox\Arbeitsbox\obj\Release\Arbeitsbox.exe
 H:\UE4\Splash\Arbeitsbox\Arbeitsbox\obj\Release\Arbeitsbox.pdb
 H:\UE4\Splash\Arbeitsbox\Arbeitsbox\bin\Release\Resources\favicon2.ico
 H:\UE4\Splash\Arbeitsbox\Arbeitsbox\bin\Release\Resources\ReverseRottenLeaf.png
+H:\UE4\Splash\Arbeitsbox\Arbeitsbox\bin\Release\NAudio.dll
+H:\UE4\Splash\Arbeitsbox\Arbeitsbox\bin\Release\NAudio.GiawaFX.dll
+H:\UE4\Splash\Arbeitsbox\Arbeitsbox\bin\Release\NAudio.xml
+H:\UE4\Splash\Arbeitsbox\Arbeitsbox\obj\Release\Arbeitsbox.csprojAssemblyReference.cache
