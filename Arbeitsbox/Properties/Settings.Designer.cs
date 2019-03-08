@@ -34,5 +34,29 @@ namespace Arbeitsbox.Properties {
                 this["VolumeOn"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("H:\\UE4\\Tailwind_R E B U I L D\\Environment\\World Machine 93e\\PNGs\\12\\BMPs")]
+        public string CSVpath {
+            get {
+                return ((string)(this["CSVpath"]));
+            }
+            set {
+                this["CSVpath"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("H:\\UE4\\Tailwind_R E B U I L D\\Environment\\World Machine 93e\\PNGs\\12\\BMPs")]
+        public string Destination {
+            get {
+                return ((string)(this["Destination"]));
+            }
+            set {
+                this["Destination"] = value;
+            }
+        }
     }
 }

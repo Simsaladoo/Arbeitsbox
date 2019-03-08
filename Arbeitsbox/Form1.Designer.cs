@@ -48,6 +48,7 @@
             this.GeneralPanel = new System.Windows.Forms.Panel();
             this.waveformPainter2 = new NAudio.Gui.WaveformPainter();
             this.FaunaPanel = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -108,7 +109,7 @@
             this.AudioButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
             this.AudioButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.AudioButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AudioButton.Font = new System.Drawing.Font("Morris Roman", 10F);
+            this.AudioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.AudioButton.ForeColor = System.Drawing.Color.White;
             this.AudioButton.Location = new System.Drawing.Point(0, 0);
             this.AudioButton.Margin = new System.Windows.Forms.Padding(0);
@@ -126,13 +127,13 @@
             this.GeneralButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
             this.GeneralButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.GeneralButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.GeneralButton.Font = new System.Drawing.Font("Morris Roman", 12F);
+            this.GeneralButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.GeneralButton.ForeColor = System.Drawing.Color.White;
             this.GeneralButton.Location = new System.Drawing.Point(0, 51);
             this.GeneralButton.Name = "GeneralButton";
             this.GeneralButton.Size = new System.Drawing.Size(64, 50);
             this.GeneralButton.TabIndex = 1;
-            this.GeneralButton.Text = "Audio";
+            this.GeneralButton.Text = "General";
             this.GeneralButton.UseVisualStyleBackColor = false;
             this.GeneralButton.Click += new System.EventHandler(this.GeneralButton_Click);
             // 
@@ -143,7 +144,7 @@
             this.FaunaButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
             this.FaunaButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.FaunaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.FaunaButton.Font = new System.Drawing.Font("Morris Roman", 12F);
+            this.FaunaButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.FaunaButton.ForeColor = System.Drawing.Color.White;
             this.FaunaButton.Location = new System.Drawing.Point(0, 102);
             this.FaunaButton.Name = "FaunaButton";
@@ -160,7 +161,7 @@
             this.FoliageButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
             this.FoliageButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.FoliageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.FoliageButton.Font = new System.Drawing.Font("Morris Roman", 12F);
+            this.FoliageButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.FoliageButton.ForeColor = System.Drawing.Color.White;
             this.FoliageButton.Location = new System.Drawing.Point(0, 153);
             this.FoliageButton.Margin = new System.Windows.Forms.Padding(2);
@@ -178,7 +179,7 @@
             this.OtherButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
             this.OtherButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.OtherButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.OtherButton.Font = new System.Drawing.Font("Morris Roman", 12F);
+            this.OtherButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.OtherButton.ForeColor = System.Drawing.Color.White;
             this.OtherButton.Location = new System.Drawing.Point(0, 204);
             this.OtherButton.Name = "OtherButton";
@@ -216,7 +217,7 @@
             this.ProcessAudioButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
             this.ProcessAudioButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Chocolate;
             this.ProcessAudioButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ProcessAudioButton.Font = new System.Drawing.Font("Morris Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProcessAudioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProcessAudioButton.ForeColor = System.Drawing.Color.White;
             this.ProcessAudioButton.Location = new System.Drawing.Point(208, 318);
             this.ProcessAudioButton.Name = "ProcessAudioButton";
@@ -234,7 +235,7 @@
             this.AudioVisualizerButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
             this.AudioVisualizerButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Chocolate;
             this.AudioVisualizerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AudioVisualizerButton.Font = new System.Drawing.Font("Morris Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AudioVisualizerButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AudioVisualizerButton.ForeColor = System.Drawing.Color.White;
             this.AudioVisualizerButton.Location = new System.Drawing.Point(1, 318);
             this.AudioVisualizerButton.Name = "AudioVisualizerButton";
@@ -250,7 +251,7 @@
             this.richTextBox1.BackColor = System.Drawing.Color.Black;
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox1.Cursor = System.Windows.Forms.Cursors.No;
-            this.richTextBox1.Font = new System.Drawing.Font("Morris Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox1.ForeColor = System.Drawing.SystemColors.Info;
             this.richTextBox1.Location = new System.Drawing.Point(66, 424);
             this.richTextBox1.Name = "richTextBox1";
@@ -272,7 +273,7 @@
             this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Chocolate;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Morris Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(208, 318);
             this.button1.Name = "button1";
@@ -289,7 +290,7 @@
             this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Chocolate;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Morris Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Location = new System.Drawing.Point(1, 318);
             this.button2.Name = "button2";
@@ -320,6 +321,7 @@
             // FaunaPanel
             // 
             this.FaunaPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
+            this.FaunaPanel.Controls.Add(this.label4);
             this.FaunaPanel.Controls.Add(this.label1);
             this.FaunaPanel.Controls.Add(this.label2);
             this.FaunaPanel.Controls.Add(this.label3);
@@ -336,25 +338,39 @@
             this.FaunaPanel.Size = new System.Drawing.Size(882, 374);
             this.FaunaPanel.TabIndex = 41;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(118, 99);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(509, 17);
+            this.label4.TabIndex = 53;
+            this.label4.Text = "H:\\UE4\\Tailwind_R E B U I L D\\Environment\\World Machine 93e\\PNGs\\12\\BMPs";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
+            this.label4.MouseHover += new System.EventHandler(this.label4_MouseHover);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Kelly", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(364, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(174, 41);
+            this.label1.Size = new System.Drawing.Size(168, 36);
             this.label1.TabIndex = 52;
             this.label1.Text = "Fauna Data";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Morris Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(115, 57);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(237, 21);
+            this.label2.Size = new System.Drawing.Size(264, 24);
             this.label2.TabIndex = 50;
             this.label2.Text = "Fauna PNG -> CSV Processor";
             // 
@@ -364,7 +380,7 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(116, 71);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(668, 18);
+            this.label3.Size = new System.Drawing.Size(1109, 20);
             this.label3.TabIndex = 51;
             this.label3.Text = "_________________________________________________________________________________" +
     "_____________________________";
@@ -377,7 +393,7 @@
             this.button21.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
             this.button21.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Chocolate;
             this.button21.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button21.Font = new System.Drawing.Font("Morris Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button21.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button21.ForeColor = System.Drawing.Color.White;
             this.button21.Location = new System.Drawing.Point(732, 191);
             this.button21.Name = "button21";
@@ -395,7 +411,7 @@
             this.button22.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
             this.button22.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Chocolate;
             this.button22.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button22.Font = new System.Drawing.Font("Morris Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button22.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button22.ForeColor = System.Drawing.Color.White;
             this.button22.Location = new System.Drawing.Point(568, 191);
             this.button22.Name = "button22";
@@ -413,7 +429,7 @@
             this.button23.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
             this.button23.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Chocolate;
             this.button23.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button23.Font = new System.Drawing.Font("Morris Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button23.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button23.ForeColor = System.Drawing.Color.White;
             this.button23.Location = new System.Drawing.Point(604, 191);
             this.button23.Name = "button23";
@@ -431,7 +447,7 @@
             this.button24.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
             this.button24.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Chocolate;
             this.button24.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button24.Font = new System.Drawing.Font("Morris Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button24.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button24.ForeColor = System.Drawing.Color.White;
             this.button24.Location = new System.Drawing.Point(300, 191);
             this.button24.Name = "button24";
@@ -449,7 +465,7 @@
             this.button25.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
             this.button25.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Chocolate;
             this.button25.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button25.Font = new System.Drawing.Font("Morris Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button25.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button25.ForeColor = System.Drawing.Color.White;
             this.button25.Location = new System.Drawing.Point(136, 191);
             this.button25.Name = "button25";
@@ -467,7 +483,7 @@
             this.button26.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
             this.button26.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Chocolate;
             this.button26.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button26.Font = new System.Drawing.Font("Morris Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button26.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button26.ForeColor = System.Drawing.Color.White;
             this.button26.Location = new System.Drawing.Point(172, 191);
             this.button26.Name = "button26";
@@ -485,7 +501,7 @@
             this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
             this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Chocolate;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Morris Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.Location = new System.Drawing.Point(136, 130);
             this.button3.Name = "button3";
@@ -503,7 +519,7 @@
             this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
             this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Chocolate;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Morris Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.White;
             this.button4.Location = new System.Drawing.Point(568, 130);
             this.button4.Name = "button4";
@@ -521,7 +537,7 @@
             this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
             this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Chocolate;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Morris Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.White;
             this.button5.Location = new System.Drawing.Point(208, 318);
             this.button5.Name = "button5";
@@ -538,7 +554,7 @@
             this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
             this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Chocolate;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Morris Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.Color.White;
             this.button6.Location = new System.Drawing.Point(1, 318);
             this.button6.Name = "button6";
@@ -564,7 +580,7 @@
             this.button7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
             this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Chocolate;
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Morris Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.ForeColor = System.Drawing.Color.White;
             this.button7.Location = new System.Drawing.Point(208, 318);
             this.button7.Name = "button7";
@@ -581,7 +597,7 @@
             this.button8.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
             this.button8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Chocolate;
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Morris Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button8.ForeColor = System.Drawing.Color.White;
             this.button8.Location = new System.Drawing.Point(1, 318);
             this.button8.Name = "button8";
@@ -605,11 +621,11 @@
             // FoliagePageTitle
             // 
             this.FoliagePageTitle.AutoSize = true;
-            this.FoliagePageTitle.Font = new System.Drawing.Font("Kelly", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FoliagePageTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FoliagePageTitle.ForeColor = System.Drawing.Color.White;
             this.FoliagePageTitle.Location = new System.Drawing.Point(370, 10);
             this.FoliagePageTitle.Name = "FoliagePageTitle";
-            this.FoliagePageTitle.Size = new System.Drawing.Size(160, 41);
+            this.FoliagePageTitle.Size = new System.Drawing.Size(157, 36);
             this.FoliagePageTitle.TabIndex = 47;
             this.FoliagePageTitle.Text = "Other Data";
             this.FoliagePageTitle.Click += new System.EventHandler(this.FoliagePageTitle_Click);
@@ -617,11 +633,11 @@
             // Foliage_HeaderLabel
             // 
             this.Foliage_HeaderLabel.AutoSize = true;
-            this.Foliage_HeaderLabel.Font = new System.Drawing.Font("Morris Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Foliage_HeaderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Foliage_HeaderLabel.ForeColor = System.Drawing.Color.White;
             this.Foliage_HeaderLabel.Location = new System.Drawing.Point(121, 57);
             this.Foliage_HeaderLabel.Name = "Foliage_HeaderLabel";
-            this.Foliage_HeaderLabel.Size = new System.Drawing.Size(49, 21);
+            this.Foliage_HeaderLabel.Size = new System.Drawing.Size(57, 24);
             this.Foliage_HeaderLabel.TabIndex = 45;
             this.Foliage_HeaderLabel.Text = "Other";
             // 
@@ -631,7 +647,7 @@
             this.FoliageHLine.ForeColor = System.Drawing.Color.White;
             this.FoliageHLine.Location = new System.Drawing.Point(122, 71);
             this.FoliageHLine.Name = "FoliageHLine";
-            this.FoliageHLine.Size = new System.Drawing.Size(668, 18);
+            this.FoliageHLine.Size = new System.Drawing.Size(1109, 20);
             this.FoliageHLine.TabIndex = 46;
             this.FoliageHLine.Text = "_________________________________________________________________________________" +
     "_____________________________";
@@ -645,12 +661,12 @@
             this.ClientSize = new System.Drawing.Size(947, 561);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.MenuPanel);
+            this.Controls.Add(this.FaunaPanel);
             this.Controls.Add(this.AudioPanel);
             this.Controls.Add(this.OtherPanel);
-            this.Controls.Add(this.FaunaPanel);
             this.Controls.Add(this.FoliagePanel);
             this.Controls.Add(this.GeneralPanel);
-            this.Font = new System.Drawing.Font("Morris Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1920, 1080);
@@ -713,6 +729,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private NAudio.Gui.WaveformPainter waveformPainter1;
         private NAudio.Gui.WaveformPainter waveformPainter2;
+        private System.Windows.Forms.Label label4;
     }
 }
 

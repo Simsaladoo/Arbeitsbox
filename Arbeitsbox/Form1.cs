@@ -5,10 +5,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-//using System.Linq;
 using System.Media;
 using System.Windows.Forms;
 using Microsoft.WindowsAPICodePack.Dialogs;
@@ -16,6 +16,7 @@ using System.Runtime.InteropServices;
 //using System.Speech.Synthesis;
 //using System.ComponentModel;
 using System.IO.Compression;
+using System.Reflection;
 
 namespace Arbeitsbox
 {
@@ -44,6 +45,7 @@ namespace Arbeitsbox
 
 
         public static string intVar { get; set; }
+
 
         public static string aX000Y000 { get; set; }
         public static string aX000Y001 { get; set; }
@@ -4436,7 +4438,7 @@ namespace Arbeitsbox
         public string startPath = "Game/";
         public string zipPath = "Game/cache/";
         public string extractPath = "Game/";
-
+        public string path = Properties.Settings.Default.CSVpath;
 
 
 
@@ -4565,16 +4567,43 @@ namespace Arbeitsbox
 
         }
 
+        [System.Runtime.InteropServices.DllImport("gdi32.dll")]
+        private static extern IntPtr AddFontMemResourceEx(IntPtr pbFont, uint cbFont,
+        IntPtr pdv, [System.Runtime.InteropServices.In] ref uint pcFonts);
 
+        private PrivateFontCollection fonts = new PrivateFontCollection();
+
+        Font myFont10;
+        Font myFont12;
+        Font myFont22;
 
 
         public Form1()
         {
             InitializeComponent();
+
             /* Beginning of record */
             this.Shown += new System.EventHandler(this.AfterLoading);
             Console.WriteLine("main loaded");
             m_aeroEnabled = true;
+
+            // embedded font shit
+            byte[] fontData = Properties.Resources.MorrisRomanAlternate_Black;
+            IntPtr fontPtr = System.Runtime.InteropServices.Marshal.AllocCoTaskMem(fontData.Length);
+            System.Runtime.InteropServices.Marshal.Copy(fontData, 0, fontPtr, fontData.Length);
+            uint dummy = 0;
+            fonts.AddMemoryFont(fontPtr, Properties.Resources.MorrisRomanAlternate_Black.Length);
+            AddFontMemResourceEx(fontPtr, (uint)Properties.Resources.MorrisRomanAlternate_Black.Length, IntPtr.Zero, ref dummy);
+            System.Runtime.InteropServices.Marshal.FreeCoTaskMem(fontPtr);
+
+            // sizing of the new custom font
+            myFont10 = new Font(fonts.Families[0], 10.0F);
+            myFont12 = new Font(fonts.Families[0], 12.0F);
+            myFont22 = new Font(fonts.Families[0], 22.0F);
+
+
+
+
             //this.FormBorderStyle = FormBorderStyle.None;
             bool VolumeOn = (bool)Properties.Settings.Default["VolumeOn"];
 
@@ -4615,8 +4644,7 @@ namespace Arbeitsbox
         {
 
             Console.WriteLine("Main Window Loaded");
-
-
+            steupfonts();
 
 
 
@@ -4641,6 +4669,50 @@ namespace Arbeitsbox
             }
         }
 
+
+        public void steupfonts()
+        {
+            //set fonts via void
+
+        
+            label1.Font = myFont22;
+            label2.Font = myFont22;
+            label3.Font = myFont22;
+            // label4.Font = myFont;
+
+            AudioButton.Font = myFont10;  
+            GeneralButton.Font = myFont10;
+            FaunaButton.Font = myFont10;
+            FoliageButton.Font = myFont10;
+            OtherButton.Font = myFont10;
+
+            button1.Font = myFont12;
+            button2.Font = myFont12;
+            button3.Font = myFont12;
+            button4.Font = myFont12;
+            button5.Font = myFont12;
+            button6.Font = myFont12;
+            button7.Font = myFont12;
+            button8.Font = myFont12;
+
+            button21.Font = myFont12;
+            button22.Font = myFont12;
+            button23.Font = myFont12;
+            button24.Font = myFont12;
+            button25.Font = myFont12;
+            button26.Font = myFont12;
+
+            ProcessAudioButton.Font = myFont12;
+            AudioVisualizerButton.Font = myFont12;
+            FoliagePageTitle.Font = myFont12;
+            Foliage_HeaderLabel.Font = myFont12;
+            richTextBox1.Font = myFont12;
+
+           
+
+
+
+        }
 
 
         /* Any updates to richTextBox1 reenable focus so it'll scroll */
@@ -4794,7 +4866,7 @@ namespace Arbeitsbox
             string path = @"H:\UE4\Tailwind_R E B U I L D\Environment\World Machine 93e\PNGs\12\BMPs";
             //string altpath = @"D:\Test";
             string searchPattern = "A*";
-            DirectoryInfo di = new DirectoryInfo(path);
+            DirectoryInfo di = new DirectoryInfo(Properties.Settings.Default.CSVpath);
             DirectoryInfo[] directories = di.GetDirectories(searchPattern, SearchOption.TopDirectoryOnly);
             FileInfo[] files = di.GetFiles(searchPattern, SearchOption.TopDirectoryOnly);
 
@@ -4812,7 +4884,7 @@ namespace Arbeitsbox
                 try
                 {
                     Console.WriteLine("Found file " + file);
-                    string readfilepath = (path + "/" + file);
+                    string readfilepath = (Properties.Settings.Default.CSVpath + "/" + file);
                     Console.WriteLine("Current file to process: " + readfilepath);
                     Bitmap testimage = new Bitmap(readfilepath);
                     Console.WriteLine(file + " ... clearing previous data from variables... ");
@@ -10487,6 +10559,24 @@ namespace Arbeitsbox
             // add 
             loopnum = loopnum + 10;
             button23.Text = "Run (" + loopnum.ToString() + ")";
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            // clicking on CSV path for Fauna brings up prompt to change directory
+            FolderBrowserDialog fbd = new FolderBrowserDialog();
+            fbd.Description = "Select source folder";
+            fbd.ShowDialog();
+            string Source = fbd.SelectedPath;
+            Properties.Settings.Default.CSVpath = Source;
+            Properties.Settings.Default.Save();
+            label4.Text = Properties.Settings.Default.CSVpath;
+
+        }
+
+        private void label4_MouseHover(object sender, EventArgs e)
+        {
+            // hovering over directory control
         }
     }
 

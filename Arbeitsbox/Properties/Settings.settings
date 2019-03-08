@@ -5,5 +5,11 @@
     <Setting Name="VolumeOn" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
+    <Setting Name="CSVpath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">H:\UE4\Tailwind_R E B U I L D\Environment\World Machine 93e\PNGs\12\BMPs</Value>
+    </Setting>
+    <Setting Name="Destination" Type="System.String" Scope="User">
+      <Value Profile="(Default)">H:\UE4\Tailwind_R E B U I L D\Environment\World Machine 93e\PNGs\12\BMPs</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
