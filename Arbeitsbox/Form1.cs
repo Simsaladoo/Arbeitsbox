@@ -4601,6 +4601,7 @@ namespace Arbeitsbox
             myFont12 = new Font(fonts.Families[0], 12.0F);
             myFont22 = new Font(fonts.Families[0], 22.0F);
 
+            label4.Text = Properties.Settings.Default.CSVpath;
 
 
 
@@ -4678,6 +4679,10 @@ namespace Arbeitsbox
             label1.Font = myFont22;
             label2.Font = myFont22;
             label3.Font = myFont22;
+            label5.Font = myFont22;
+            label6.Font = myFont22;
+            FoliagePageTitle.Font = myFont22;
+            Foliage_HeaderLabel.Font = myFont12;
             // label4.Font = myFont;
 
             AudioButton.Font = myFont10;  
@@ -4702,10 +4707,9 @@ namespace Arbeitsbox
             button25.Font = myFont12;
             button26.Font = myFont12;
 
+
             ProcessAudioButton.Font = myFont12;
             AudioVisualizerButton.Font = myFont12;
-            FoliagePageTitle.Font = myFont12;
-            Foliage_HeaderLabel.Font = myFont12;
             richTextBox1.Font = myFont12;
 
            
@@ -4863,7 +4867,7 @@ namespace Arbeitsbox
             dta.Columns.Add("Type1CellY009");
             dta.Columns.Add("Type1CellY010");
             dta.Columns.Add("Type1CellY011");
-            string path = @"H:\UE4\Tailwind_R E B U I L D\Environment\World Machine 93e\PNGs\12\BMPs";
+            string path = Properties.Settings.Default.CSVpath;
             //string altpath = @"D:\Test";
             string searchPattern = "A*";
             DirectoryInfo di = new DirectoryInfo(Properties.Settings.Default.CSVpath);
@@ -4898,7 +4902,7 @@ namespace Arbeitsbox
 
                     }
                     Console.WriteLine(file + " ... processing ...");
-                    // richTextBox1.AppendText(Environment.NewLine + file + " ... processing ...");
+                    richTextBox1.AppendText(Environment.NewLine + file + " ... processing ...");
                     // richTextBox1.Focus();
                     // richTextBox1.SelectionStart = richTextBox1.Text.Length;
                     // richTextBox1.ScrollToCaret();
@@ -5371,7 +5375,7 @@ namespace Arbeitsbox
                 {
                     // name csv from images, this goes off for every file converted --commented out the richtextbox updater for performance
                     System.IO.File.WriteAllText(path + file + ".csv", sb.ToString());
-                    // richTextBox1.AppendText(Environment.NewLine + file + " Written...");
+                    richTextBox1.AppendText(Environment.NewLine + file + " Written...");
                     // richTextBox1.Focus();
                     // richTextBox1.SelectionStart = richTextBox1.Text.Length;
                     // richTextBox1.ScrollToCaret();
@@ -5512,7 +5516,7 @@ namespace Arbeitsbox
             dta.Columns.Add("Type2CellY063");
 
             // string path = @"D:\UE4\Tailwind_R E B U I L D\Environment\Fauna Data\Type2s\PNGs_Type2\BMPs";
-            string path = @"H:\UE4\Tailwind_R E B U I L D\Environment\World Machine 93e\PNGs\64\BMPs";
+            string path = Properties.Settings.Default.CSVpath;
             //string altpath = @"D:\Test";
             string searchPattern = "A*";
             DirectoryInfo di = new DirectoryInfo(path);

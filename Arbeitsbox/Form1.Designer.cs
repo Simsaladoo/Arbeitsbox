@@ -69,6 +69,8 @@
             this.FoliagePageTitle = new System.Windows.Forms.Label();
             this.Foliage_HeaderLabel = new System.Windows.Forms.Label();
             this.FoliageHLine = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.MenuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.AudioPanel.SuspendLayout();
@@ -191,6 +193,7 @@
             // 
             // AudioPanel
             // 
+            this.AudioPanel.Controls.Add(this.label6);
             this.AudioPanel.Controls.Add(this.waveformPainter1);
             this.AudioPanel.Controls.Add(this.ProcessAudioButton);
             this.AudioPanel.Controls.Add(this.AudioVisualizerButton);
@@ -203,9 +206,9 @@
             // 
             this.waveformPainter1.BackColor = System.Drawing.Color.Black;
             this.waveformPainter1.ForeColor = System.Drawing.Color.Lime;
-            this.waveformPainter1.Location = new System.Drawing.Point(0, 0);
+            this.waveformPainter1.Location = new System.Drawing.Point(0, 52);
             this.waveformPainter1.Name = "waveformPainter1";
-            this.waveformPainter1.Size = new System.Drawing.Size(882, 185);
+            this.waveformPainter1.Size = new System.Drawing.Size(882, 202);
             this.waveformPainter1.TabIndex = 37;
             this.waveformPainter1.Text = "waveformPainter1";
             // 
@@ -301,6 +304,7 @@
             // 
             // GeneralPanel
             // 
+            this.GeneralPanel.Controls.Add(this.label5);
             this.GeneralPanel.Controls.Add(this.waveformPainter2);
             this.GeneralPanel.Controls.Add(this.button1);
             this.GeneralPanel.Controls.Add(this.button2);
@@ -312,9 +316,9 @@
             // waveformPainter2
             // 
             this.waveformPainter2.BackColor = System.Drawing.Color.Black;
-            this.waveformPainter2.Location = new System.Drawing.Point(0, 0);
+            this.waveformPainter2.Location = new System.Drawing.Point(0, 52);
             this.waveformPainter2.Name = "waveformPainter2";
-            this.waveformPainter2.Size = new System.Drawing.Size(882, 185);
+            this.waveformPainter2.Size = new System.Drawing.Size(882, 202);
             this.waveformPainter2.TabIndex = 38;
             this.waveformPainter2.Text = "waveformPainter2";
             // 
@@ -344,11 +348,11 @@
             this.label4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(118, 99);
+            this.label4.Location = new System.Drawing.Point(118, 102);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(509, 17);
+            this.label4.Size = new System.Drawing.Size(510, 17);
             this.label4.TabIndex = 53;
-            this.label4.Text = "H:\\UE4\\Tailwind_R E B U I L D\\Environment\\World Machine 93e\\PNGs\\12\\BMPs";
+            this.label4.Text = "G:\\UE4\\Tailwind_R E B U I L D\\Environment\\World Machine 93e\\PNGs\\12\\BMPs";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             this.label4.MouseHover += new System.EventHandler(this.label4_MouseHover);
             // 
@@ -569,7 +573,7 @@
             this.FoliagePanel.Controls.Add(this.button6);
             this.FoliagePanel.Location = new System.Drawing.Point(65, 48);
             this.FoliagePanel.Name = "FoliagePanel";
-            this.FoliagePanel.Size = new System.Drawing.Size(898, 374);
+            this.FoliagePanel.Size = new System.Drawing.Size(882, 374);
             this.FoliagePanel.TabIndex = 42;
             // 
             // button7
@@ -615,7 +619,7 @@
             this.OtherPanel.Controls.Add(this.button8);
             this.OtherPanel.Location = new System.Drawing.Point(65, 48);
             this.OtherPanel.Name = "OtherPanel";
-            this.OtherPanel.Size = new System.Drawing.Size(898, 374);
+            this.OtherPanel.Size = new System.Drawing.Size(882, 374);
             this.OtherPanel.TabIndex = 43;
             // 
             // FoliagePageTitle
@@ -652,6 +656,28 @@
             this.FoliageHLine.Text = "_________________________________________________________________________________" +
     "_____________________________";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(347, 11);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(207, 36);
+            this.label5.TabIndex = 53;
+            this.label5.Text = "General Audio";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(351, 10);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(183, 36);
+            this.label6.TabIndex = 53;
+            this.label6.Text = "Audio Sorter";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -661,11 +687,11 @@
             this.ClientSize = new System.Drawing.Size(947, 561);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.MenuPanel);
-            this.Controls.Add(this.FaunaPanel);
-            this.Controls.Add(this.AudioPanel);
-            this.Controls.Add(this.OtherPanel);
-            this.Controls.Add(this.FoliagePanel);
             this.Controls.Add(this.GeneralPanel);
+            this.Controls.Add(this.OtherPanel);
+            this.Controls.Add(this.AudioPanel);
+            this.Controls.Add(this.FoliagePanel);
+            this.Controls.Add(this.FaunaPanel);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -679,7 +705,9 @@
             this.MenuPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.AudioPanel.ResumeLayout(false);
+            this.AudioPanel.PerformLayout();
             this.GeneralPanel.ResumeLayout(false);
+            this.GeneralPanel.PerformLayout();
             this.FaunaPanel.ResumeLayout(false);
             this.FaunaPanel.PerformLayout();
             this.FoliagePanel.ResumeLayout(false);
@@ -730,6 +758,8 @@
         private NAudio.Gui.WaveformPainter waveformPainter1;
         private NAudio.Gui.WaveformPainter waveformPainter2;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }
 
