@@ -4681,6 +4681,7 @@ namespace Arbeitsbox
             label3.Font = myFont22;
             label5.Font = myFont22;
             label6.Font = myFont22;
+            label7.Font = myFont22;
             FoliagePageTitle.Font = myFont22;
             Foliage_HeaderLabel.Font = myFont12;
             // label4.Font = myFont;
@@ -4712,7 +4713,7 @@ namespace Arbeitsbox
             AudioVisualizerButton.Font = myFont12;
             richTextBox1.Font = myFont12;
 
-           
+            MasterQuestNationText.Font = myFont22;
 
 
 
@@ -10582,6 +10583,75 @@ namespace Arbeitsbox
         {
             // hovering over directory control
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            // this needs to create a new panel that reads a specific master quest CSV based on nation type
+            NationChooser objUI = new NationChooser();
+            objUI.ShowDialog();
+
+
+
+
+        }
+
+
+        public void SetNativesNation()
+        {
+            MasterQuestNationText.Text = ("Alyssakin Freetribe Natives");
+            Properties.Settings.Default.Nation = 1;
+        }
+
+        public void SetRowaniNation()
+        {
+            MasterQuestNationText.Text = ("Rowani Empire");
+            Properties.Settings.Default.Nation = 2;
+        }
+
+        public void SetGraataNation()
+        {
+            MasterQuestNationText.Text = ("Republic of Graata");
+            Properties.Settings.Default.Nation = 3;
+        }
+
+
+        public void SetNeageseNation()
+        {
+            MasterQuestNationText.Text = ("Neagese Dynasty");
+            Properties.Settings.Default.Nation = 4;
+
+        }
+
+        public void SetMonsNation()
+        {
+            MasterQuestNationText.Text = ("Kingdom of Mons");
+            Properties.Settings.Default.Nation = 5;
+        }
+
+        private void button6_Click_1(object sender, EventArgs e)
+        {
+            // open charts to master quest csv for  chosen nation
+
+            if (Properties.Settings.Default.Nation == 0)
+            {
+                //faile
+                MessageBox.Show("Choose a Nation first!", "Please Choose a Nation",MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+
+            }
+
+            else
+            {
+                //open that quest
+
+
+
+                QuestChart objUI = new QuestChart();
+                objUI.ShowDialog();
+            }
+
+        }
+
     }
 
 

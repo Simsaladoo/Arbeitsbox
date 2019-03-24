@@ -58,5 +58,17 @@ namespace Arbeitsbox.Properties {
                 this["Destination"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int Nation {
+            get {
+                return ((int)(this["Nation"]));
+            }
+            set {
+                this["Nation"] = value;
+            }
+        }
     }
 }

@@ -153,3 +153,17 @@ G:\UE4\Splash\Arbeitsbox\Arbeitsbox\obj\Debug\Arbeitsbox.csproj.CoreCompileInput
 G:\UE4\Splash\Arbeitsbox\Arbeitsbox\obj\Debug\Arbeitsbox.csproj.CopyComplete
 G:\UE4\Splash\Arbeitsbox\Arbeitsbox\obj\Debug\Arbeitsbox.exe
 G:\UE4\Splash\Arbeitsbox\Arbeitsbox\obj\Debug\Arbeitsbox.pdb
+G:\UE4\Splash\Arbeitsbox\Arbeitsbox\obj\Debug\Arbeitsbox.NationChooser.resources
+G:\UE4\Splash\Arbeitsbox\Arbeitsbox\bin\Debug\Form1.resx
+G:\UE4\Splash\Arbeitsbox\Arbeitsbox\bin\Debug\NationChooser.resx
+G:\UE4\Splash\Arbeitsbox\Arbeitsbox\bin\Debug\Form1.cs
+G:\UE4\Splash\Arbeitsbox\Arbeitsbox\bin\Debug\Form1.Designer.cs
+G:\UE4\Splash\Arbeitsbox\Arbeitsbox\bin\Debug\NationChooser.cs
+G:\UE4\Splash\Arbeitsbox\Arbeitsbox\bin\Debug\NationChooser.Designer.cs
+G:\UE4\Splash\Arbeitsbox\Arbeitsbox\obj\Debug\Arbeitsbox.QuestChart.resources
+G:\UE4\Splash\Arbeitsbox\Arbeitsbox\bin\Debug\QuestChart.resx
+G:\UE4\Splash\Arbeitsbox\Arbeitsbox\bin\Debug\Program.cs
+G:\UE4\Splash\Arbeitsbox\Arbeitsbox\bin\Debug\QuestChart.cs
+G:\UE4\Splash\Arbeitsbox\Arbeitsbox\bin\Debug\QuestChart.Designer.cs
+G:\UE4\Splash\Arbeitsbox\Arbeitsbox\bin\Debug\packages.config
+G:\UE4\Splash\Arbeitsbox\Arbeitsbox\obj\Debug\Arbeitsbox.csprojAssemblyReference.cache

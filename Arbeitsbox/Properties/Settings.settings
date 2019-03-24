@@ -11,5 +11,8 @@
     <Setting Name="Destination" Type="System.String" Scope="User">
       <Value Profile="(Default)">G:\UE4\Tailwind_R E B U I L D\Environment\World Machine 93e\PNGs\12\BMPs</Value>
     </Setting>
+    <Setting Name="Nation" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

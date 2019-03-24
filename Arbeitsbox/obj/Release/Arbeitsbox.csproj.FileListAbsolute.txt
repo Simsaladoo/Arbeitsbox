@@ -153,3 +153,16 @@ G:\UE4\Splash\Arbeitsbox\Arbeitsbox\obj\Release\Arbeitsbox.csproj.CoreCompileInp
 G:\UE4\Splash\Arbeitsbox\Arbeitsbox\obj\Release\Arbeitsbox.csproj.CopyComplete
 G:\UE4\Splash\Arbeitsbox\Arbeitsbox\obj\Release\Arbeitsbox.exe
 G:\UE4\Splash\Arbeitsbox\Arbeitsbox\obj\Release\Arbeitsbox.pdb
+G:\UE4\Splash\Arbeitsbox\Arbeitsbox\bin\Release\Form1.resx
+G:\UE4\Splash\Arbeitsbox\Arbeitsbox\bin\Release\NationChooser.resx
+G:\UE4\Splash\Arbeitsbox\Arbeitsbox\bin\Release\Form1.cs
+G:\UE4\Splash\Arbeitsbox\Arbeitsbox\bin\Release\Form1.Designer.cs
+G:\UE4\Splash\Arbeitsbox\Arbeitsbox\bin\Release\NationChooser.cs
+G:\UE4\Splash\Arbeitsbox\Arbeitsbox\bin\Release\NationChooser.Designer.cs
+G:\UE4\Splash\Arbeitsbox\Arbeitsbox\obj\Release\Arbeitsbox.NationChooser.resources
+G:\UE4\Splash\Arbeitsbox\Arbeitsbox\obj\Release\Arbeitsbox.QuestChart.resources
+G:\UE4\Splash\Arbeitsbox\Arbeitsbox\bin\Release\QuestChart.resx
+G:\UE4\Splash\Arbeitsbox\Arbeitsbox\bin\Release\Program.cs
+G:\UE4\Splash\Arbeitsbox\Arbeitsbox\bin\Release\QuestChart.cs
+G:\UE4\Splash\Arbeitsbox\Arbeitsbox\bin\Release\QuestChart.Designer.cs
+G:\UE4\Splash\Arbeitsbox\Arbeitsbox\bin\Release\packages.config
