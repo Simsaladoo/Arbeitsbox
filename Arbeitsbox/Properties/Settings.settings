@@ -14,5 +14,8 @@
     <Setting Name="Nation" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
+    <Setting Name="QuestPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">G:\UE4\Tailwind_R E B U I L D\Environment\QuestData</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

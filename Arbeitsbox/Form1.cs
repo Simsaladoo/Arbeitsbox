@@ -4439,6 +4439,8 @@ namespace Arbeitsbox
         public string zipPath = "Game/cache/";
         public string extractPath = "Game/";
         public string path = Properties.Settings.Default.CSVpath;
+        public string Questpath = Properties.Settings.Default.QuestPath;
+
 
 
 
@@ -4578,6 +4580,12 @@ namespace Arbeitsbox
         Font myFont22;
 
 
+
+
+
+
+
+
         public Form1()
         {
             InitializeComponent();
@@ -4625,6 +4633,16 @@ namespace Arbeitsbox
 
         }
 
+
+
+
+
+
+
+
+
+
+
         private void button6_Click(object sender, EventArgs e)
         {
             Console.WriteLine("Audio Processing... doing nothing");
@@ -4646,9 +4664,8 @@ namespace Arbeitsbox
 
             Console.WriteLine("Main Window Loaded");
             steupfonts();
-
-
-
+            SetNativesNation();
+            UpdateCurrentStage();
         }
 
 
@@ -4715,7 +4732,7 @@ namespace Arbeitsbox
 
             MasterQuestNationText.Font = myFont22;
 
-
+            button6.BackColor = Color.FromArgb(0, 55, 55, 155);
 
         }
 
@@ -10568,7 +10585,7 @@ namespace Arbeitsbox
 
         private void label4_Click(object sender, EventArgs e)
         {
-            // clicking on CSV path for Fauna brings up prompt to change directory
+            ///////////////////////////////////////////////////////////////////// clicking on CSV path for Fauna brings up prompt to change directory
             FolderBrowserDialog fbd = new FolderBrowserDialog();
             fbd.Description = "Select source folder";
             fbd.ShowDialog();
@@ -10589,10 +10606,20 @@ namespace Arbeitsbox
             // this needs to create a new panel that reads a specific master quest CSV based on nation type
             NationChooser objUI = new NationChooser();
             objUI.ShowDialog();
+            // new panel Nation Chooser answers back with below medthods to set current quest csv nation
+        }
 
-
-
-
+        private void label8_Click(object sender, EventArgs e)
+        {
+            ///////////////////////////////////////////////////////////////////// clicking on CSV path for Quests brings up CSV directory to search later
+            FolderBrowserDialog fbd = new FolderBrowserDialog();
+            fbd.Description = "Select Quest source folder";
+            fbd.ShowDialog();
+            string Source = fbd.SelectedPath;
+            Properties.Settings.Default.QuestPath = Source;
+            Properties.Settings.Default.Save();
+            Properties.Settings.Default.QuestPath = Questpath;
+            label8.Text = Questpath;
         }
 
 
@@ -10600,18 +10627,21 @@ namespace Arbeitsbox
         {
             MasterQuestNationText.Text = ("Alyssakin Freetribe Natives");
             Properties.Settings.Default.Nation = 1;
+            button5.BackColor = Color.FromArgb(0, 55, 55, 155);
         }
 
         public void SetRowaniNation()
         {
             MasterQuestNationText.Text = ("Rowani Empire");
             Properties.Settings.Default.Nation = 2;
+            button5.BackColor = Color.FromArgb(0, 155, 55, 55);
         }
 
         public void SetGraataNation()
         {
             MasterQuestNationText.Text = ("Republic of Graata");
             Properties.Settings.Default.Nation = 3;
+            button5.BackColor = Color.FromArgb(0, 55, 155, 55);
         }
 
 
@@ -10619,6 +10649,7 @@ namespace Arbeitsbox
         {
             MasterQuestNationText.Text = ("Neagese Dynasty");
             Properties.Settings.Default.Nation = 4;
+            button5.BackColor = Color.FromArgb(0, 155, 155, 55);
 
         }
 
@@ -10626,7 +10657,35 @@ namespace Arbeitsbox
         {
             MasterQuestNationText.Text = ("Kingdom of Mons");
             Properties.Settings.Default.Nation = 5;
+            button5.BackColor = Color.FromArgb(0, 55, 155, 155);
         }
+
+        public void UpdateCurrentStage()
+        {
+
+            //
+            //
+            //  So the first thing we'll need to do is differentiate which CSV to open based upon the default nation selector
+            // So using that Integer as a switch we'll first look for ANY CSVs within the chosen folder -- search by name and make sure it (that nation-specific CSV) exists first
+            //
+            //
+            //
+            //
+            //
+            //
+            //
+            //
+            //
+
+            label7.Text = ("Stage 1");
+
+
+
+
+
+        }
+
+
 
         private void button6_Click_1(object sender, EventArgs e)
         {
@@ -10649,8 +10708,74 @@ namespace Arbeitsbox
                 QuestChart objUI = new QuestChart();
                 objUI.ShowDialog();
             }
+        }
+
+
+
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            // re-reads the CSV for selected Naiton
+            ReadQuestDirectory();
 
         }
+
+        public void ReadQuestDirectory()
+        {
+            // search Properties.Settings.Default.QuestPath;
+            string[] potflies = new string[] { "Null", "Natives", "Rowani", "Graata", "Neagese", "Mons" };
+
+            if (Directory.Exists(Properties.Settings.Default.QuestPath))
+            {
+                var filePath = Directory.GetFiles(Properties.Settings.Default.QuestPath, "*.csv");
+                foreach (string s in filePath)
+                {
+                    using (StreamReader sr = new StreamReader(s))
+                    {
+                        //perform task related to that file 
+                        Console.WriteLine(s);
+                        richTextBox1.AppendText(Environment.NewLine + "Found a CSV file " + s);
+                        richTextBox1.Focus();
+                        richTextBox1.SelectionStart = richTextBox1.Text.Length;
+                        richTextBox1.ScrollToCaret();
+
+                    }
+                }
+
+                // how to select named CSV from array?
+                // search for only CSVs
+
+
+                /////// https://stackoverflow.com/questions/18757097/writing-data-into-csv-file-in-c-sharp
+
+
+
+
+
+
+
+            }
+
+            else
+            {
+                // dir doesnt exist // ERROR OUT THIS FUCKIN USER POS
+
+                Console.WriteLine("Not a valid directory!");
+                MessageBox.Show("Choose a directory first!", "Please Choose a Directory", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                richTextBox1.AppendText(Environment.NewLine + "Not a valid directory!");
+                richTextBox1.Focus();
+                richTextBox1.SelectionStart = richTextBox1.Text.Length;
+                richTextBox1.ScrollToCaret();
+            }
+
+
+
+
+
+        }
+
+
+
 
     }
 

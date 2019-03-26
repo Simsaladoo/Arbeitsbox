@@ -70,5 +70,17 @@ namespace Arbeitsbox.Properties {
                 this["Nation"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("G:\\UE4\\Tailwind_R E B U I L D\\Environment\\QuestData")]
+        public string QuestPath {
+            get {
+                return ((string)(this["QuestPath"]));
+            }
+            set {
+                this["QuestPath"] = value;
+            }
+        }
     }
 }

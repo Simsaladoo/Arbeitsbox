@@ -167,3 +167,17 @@ G:\UE4\Splash\Arbeitsbox\Arbeitsbox\bin\Debug\QuestChart.cs
 G:\UE4\Splash\Arbeitsbox\Arbeitsbox\bin\Debug\QuestChart.Designer.cs
 G:\UE4\Splash\Arbeitsbox\Arbeitsbox\bin\Debug\packages.config
 G:\UE4\Splash\Arbeitsbox\Arbeitsbox\obj\Debug\Arbeitsbox.csprojAssemblyReference.cache
+D:\Reposit\Arbeitsbox\Arbeitsbox\bin\Debug\Form1.resx
+D:\Reposit\Arbeitsbox\Arbeitsbox\bin\Debug\NationChooser.resx
+D:\Reposit\Arbeitsbox\Arbeitsbox\bin\Debug\QuestChart.resx
+D:\Reposit\Arbeitsbox\Arbeitsbox\bin\Debug\Form1.cs
+D:\Reposit\Arbeitsbox\Arbeitsbox\bin\Debug\Form1.Designer.cs
+D:\Reposit\Arbeitsbox\Arbeitsbox\bin\Debug\NationChooser.cs
+D:\Reposit\Arbeitsbox\Arbeitsbox\bin\Debug\NationChooser.Designer.cs
+D:\Reposit\Arbeitsbox\Arbeitsbox\bin\Debug\Program.cs
+D:\Reposit\Arbeitsbox\Arbeitsbox\bin\Debug\QuestChart.cs
+D:\Reposit\Arbeitsbox\Arbeitsbox\bin\Debug\QuestChart.Designer.cs
+D:\Reposit\Arbeitsbox\Arbeitsbox\bin\Debug\packages.config
+D:\Reposit\Arbeitsbox\Arbeitsbox\obj\Debug\Arbeitsbox.csprojAssemblyReference.cache
+D:\Reposit\Arbeitsbox\Arbeitsbox\obj\Debug\Arbeitsbox.NationChooser.resources
+D:\Reposit\Arbeitsbox\Arbeitsbox\obj\Debug\Arbeitsbox.QuestChart.resources

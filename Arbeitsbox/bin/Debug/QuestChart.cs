@@ -15,7 +15,19 @@ namespace Arbeitsbox
         public QuestChart()
         {
             InitializeComponent();
+
+            int startupNationINT = Properties.Settings.Default.Nation;
+
         }
+
+
+
+
+
+
+
+
+
 
 
 
