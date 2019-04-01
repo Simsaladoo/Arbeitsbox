@@ -15,7 +15,21 @@ namespace Arbeitsbox
         public QuestChart()
         {
             InitializeComponent();
+
+            int startupNationINT = Properties.Settings.Default.Nation;
+            var principcalForm = Application.OpenForms.OfType<Form1>().Single();
+
+            label1.Text = principcalForm.CurrentQuestCSV;
         }
+
+
+
+
+
+
+
+
+
 
 
 
@@ -31,6 +45,13 @@ namespace Arbeitsbox
         private void button6_Click(object sender, EventArgs e)
         {
             // close everything
+            var principcalForm = Application.OpenForms.OfType<Form1>().Single();
+
+            principcalForm.Close();
+
+            this.Close();
+
+
         }
     }
 }

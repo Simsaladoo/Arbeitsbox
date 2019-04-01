@@ -4440,6 +4440,8 @@ namespace Arbeitsbox
         public string extractPath = "Game/";
         public string path = Properties.Settings.Default.CSVpath;
         public string Questpath = Properties.Settings.Default.QuestPath;
+        public string CurrentNation = "Natives";
+        public string CurrentQuestCSV = "Null";
 
 
 
@@ -10628,6 +10630,7 @@ namespace Arbeitsbox
             MasterQuestNationText.Text = ("Alyssakin Freetribe Natives");
             Properties.Settings.Default.Nation = 1;
             button5.BackColor = Color.FromArgb(0, 55, 55, 155);
+            UpdateNation();
         }
 
         public void SetRowaniNation()
@@ -10635,6 +10638,7 @@ namespace Arbeitsbox
             MasterQuestNationText.Text = ("Rowani Empire");
             Properties.Settings.Default.Nation = 2;
             button5.BackColor = Color.FromArgb(0, 155, 55, 55);
+            UpdateNation();
         }
 
         public void SetGraataNation()
@@ -10642,6 +10646,7 @@ namespace Arbeitsbox
             MasterQuestNationText.Text = ("Republic of Graata");
             Properties.Settings.Default.Nation = 3;
             button5.BackColor = Color.FromArgb(0, 55, 155, 55);
+            UpdateNation();
         }
 
 
@@ -10650,6 +10655,7 @@ namespace Arbeitsbox
             MasterQuestNationText.Text = ("Neagese Dynasty");
             Properties.Settings.Default.Nation = 4;
             button5.BackColor = Color.FromArgb(0, 155, 155, 55);
+            UpdateNation();
 
         }
 
@@ -10658,6 +10664,7 @@ namespace Arbeitsbox
             MasterQuestNationText.Text = ("Kingdom of Mons");
             Properties.Settings.Default.Nation = 5;
             button5.BackColor = Color.FromArgb(0, 55, 155, 155);
+            UpdateNation();
         }
 
         public void UpdateCurrentStage()
@@ -10701,9 +10708,9 @@ namespace Arbeitsbox
 
             else
             {
-                //open that quest
+                //re-read directory and then open that quest
 
-
+                ReadQuestDirectory();
 
                 QuestChart objUI = new QuestChart();
                 objUI.ShowDialog();
@@ -10711,11 +10718,81 @@ namespace Arbeitsbox
         }
 
 
+        private void UpdateNation()
+        {
+            if (Properties.Settings.Default.Nation == 0)
+            {
+                // set to Null
+                Console.WriteLine("Update Nation set to Null");
+                CurrentNation = "Null";
+                richTextBox1.AppendText(Environment.NewLine + "Update Nation set to Null");
+                richTextBox1.Focus();
+                richTextBox1.SelectionStart = richTextBox1.Text.Length;
+                richTextBox1.ScrollToCaret();
+            }
+            if (Properties.Settings.Default.Nation == 1)
+            {
+                // set to Natives
+                Console.WriteLine("Using Natives Nation");
+                CurrentNation = "Natives";
+                richTextBox1.AppendText(Environment.NewLine + "Using Natives Nation");
+                richTextBox1.Focus();
+                richTextBox1.SelectionStart = richTextBox1.Text.Length;
+                richTextBox1.ScrollToCaret();
+            }
+            if (Properties.Settings.Default.Nation == 2)
+            {
+                // set to Rowani
+                Console.WriteLine("Using Rowani Nation");
+                CurrentNation = "Rowani";
+                richTextBox1.AppendText(Environment.NewLine + "Using Rowani Nation");
+                richTextBox1.Focus();
+                richTextBox1.SelectionStart = richTextBox1.Text.Length;
+                richTextBox1.ScrollToCaret();
+            }
+            if (Properties.Settings.Default.Nation == 3)
+            {
+                // set to Graata
+                Console.WriteLine("Using Graata Nation");
+                CurrentNation = "Graata";
+                richTextBox1.AppendText(Environment.NewLine + "Using Graata Nation");
+                richTextBox1.Focus();
+                richTextBox1.SelectionStart = richTextBox1.Text.Length;
+                richTextBox1.ScrollToCaret();
+            }
 
+            if (Properties.Settings.Default.Nation == 4)
+            {
+                // set to Neagese
+                Console.WriteLine("Using Neagese Nation");
+                CurrentNation = "Neagese";
+                richTextBox1.AppendText(Environment.NewLine + "Using Neagese Nation");
+                richTextBox1.Focus();
+                richTextBox1.SelectionStart = richTextBox1.Text.Length;
+                richTextBox1.ScrollToCaret();
+            }
+            if (Properties.Settings.Default.Nation == 5)
+            {
+                // set to Mons
+                Console.WriteLine("Using Mons Nation");
+                CurrentNation = "Mons";
+                richTextBox1.AppendText(Environment.NewLine + "Using Mons Nation");
+                richTextBox1.Focus();
+                richTextBox1.SelectionStart = richTextBox1.Text.Length;
+                richTextBox1.ScrollToCaret();
+            }
+
+            else
+            {
+
+            }
+
+        }
 
         private void button9_Click(object sender, EventArgs e)
         {
             // re-reads the CSV for selected Naiton
+            Console.WriteLine("Refreshing Directory...");
             ReadQuestDirectory();
 
         }
@@ -10723,7 +10800,9 @@ namespace Arbeitsbox
         public void ReadQuestDirectory()
         {
             // search Properties.Settings.Default.QuestPath;
-            string[] potflies = new string[] { "Null", "Natives", "Rowani", "Graata", "Neagese", "Mons" };
+            UpdateNation();
+
+            // string[] potflies = new string[] { "Null", "Natives", "Rowani", "Graata", "Neagese", "Mons" };   // later these can be checked against the public string CurrentNation
 
             if (Directory.Exists(Properties.Settings.Default.QuestPath))
             {
@@ -10739,6 +10818,28 @@ namespace Arbeitsbox
                         richTextBox1.SelectionStart = richTextBox1.Text.Length;
                         richTextBox1.ScrollToCaret();
 
+                        //IF the read CSV file's name is the same as the CurrentNation, set it to current variable
+                        bool contains = Directory.EnumerateFiles(Properties.Settings.Default.QuestPath).Any(f => f.IndexOf(CurrentNation, StringComparison.OrdinalIgnoreCase) > 0);
+
+                        if (contains == true)
+                        {
+                            // use this file
+                            Console.WriteLine("Found matching file: " + s);
+                            richTextBox1.AppendText(Environment.NewLine + "Found matching file: " + s);
+                            richTextBox1.Focus();
+                            richTextBox1.SelectionStart = richTextBox1.Text.Length;
+                            richTextBox1.ScrollToCaret();
+
+                            CurrentQuestCSV = s;
+
+
+                        }
+                        
+                        else
+                        {
+                            Console.WriteLine("No CSVs Found!");
+                            //CurrentQuestCSV = "No CSVs found!";
+                        }
                     }
                 }
 
@@ -10748,8 +10849,22 @@ namespace Arbeitsbox
 
                 /////// https://stackoverflow.com/questions/18757097/writing-data-into-csv-file-in-c-sharp
 
+                if (filePath == null || filePath.Length == 0)
+                {
+                    // nada found yo
+                    Console.WriteLine("No CSVs Found!");
+                    CurrentQuestCSV = "No CSVs were found in " + Properties.Settings.Default.QuestPath;
+                    richTextBox1.AppendText(Environment.NewLine + "No CSVs Found!");
+                    richTextBox1.Focus();
+                    richTextBox1.SelectionStart = richTextBox1.Text.Length;
+                    richTextBox1.ScrollToCaret();
+                }
 
+                else
+                {
 
+                }
+                    Console.WriteLine("...ReadQuestDirectory Completed!");
 
 
 

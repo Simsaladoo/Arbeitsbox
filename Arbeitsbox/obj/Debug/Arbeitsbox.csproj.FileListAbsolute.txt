@@ -178,6 +178,6 @@ D:\Reposit\Arbeitsbox\Arbeitsbox\bin\Debug\Program.cs
 D:\Reposit\Arbeitsbox\Arbeitsbox\bin\Debug\QuestChart.cs
 D:\Reposit\Arbeitsbox\Arbeitsbox\bin\Debug\QuestChart.Designer.cs
 D:\Reposit\Arbeitsbox\Arbeitsbox\bin\Debug\packages.config
-D:\Reposit\Arbeitsbox\Arbeitsbox\obj\Debug\Arbeitsbox.csprojAssemblyReference.cache
 D:\Reposit\Arbeitsbox\Arbeitsbox\obj\Debug\Arbeitsbox.NationChooser.resources
 D:\Reposit\Arbeitsbox\Arbeitsbox\obj\Debug\Arbeitsbox.QuestChart.resources
+D:\Reposit\Arbeitsbox\Arbeitsbox\obj\Debug\Arbeitsbox.csprojAssemblyReference.cache

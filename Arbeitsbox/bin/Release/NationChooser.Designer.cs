@@ -137,6 +137,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "NationChooser";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Choose Nation MasterQuest";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

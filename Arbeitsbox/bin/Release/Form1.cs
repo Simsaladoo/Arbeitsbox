@@ -4439,6 +4439,10 @@ namespace Arbeitsbox
         public string zipPath = "Game/cache/";
         public string extractPath = "Game/";
         public string path = Properties.Settings.Default.CSVpath;
+        public string Questpath = Properties.Settings.Default.QuestPath;
+        public string CurrentNation = "Natives";
+        public string CurrentQuestCSV = "Null";
+
 
 
 
@@ -4578,6 +4582,12 @@ namespace Arbeitsbox
         Font myFont22;
 
 
+
+
+
+
+
+
         public Form1()
         {
             InitializeComponent();
@@ -4625,6 +4635,16 @@ namespace Arbeitsbox
 
         }
 
+
+
+
+
+
+
+
+
+
+
         private void button6_Click(object sender, EventArgs e)
         {
             Console.WriteLine("Audio Processing... doing nothing");
@@ -4646,9 +4666,8 @@ namespace Arbeitsbox
 
             Console.WriteLine("Main Window Loaded");
             steupfonts();
-
-
-
+            SetNativesNation();
+            UpdateCurrentStage();
         }
 
 
@@ -4715,7 +4734,7 @@ namespace Arbeitsbox
 
             MasterQuestNationText.Font = myFont22;
 
-
+            button6.BackColor = Color.FromArgb(0, 55, 55, 155);
 
         }
 
@@ -10568,7 +10587,7 @@ namespace Arbeitsbox
 
         private void label4_Click(object sender, EventArgs e)
         {
-            // clicking on CSV path for Fauna brings up prompt to change directory
+            ///////////////////////////////////////////////////////////////////// clicking on CSV path for Fauna brings up prompt to change directory
             FolderBrowserDialog fbd = new FolderBrowserDialog();
             fbd.Description = "Select source folder";
             fbd.ShowDialog();
@@ -10589,10 +10608,20 @@ namespace Arbeitsbox
             // this needs to create a new panel that reads a specific master quest CSV based on nation type
             NationChooser objUI = new NationChooser();
             objUI.ShowDialog();
+            // new panel Nation Chooser answers back with below medthods to set current quest csv nation
+        }
 
-
-
-
+        private void label8_Click(object sender, EventArgs e)
+        {
+            ///////////////////////////////////////////////////////////////////// clicking on CSV path for Quests brings up CSV directory to search later
+            FolderBrowserDialog fbd = new FolderBrowserDialog();
+            fbd.Description = "Select Quest source folder";
+            fbd.ShowDialog();
+            string Source = fbd.SelectedPath;
+            Properties.Settings.Default.QuestPath = Source;
+            Properties.Settings.Default.Save();
+            Properties.Settings.Default.QuestPath = Questpath;
+            label8.Text = Questpath;
         }
 
 
@@ -10600,18 +10629,24 @@ namespace Arbeitsbox
         {
             MasterQuestNationText.Text = ("Alyssakin Freetribe Natives");
             Properties.Settings.Default.Nation = 1;
+            button5.BackColor = Color.FromArgb(0, 55, 55, 155);
+            UpdateNation();
         }
 
         public void SetRowaniNation()
         {
             MasterQuestNationText.Text = ("Rowani Empire");
             Properties.Settings.Default.Nation = 2;
+            button5.BackColor = Color.FromArgb(0, 155, 55, 55);
+            UpdateNation();
         }
 
         public void SetGraataNation()
         {
             MasterQuestNationText.Text = ("Republic of Graata");
             Properties.Settings.Default.Nation = 3;
+            button5.BackColor = Color.FromArgb(0, 55, 155, 55);
+            UpdateNation();
         }
 
 
@@ -10619,6 +10654,8 @@ namespace Arbeitsbox
         {
             MasterQuestNationText.Text = ("Neagese Dynasty");
             Properties.Settings.Default.Nation = 4;
+            button5.BackColor = Color.FromArgb(0, 155, 155, 55);
+            UpdateNation();
 
         }
 
@@ -10626,7 +10663,36 @@ namespace Arbeitsbox
         {
             MasterQuestNationText.Text = ("Kingdom of Mons");
             Properties.Settings.Default.Nation = 5;
+            button5.BackColor = Color.FromArgb(0, 55, 155, 155);
+            UpdateNation();
         }
+
+        public void UpdateCurrentStage()
+        {
+
+            //
+            //
+            //  So the first thing we'll need to do is differentiate which CSV to open based upon the default nation selector
+            // So using that Integer as a switch we'll first look for ANY CSVs within the chosen folder -- search by name and make sure it (that nation-specific CSV) exists first
+            //
+            //
+            //
+            //
+            //
+            //
+            //
+            //
+            //
+
+            label7.Text = ("Stage 1");
+
+
+
+
+
+        }
+
+
 
         private void button6_Click_1(object sender, EventArgs e)
         {
@@ -10642,15 +10708,189 @@ namespace Arbeitsbox
 
             else
             {
-                //open that quest
+                //re-read directory and then open that quest
 
-
+                ReadQuestDirectory();
 
                 QuestChart objUI = new QuestChart();
                 objUI.ShowDialog();
             }
+        }
+
+
+        private void UpdateNation()
+        {
+            if (Properties.Settings.Default.Nation == 0)
+            {
+                // set to Null
+                Console.WriteLine("Update Nation set to Null");
+                CurrentNation = "Null";
+                richTextBox1.AppendText(Environment.NewLine + "Update Nation set to Null");
+                richTextBox1.Focus();
+                richTextBox1.SelectionStart = richTextBox1.Text.Length;
+                richTextBox1.ScrollToCaret();
+            }
+            if (Properties.Settings.Default.Nation == 1)
+            {
+                // set to Natives
+                Console.WriteLine("Using Natives Nation");
+                CurrentNation = "Natives";
+                richTextBox1.AppendText(Environment.NewLine + "Using Natives Nation");
+                richTextBox1.Focus();
+                richTextBox1.SelectionStart = richTextBox1.Text.Length;
+                richTextBox1.ScrollToCaret();
+            }
+            if (Properties.Settings.Default.Nation == 2)
+            {
+                // set to Rowani
+                Console.WriteLine("Using Rowani Nation");
+                CurrentNation = "Rowani";
+                richTextBox1.AppendText(Environment.NewLine + "Using Rowani Nation");
+                richTextBox1.Focus();
+                richTextBox1.SelectionStart = richTextBox1.Text.Length;
+                richTextBox1.ScrollToCaret();
+            }
+            if (Properties.Settings.Default.Nation == 3)
+            {
+                // set to Graata
+                Console.WriteLine("Using Graata Nation");
+                CurrentNation = "Graata";
+                richTextBox1.AppendText(Environment.NewLine + "Using Graata Nation");
+                richTextBox1.Focus();
+                richTextBox1.SelectionStart = richTextBox1.Text.Length;
+                richTextBox1.ScrollToCaret();
+            }
+
+            if (Properties.Settings.Default.Nation == 4)
+            {
+                // set to Neagese
+                Console.WriteLine("Using Neagese Nation");
+                CurrentNation = "Neagese";
+                richTextBox1.AppendText(Environment.NewLine + "Using Neagese Nation");
+                richTextBox1.Focus();
+                richTextBox1.SelectionStart = richTextBox1.Text.Length;
+                richTextBox1.ScrollToCaret();
+            }
+            if (Properties.Settings.Default.Nation == 5)
+            {
+                // set to Mons
+                Console.WriteLine("Using Mons Nation");
+                CurrentNation = "Mons";
+                richTextBox1.AppendText(Environment.NewLine + "Using Mons Nation");
+                richTextBox1.Focus();
+                richTextBox1.SelectionStart = richTextBox1.Text.Length;
+                richTextBox1.ScrollToCaret();
+            }
+
+            else
+            {
+
+            }
 
         }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            // re-reads the CSV for selected Naiton
+            Console.WriteLine("Refreshing Directory...");
+            ReadQuestDirectory();
+
+        }
+
+        public void ReadQuestDirectory()
+        {
+            // search Properties.Settings.Default.QuestPath;
+            UpdateNation();
+
+            // string[] potflies = new string[] { "Null", "Natives", "Rowani", "Graata", "Neagese", "Mons" };   // later these can be checked against the public string CurrentNation
+
+            if (Directory.Exists(Properties.Settings.Default.QuestPath))
+            {
+                var filePath = Directory.GetFiles(Properties.Settings.Default.QuestPath, "*.csv");
+                foreach (string s in filePath)
+                {
+                    using (StreamReader sr = new StreamReader(s))
+                    {
+                        //perform task related to that file 
+                        Console.WriteLine(s);
+                        richTextBox1.AppendText(Environment.NewLine + "Found a CSV file " + s);
+                        richTextBox1.Focus();
+                        richTextBox1.SelectionStart = richTextBox1.Text.Length;
+                        richTextBox1.ScrollToCaret();
+
+                        //IF the read CSV file's name is the same as the CurrentNation, set it to current variable
+                        bool contains = Directory.EnumerateFiles(Properties.Settings.Default.QuestPath).Any(f => f.IndexOf(CurrentNation, StringComparison.OrdinalIgnoreCase) > 0);
+
+                        if (contains == true)
+                        {
+                            // use this file
+                            Console.WriteLine("Found matching file: " + s);
+                            richTextBox1.AppendText(Environment.NewLine + "Found matching file: " + s);
+                            richTextBox1.Focus();
+                            richTextBox1.SelectionStart = richTextBox1.Text.Length;
+                            richTextBox1.ScrollToCaret();
+
+                            CurrentQuestCSV = s;
+
+
+                        }
+                        
+                        else
+                        {
+                            Console.WriteLine("No CSVs Found!");
+                            //CurrentQuestCSV = "No CSVs found!";
+                        }
+                    }
+                }
+
+                // how to select named CSV from array?
+                // search for only CSVs
+
+
+                /////// https://stackoverflow.com/questions/18757097/writing-data-into-csv-file-in-c-sharp
+
+                if (filePath == null || filePath.Length == 0)
+                {
+                    // nada found yo
+                    Console.WriteLine("No CSVs Found!");
+                    CurrentQuestCSV = "No CSVs were found in " + Properties.Settings.Default.QuestPath;
+                    richTextBox1.AppendText(Environment.NewLine + "No CSVs Found!");
+                    richTextBox1.Focus();
+                    richTextBox1.SelectionStart = richTextBox1.Text.Length;
+                    richTextBox1.ScrollToCaret();
+                }
+
+                else
+                {
+
+                }
+                    Console.WriteLine("...ReadQuestDirectory Completed!");
+
+
+
+
+            }
+
+            else
+            {
+                // dir doesnt exist // ERROR OUT THIS FUCKIN USER POS
+
+                Console.WriteLine("Not a valid directory!");
+                MessageBox.Show("Choose a directory first!", "Please Choose a Directory", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                richTextBox1.AppendText(Environment.NewLine + "Not a valid directory!");
+                richTextBox1.Focus();
+                richTextBox1.SelectionStart = richTextBox1.Text.Length;
+                richTextBox1.ScrollToCaret();
+            }
+
+
+
+
+
+        }
+
+
+
 
     }
 

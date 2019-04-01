@@ -51,6 +51,7 @@
             this.HasSpottedAction = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
             this.BasePanel = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -99,7 +100,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dataGridView1.Size = new System.Drawing.Size(1735, 300);
+            this.dataGridView1.Size = new System.Drawing.Size(1307, 300);
             this.dataGridView1.TabIndex = 0;
             // 
             // A
@@ -217,9 +218,8 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.MaximumSize = new System.Drawing.Size(0, 300);
-            this.panel1.MinimumSize = new System.Drawing.Size(1730, 200);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1735, 300);
+            this.panel1.Size = new System.Drawing.Size(1307, 300);
             this.panel1.TabIndex = 1;
             // 
             // panel2
@@ -228,13 +228,24 @@
             this.panel2.AutoSize = true;
             this.panel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.button6);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.MinimumSize = new System.Drawing.Size(1730, 361);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1735, 922);
+            this.panel2.Size = new System.Drawing.Size(1307, 882);
             this.panel2.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label1.Location = new System.Drawing.Point(23, 321);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(68, 25);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Nation";
             // 
             // button6
             // 
@@ -247,7 +258,7 @@
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(1553, 833);
+            this.button6.Location = new System.Drawing.Point(1125, 793);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(182, 54);
             this.button6.TabIndex = 58;
@@ -262,7 +273,7 @@
             this.BasePanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BasePanel.Location = new System.Drawing.Point(0, 0);
             this.BasePanel.Name = "BasePanel";
-            this.BasePanel.Size = new System.Drawing.Size(1735, 922);
+            this.BasePanel.Size = new System.Drawing.Size(1307, 882);
             this.BasePanel.TabIndex = 59;
             // 
             // QuestChart
@@ -271,7 +282,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.ClientSize = new System.Drawing.Size(1735, 922);
+            this.ClientSize = new System.Drawing.Size(1307, 882);
             this.Controls.Add(this.BasePanel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "QuestChart";
@@ -279,6 +290,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.BasePanel.ResumeLayout(false);
             this.BasePanel.PerformLayout();
             this.ResumeLayout(false);
@@ -310,5 +322,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Panel BasePanel;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -17,7 +17,9 @@ namespace Arbeitsbox
             InitializeComponent();
 
             int startupNationINT = Properties.Settings.Default.Nation;
+            var principcalForm = Application.OpenForms.OfType<Form1>().Single();
 
+            label1.Text = principcalForm.CurrentQuestCSV;
         }
 
 
