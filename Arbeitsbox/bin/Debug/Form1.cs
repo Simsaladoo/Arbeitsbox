@@ -6,6 +6,11 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Text;
+using DocumentFormat.OpenXml.Packaging;
+using DocumentFormat.OpenXml.Spreadsheet;
+using Excel = Microsoft.Office.Interop.Excel;
+using Microsoft.Office.Interop;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,8 +18,6 @@ using System.Media;
 using System.Windows.Forms;
 using Microsoft.WindowsAPICodePack.Dialogs;
 using System.Runtime.InteropServices;
-//using System.Speech.Synthesis;
-//using System.ComponentModel;
 using System.IO.Compression;
 using System.Reflection;
 
@@ -4577,9 +4580,9 @@ namespace Arbeitsbox
 
         private PrivateFontCollection fonts = new PrivateFontCollection();
 
-        Font myFont10;
-        Font myFont12;
-        Font myFont22;
+        System.Drawing.Font myFont10;
+        System.Drawing.Font myFont12;
+        System.Drawing.Font myFont22;
 
 
 
@@ -4607,9 +4610,9 @@ namespace Arbeitsbox
             System.Runtime.InteropServices.Marshal.FreeCoTaskMem(fontPtr);
 
             // sizing of the new custom font
-            myFont10 = new Font(fonts.Families[0], 10.0F);
-            myFont12 = new Font(fonts.Families[0], 12.0F);
-            myFont22 = new Font(fonts.Families[0], 22.0F);
+            myFont10 = new System.Drawing.Font(fonts.Families[0], 10.0F);
+            myFont12 = new System.Drawing.Font(fonts.Families[0], 12.0F);
+            myFont22 = new System.Drawing.Font(fonts.Families[0], 22.0F);
 
             label4.Text = Properties.Settings.Default.CSVpath;
 
@@ -4734,7 +4737,7 @@ namespace Arbeitsbox
 
             MasterQuestNationText.Font = myFont22;
 
-            button6.BackColor = Color.FromArgb(0, 55, 55, 155);
+            button6.BackColor = System.Drawing.Color.FromArgb(0, 55, 55, 155);
 
         }
 
@@ -4940,7 +4943,7 @@ namespace Arbeitsbox
                             // row start
                             if (y == 0)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
                                 if (x == 0)
@@ -4971,7 +4974,7 @@ namespace Arbeitsbox
                             // row start
                             if (y == 1)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
                                 if (x == 0)
@@ -5002,7 +5005,7 @@ namespace Arbeitsbox
                             // row start
                             if (y == 2)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
                                 if (x == 0)
@@ -5033,7 +5036,7 @@ namespace Arbeitsbox
                             // row start
                             if (y == 3)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
                                 if (x == 0)
@@ -5064,7 +5067,7 @@ namespace Arbeitsbox
                             // row start
                             if (y == 4)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
                                 if (x == 0)
@@ -5095,7 +5098,7 @@ namespace Arbeitsbox
                             // row start
                             if (y == 5)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
                                 if (x == 0)
@@ -5126,7 +5129,7 @@ namespace Arbeitsbox
                             // row start
                             if (y == 6)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
                                 if (x == 0)
@@ -5157,7 +5160,7 @@ namespace Arbeitsbox
                             // row start
                             if (y == 7)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
                                 if (x == 0)
@@ -5188,7 +5191,7 @@ namespace Arbeitsbox
                             // row start
                             if (y == 8)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
                                 if (x == 0)
@@ -5219,7 +5222,7 @@ namespace Arbeitsbox
                             // row start
                             if (y == 9)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
                                 if (x == 0)
@@ -5250,7 +5253,7 @@ namespace Arbeitsbox
                             // row start
                             if (y == 10)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
                                 if (x == 0)
@@ -5281,7 +5284,7 @@ namespace Arbeitsbox
                             // row start
                             if (y == 11)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
                                 if (x == 0)
@@ -5586,7 +5589,7 @@ namespace Arbeitsbox
                             // row start
                             if (y == 0)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
 
@@ -5658,7 +5661,7 @@ namespace Arbeitsbox
                             }
                             if (y == 1)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
 
@@ -5732,7 +5735,7 @@ namespace Arbeitsbox
 
                             if (y == 2)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
 
@@ -5805,7 +5808,7 @@ namespace Arbeitsbox
 
                             if (y == 3)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
 
@@ -5878,7 +5881,7 @@ namespace Arbeitsbox
 
                             if (y == 4)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
 
@@ -5951,7 +5954,7 @@ namespace Arbeitsbox
 
                             if (y == 5)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
 
@@ -6024,7 +6027,7 @@ namespace Arbeitsbox
 
                             if (y == 6)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
 
@@ -6096,7 +6099,7 @@ namespace Arbeitsbox
 
                             if (y == 7)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
 
@@ -6169,7 +6172,7 @@ namespace Arbeitsbox
 
                             if (y == 8)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
 
@@ -6242,7 +6245,7 @@ namespace Arbeitsbox
 
                             if (y == 9)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
 
@@ -6315,7 +6318,7 @@ namespace Arbeitsbox
 
                             if (y == 10)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
 
@@ -6388,7 +6391,7 @@ namespace Arbeitsbox
 
                             if (y == 11)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
 
@@ -6461,7 +6464,7 @@ namespace Arbeitsbox
 
                             if (y == 12)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
 
@@ -6534,7 +6537,7 @@ namespace Arbeitsbox
 
                             if (y == 13)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
 
@@ -6607,7 +6610,7 @@ namespace Arbeitsbox
 
                             if (y == 14)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
 
@@ -6680,7 +6683,7 @@ namespace Arbeitsbox
 
                             if (y == 15)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
 
@@ -6753,7 +6756,7 @@ namespace Arbeitsbox
 
                             if (y == 16)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
 
@@ -6825,7 +6828,7 @@ namespace Arbeitsbox
 
                             if (y == 17)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
 
@@ -6898,7 +6901,7 @@ namespace Arbeitsbox
 
                             if (y == 18)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
 
@@ -6970,7 +6973,7 @@ namespace Arbeitsbox
 
                             if (y == 19)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
 
@@ -7042,7 +7045,7 @@ namespace Arbeitsbox
 
                             if (y == 20)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
 
@@ -7114,7 +7117,7 @@ namespace Arbeitsbox
 
                             if (y == 21)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
 
@@ -7186,7 +7189,7 @@ namespace Arbeitsbox
 
                             if (y == 22)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
 
@@ -7258,7 +7261,7 @@ namespace Arbeitsbox
 
                             if (y == 23)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
 
@@ -7330,7 +7333,7 @@ namespace Arbeitsbox
 
                             if (y == 24)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
 
@@ -7402,7 +7405,7 @@ namespace Arbeitsbox
 
                             if (y == 25)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
 
@@ -7474,7 +7477,7 @@ namespace Arbeitsbox
 
                             if (y == 26)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
 
@@ -7547,7 +7550,7 @@ namespace Arbeitsbox
 
                             if (y == 27)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
 
@@ -7620,7 +7623,7 @@ namespace Arbeitsbox
 
                             if (y == 28)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
 
@@ -7693,7 +7696,7 @@ namespace Arbeitsbox
 
                             if (y == 29)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
 
@@ -7766,7 +7769,7 @@ namespace Arbeitsbox
 
                             if (y == 30)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
 
@@ -7839,7 +7842,7 @@ namespace Arbeitsbox
 
                             if (y == 31)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
 
@@ -7912,7 +7915,7 @@ namespace Arbeitsbox
 
                             if (y == 32)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
 
@@ -7985,7 +7988,7 @@ namespace Arbeitsbox
 
                             if (y == 33)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
 
@@ -8058,7 +8061,7 @@ namespace Arbeitsbox
 
                             if (y == 34)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
 
@@ -8131,7 +8134,7 @@ namespace Arbeitsbox
 
                             if (y == 35)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
 
@@ -8204,7 +8207,7 @@ namespace Arbeitsbox
 
                             if (y == 36)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
 
@@ -8277,7 +8280,7 @@ namespace Arbeitsbox
 
                             if (y == 37)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
 
@@ -8350,7 +8353,7 @@ namespace Arbeitsbox
 
                             if (y == 38)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
 
@@ -8423,7 +8426,7 @@ namespace Arbeitsbox
 
                             if (y == 39)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
 
@@ -8496,7 +8499,7 @@ namespace Arbeitsbox
 
                             if (y == 40)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
 
@@ -8569,7 +8572,7 @@ namespace Arbeitsbox
 
                             if (y == 41)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
 
@@ -8642,7 +8645,7 @@ namespace Arbeitsbox
 
                             if (y == 42)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
 
@@ -8715,7 +8718,7 @@ namespace Arbeitsbox
 
                             if (y == 43)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
 
@@ -8788,7 +8791,7 @@ namespace Arbeitsbox
 
                             if (y == 44)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
 
@@ -8861,7 +8864,7 @@ namespace Arbeitsbox
 
                             if (y == 45)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
 
@@ -8934,7 +8937,7 @@ namespace Arbeitsbox
 
                             if (y == 46)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
 
@@ -9007,7 +9010,7 @@ namespace Arbeitsbox
 
                             if (y == 47)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
 
@@ -9080,7 +9083,7 @@ namespace Arbeitsbox
 
                             if (y == 48)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
 
@@ -9153,7 +9156,7 @@ namespace Arbeitsbox
 
                             if (y == 49)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
 
@@ -9226,7 +9229,7 @@ namespace Arbeitsbox
 
                             if (y == 50)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
 
@@ -9299,7 +9302,7 @@ namespace Arbeitsbox
 
                             if (y == 51)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
 
@@ -9372,7 +9375,7 @@ namespace Arbeitsbox
 
                             if (y == 52)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
 
@@ -9445,7 +9448,7 @@ namespace Arbeitsbox
 
                             if (y == 53)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
 
@@ -9518,7 +9521,7 @@ namespace Arbeitsbox
 
                             if (y == 54)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
 
@@ -9591,7 +9594,7 @@ namespace Arbeitsbox
 
                             if (y == 55)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
 
@@ -9664,7 +9667,7 @@ namespace Arbeitsbox
 
                             if (y == 56)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
 
@@ -9737,7 +9740,7 @@ namespace Arbeitsbox
 
                             if (y == 57)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
 
@@ -9810,7 +9813,7 @@ namespace Arbeitsbox
 
                             if (y == 58)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
 
@@ -9883,7 +9886,7 @@ namespace Arbeitsbox
 
                             if (y == 59)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
 
@@ -9956,7 +9959,7 @@ namespace Arbeitsbox
 
                             if (y == 60)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
 
@@ -10029,7 +10032,7 @@ namespace Arbeitsbox
 
                             if (y == 61)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
 
@@ -10102,7 +10105,7 @@ namespace Arbeitsbox
 
                             if (y == 62)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
 
@@ -10175,7 +10178,7 @@ namespace Arbeitsbox
 
                             if (y == 63)
                             {
-                                Color pixelColor = testimage.GetPixel(x, y);
+                                System.Drawing.Color pixelColor = testimage.GetPixel(x, y);
                                 string pixelColorStringValue = pixelColor.B.ToString("D3");
                                 //Console.WriteLine(x + ", " + y + " = " + pixelColorStringValue);
 
@@ -10629,7 +10632,7 @@ namespace Arbeitsbox
         {
             MasterQuestNationText.Text = ("Alyssakin Freetribe Natives");
             Properties.Settings.Default.Nation = 1;
-            button5.BackColor = Color.FromArgb(0, 55, 55, 155);
+            button5.BackColor = System.Drawing.Color.FromArgb(0, 55, 55, 155);
             UpdateNation();
         }
 
@@ -10637,7 +10640,7 @@ namespace Arbeitsbox
         {
             MasterQuestNationText.Text = ("Rowani Empire");
             Properties.Settings.Default.Nation = 2;
-            button5.BackColor = Color.FromArgb(0, 155, 55, 55);
+            button5.BackColor = System.Drawing.Color.FromArgb(0, 155, 55, 55);
             UpdateNation();
         }
 
@@ -10645,7 +10648,7 @@ namespace Arbeitsbox
         {
             MasterQuestNationText.Text = ("Republic of Graata");
             Properties.Settings.Default.Nation = 3;
-            button5.BackColor = Color.FromArgb(0, 55, 155, 55);
+            button5.BackColor = System.Drawing.Color.FromArgb(0, 55, 155, 55);
             UpdateNation();
         }
 
@@ -10654,7 +10657,7 @@ namespace Arbeitsbox
         {
             MasterQuestNationText.Text = ("Neagese Dynasty");
             Properties.Settings.Default.Nation = 4;
-            button5.BackColor = Color.FromArgb(0, 155, 155, 55);
+            button5.BackColor = System.Drawing.Color.FromArgb(0, 155, 155, 55);
             UpdateNation();
 
         }
@@ -10663,7 +10666,7 @@ namespace Arbeitsbox
         {
             MasterQuestNationText.Text = ("Kingdom of Mons");
             Properties.Settings.Default.Nation = 5;
-            button5.BackColor = Color.FromArgb(0, 55, 155, 155);
+            button5.BackColor = System.Drawing.Color.FromArgb(0, 55, 155, 155);
             UpdateNation();
         }
 
@@ -10677,17 +10680,8 @@ namespace Arbeitsbox
             //
             //
             //
-            //
-            //
-            //
-            //
-            //
-            //
 
             label7.Text = ("Stage 1");
-
-
-
 
 
         }
@@ -10725,7 +10719,7 @@ namespace Arbeitsbox
                 // set to Null
                 Console.WriteLine("Update Nation set to Null");
                 CurrentNation = "Null";
-                richTextBox1.AppendText(Environment.NewLine + "Update Nation set to Null");
+                richTextBox1.AppendText(Environment.NewLine + "Using Nation: " + CurrentNation);
                 richTextBox1.Focus();
                 richTextBox1.SelectionStart = richTextBox1.Text.Length;
                 richTextBox1.ScrollToCaret();
@@ -10735,7 +10729,7 @@ namespace Arbeitsbox
                 // set to Natives
                 Console.WriteLine("Using Natives Nation");
                 CurrentNation = "Natives";
-                richTextBox1.AppendText(Environment.NewLine + "Using Natives Nation");
+                richTextBox1.AppendText(Environment.NewLine + "Using Nation: " + CurrentNation);
                 richTextBox1.Focus();
                 richTextBox1.SelectionStart = richTextBox1.Text.Length;
                 richTextBox1.ScrollToCaret();
@@ -10745,7 +10739,7 @@ namespace Arbeitsbox
                 // set to Rowani
                 Console.WriteLine("Using Rowani Nation");
                 CurrentNation = "Rowani";
-                richTextBox1.AppendText(Environment.NewLine + "Using Rowani Nation");
+                richTextBox1.AppendText(Environment.NewLine + "Using Nation: " + CurrentNation);
                 richTextBox1.Focus();
                 richTextBox1.SelectionStart = richTextBox1.Text.Length;
                 richTextBox1.ScrollToCaret();
@@ -10755,7 +10749,7 @@ namespace Arbeitsbox
                 // set to Graata
                 Console.WriteLine("Using Graata Nation");
                 CurrentNation = "Graata";
-                richTextBox1.AppendText(Environment.NewLine + "Using Graata Nation");
+                richTextBox1.AppendText(Environment.NewLine + "Using Nation: " + CurrentNation);
                 richTextBox1.Focus();
                 richTextBox1.SelectionStart = richTextBox1.Text.Length;
                 richTextBox1.ScrollToCaret();
@@ -10766,7 +10760,7 @@ namespace Arbeitsbox
                 // set to Neagese
                 Console.WriteLine("Using Neagese Nation");
                 CurrentNation = "Neagese";
-                richTextBox1.AppendText(Environment.NewLine + "Using Neagese Nation");
+                richTextBox1.AppendText(Environment.NewLine + "Using Nation: " + CurrentNation);
                 richTextBox1.Focus();
                 richTextBox1.SelectionStart = richTextBox1.Text.Length;
                 richTextBox1.ScrollToCaret();
@@ -10776,7 +10770,7 @@ namespace Arbeitsbox
                 // set to Mons
                 Console.WriteLine("Using Mons Nation");
                 CurrentNation = "Mons";
-                richTextBox1.AppendText(Environment.NewLine + "Using Mons Nation");
+                richTextBox1.AppendText(Environment.NewLine + "Using Nation: " + CurrentNation);
                 richTextBox1.Focus();
                 richTextBox1.SelectionStart = richTextBox1.Text.Length;
                 richTextBox1.ScrollToCaret();
@@ -10813,31 +10807,35 @@ namespace Arbeitsbox
                     {
                         //perform task related to that file 
                         Console.WriteLine(s);
-                        richTextBox1.AppendText(Environment.NewLine + "Found a CSV file " + s);
-                        richTextBox1.Focus();
-                        richTextBox1.SelectionStart = richTextBox1.Text.Length;
-                        richTextBox1.ScrollToCaret();
-
+                        //richTextBox1.AppendText(Environment.NewLine + "Found a CSV file " + s);
+                        //richTextBox1.Focus();
+                        //richTextBox1.SelectionStart = richTextBox1.Text.Length;
+                        //richTextBox1.ScrollToCaret();
+                        Console.WriteLine(CurrentNation);
                         //IF the read CSV file's name is the same as the CurrentNation, set it to current variable
-                        bool contains = Directory.EnumerateFiles(Properties.Settings.Default.QuestPath).Any(f => f.IndexOf(CurrentNation, StringComparison.OrdinalIgnoreCase) > 0);
+                        bool contains = s.Contains(CurrentNation);
 
                         if (contains == true)
                         {
                             // use this file
-                            Console.WriteLine("Found matching file: " + s);
-                            richTextBox1.AppendText(Environment.NewLine + "Found matching file: " + s);
+                            Console.WriteLine(CurrentNation + " was found within file: " + s);
+                            richTextBox1.AppendText(Environment.NewLine + CurrentNation + " was found within file: " + s);
                             richTextBox1.Focus();
                             richTextBox1.SelectionStart = richTextBox1.Text.Length;
                             richTextBox1.ScrollToCaret();
-
                             CurrentQuestCSV = s;
 
+                        }
+                        if (contains == false)
+                        {
+                            // use this file
+                            Console.WriteLine(CurrentNation + " wasn't listed in file: " + s);
 
                         }
-                        
+
                         else
                         {
-                            Console.WriteLine("No CSVs Found!");
+                            Console.WriteLine("End of command stream");
                             //CurrentQuestCSV = "No CSVs found!";
                         }
                     }
@@ -10866,9 +10864,6 @@ namespace Arbeitsbox
                 }
                     Console.WriteLine("...ReadQuestDirectory Completed!");
 
-
-
-
             }
 
             else
@@ -10884,15 +10879,8 @@ namespace Arbeitsbox
             }
 
 
-
-
-
         }
 
-
-
-
     }
-
 
 }
