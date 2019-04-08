@@ -17,6 +17,7 @@ using System.Runtime.InteropServices;
 using System.IO.Compression;
 using System.Text.RegularExpressions;
 using Microsoft.VisualBasic;
+using LumenWorks.Framework.IO.Csv;
 
 
 
@@ -40,6 +41,7 @@ namespace Arbeitsbox
         public bool isSaveNeeded = false;
         public string filepath = "null";
         public string tline = "null";
+        public int sheetlength = 20;
 
         //Quest struct import
 
@@ -75,10 +77,7 @@ namespace Arbeitsbox
             filepath = principcalForm.CurrentQuestCSV;
             label1.Text = principcalForm.CurrentQuestCSV; // filepath of current csv
 
-
-            ReadAllChapters();
-
-            // embedded font shit
+                       // embedded font shit
             byte[] fontData = Properties.Resources.MorrisRomanAlternate_Black;
             IntPtr fontPtr = System.Runtime.InteropServices.Marshal.AllocCoTaskMem(fontData.Length);
             System.Runtime.InteropServices.Marshal.Copy(fontData, 0, fontPtr, fontData.Length);
@@ -102,8 +101,9 @@ namespace Arbeitsbox
             button6.BackColor = System.Drawing.Color.FromArgb(0, 55, 55, 155);
 
             DataTable oData = null;
+
             oData = new DataTable();
-            oData.Columns.Add("A", typeof(string));
+            oData.Columns.Add(" ", typeof(string));
             oData.Columns.Add("ID", typeof(string));
             oData.Columns.Add("Stage", typeof(string));
             oData.Columns.Add("QuestNameREF", typeof(string));
@@ -123,9 +123,38 @@ namespace Arbeitsbox
             oData.Columns.Add("Notes", typeof(string));
             oData.Columns.Add("HasSpottedAction", typeof(string));
             oData.Columns.Add("SpottedAction", typeof(string));
+
+            // basic data setup
+
+            DataRow _test = oData.NewRow();
+            _test[" "] = "0";                                           // 0
+            _test["ID"] = "0";                                          // 1
+            _test["Stage"] = "0";                                       // 2
+            _test["QuestNameREF"] = "The Journey Home";                 // 3
+            _test["ForceFirstPane"] = "FALSE";                          // 4
+            _test["UIPanes"] = "0";                                     // 5
+            _test["UIFreetingLines"] = ("Empty Value");                 // 6
+            _test["UIResponseButtonLines"] = ("Empty Value");           // 7
+            _test["UIResponseButtonActions"] = ("Empty Value");         // 8
+            _test["AnimationArray"] = ("Idle01");                       // 9
+            _test["Vos"] = " ";                                         // 10
+            _test["UIReminderPane"] = "2";                              // 11
+            _test["UIReminderLines"] = ("Empty Value");                 // 12
+            _test["UIReminderButton"] = ("Empty Value");                // 13
+            _test["UIReminderAction"] = ("EndConversation");            // 14
+            _test["ReminderAnim"] = ("Idle01");                         // 15
+            _test["ReminderVO"] = " ";                                  // 16
+            _test["Notes"] = ("Completely pointless notes field");      // 17
+            _test["HasSpottedAction"] = "FALSE";                        // 18
+            _test["SpottedAction"] = "SpeakWalkFree";                   // 19
+
+            oData.Rows.Add(_test);
+
+
+            ReadAllChapters();
+
+
         }
-
-
 
 
 
@@ -136,9 +165,17 @@ namespace Arbeitsbox
             Console.WriteLine("Reading from: " + filepath);
 
 
+            // use o.Data -- this is the setup
+
+
+
+
+
            using (StreamReader reader = new StreamReader(filepath))
            {
-               
+                int linecounter = 0;
+                int rowcounter = 0;
+                int rowmaths = 0;
            
                while ((tline = reader.ReadLine()) != null)
                {
@@ -147,23 +184,41 @@ namespace Arbeitsbox
            
                    //Separating columns to array
                    string[] CSVRows = CSVParser.Split(tline);
+           
+           
+                     foreach (string s in CSVRows)
+                    {
+                        linecounter = (linecounter) + 1;
+                        // say its own index point
+                        if (linecounter > sheetlength)
+                        {
+                            rowmaths = (linecounter) / 20;
+
+                            
 
 
-
-                    foreach (string s in CSVRows)
-                   {
-                        Console.WriteLine(s);
-                   }
+                        }
+                         Console.WriteLine(rowmaths + " " + " " + s); // each string written here is a cell, so divide by the number of columns--20-- to get each row
+                    }
            
                
                }
            }
 
 
+
+
+
             label2.Text = "Current Stage: " + tline; // name of all chapters in chosen cs
 
         }
 
+        public void NeedsToSave()
+        {
+            // re-enable Save button
+            button3.Enabled = true;
+
+        }
 
 
         private void button6_Click(object sender, EventArgs e)
@@ -186,6 +241,10 @@ namespace Arbeitsbox
         private void button3_Click(object sender, EventArgs e)
         {
             // save
+            Console.WriteLine("Saved");
+
+            // re-disable Save button
+            button3.Enabled = false;
 
         }
 

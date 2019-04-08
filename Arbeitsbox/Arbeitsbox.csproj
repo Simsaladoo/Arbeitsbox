@@ -64,6 +64,9 @@
     <Reference Include="LinqToExcel, Version=2.0.0.2, Culture=neutral, PublicKeyToken=9c8ea65a58f03f1f, processorArchitecture=MSIL">
       <HintPath>..\packages\LinqToExcel.2.0.0-PRERELEASE-2\lib\net46\LinqToExcel.dll</HintPath>
     </Reference>
+    <Reference Include="LumenWorks.Framework.IO, Version=3.8.0.0, Culture=neutral, PublicKeyToken=5ad3ea2f85776344, processorArchitecture=MSIL">
+      <HintPath>..\packages\LumenWorks.Framework.IO.3.8.0\lib\net20\LumenWorks.Framework.IO.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>

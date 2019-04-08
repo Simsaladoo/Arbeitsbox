@@ -189,3 +189,6 @@ G:\UE4\Splash\Arbeitsbox\Arbeitsbox\bin\Debug\CsvHelper.dll
 G:\UE4\Splash\Arbeitsbox\Arbeitsbox\bin\Debug\System.ValueTuple.dll
 G:\UE4\Splash\Arbeitsbox\Arbeitsbox\bin\Debug\CsvHelper.xml
 G:\UE4\Splash\Arbeitsbox\Arbeitsbox\bin\Debug\System.ValueTuple.xml
+G:\UE4\Splash\Arbeitsbox\Arbeitsbox\obj\Debug\Arbeitsbox.csprojAssemblyReference.cache
+G:\UE4\Splash\Arbeitsbox\Arbeitsbox\bin\Debug\LumenWorks.Framework.IO.dll
+G:\UE4\Splash\Arbeitsbox\Arbeitsbox\bin\Debug\LumenWorks.Framework.IO.xml
