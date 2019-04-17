@@ -64,6 +64,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.FoliagePanel = new System.Windows.Forms.Panel();
+            this.button9 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
@@ -76,7 +77,9 @@
             this.FoliagePageTitle = new System.Windows.Forms.Label();
             this.Foliage_HeaderLabel = new System.Windows.Forms.Label();
             this.FoliageHLine = new System.Windows.Forms.Label();
-            this.button9 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
             this.MenuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.AudioPanel.SuspendLayout();
@@ -581,6 +584,9 @@
             // 
             // FoliagePanel
             // 
+            this.FoliagePanel.Controls.Add(this.label11);
+            this.FoliagePanel.Controls.Add(this.button10);
+            this.FoliagePanel.Controls.Add(this.button11);
             this.FoliagePanel.Controls.Add(this.button9);
             this.FoliagePanel.Controls.Add(this.label7);
             this.FoliagePanel.Controls.Add(this.button6);
@@ -593,6 +599,24 @@
             this.FoliagePanel.Name = "FoliagePanel";
             this.FoliagePanel.Size = new System.Drawing.Size(882, 374);
             this.FoliagePanel.TabIndex = 42;
+            // 
+            // button9
+            // 
+            this.button9.BackColor = System.Drawing.Color.Lime;
+            this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button9.FlatAppearance.BorderSize = 0;
+            this.button9.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.button9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Chocolate;
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button9.ForeColor = System.Drawing.Color.White;
+            this.button9.Location = new System.Drawing.Point(717, 61);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(159, 42);
+            this.button9.TabIndex = 59;
+            this.button9.Text = "Refresh";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // label7
             // 
@@ -747,23 +771,50 @@
             this.FoliageHLine.Text = "_________________________________________________________________________________" +
     "_____________________________";
             // 
-            // button9
+            // button10
             // 
-            this.button9.BackColor = System.Drawing.Color.Lime;
-            this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button9.FlatAppearance.BorderSize = 0;
-            this.button9.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.button9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Chocolate;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.ForeColor = System.Drawing.Color.White;
-            this.button9.Location = new System.Drawing.Point(717, 61);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(159, 42);
-            this.button9.TabIndex = 59;
-            this.button9.Text = "Refresh";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
+            this.button10.BackColor = System.Drawing.Color.Lime;
+            this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button10.FlatAppearance.BorderSize = 0;
+            this.button10.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.button10.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Chocolate;
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button10.ForeColor = System.Drawing.Color.White;
+            this.button10.Location = new System.Drawing.Point(126, 201);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(33, 52);
+            this.button10.TabIndex = 63;
+            this.button10.Text = ">";
+            this.button10.UseVisualStyleBackColor = true;
+            // 
+            // button11
+            // 
+            this.button11.BackColor = System.Drawing.Color.Lime;
+            this.button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button11.FlatAppearance.BorderSize = 0;
+            this.button11.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.button11.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Chocolate;
+            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button11.ForeColor = System.Drawing.Color.White;
+            this.button11.Location = new System.Drawing.Point(38, 201);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(33, 52);
+            this.button11.TabIndex = 62;
+            this.button11.Text = "<";
+            this.button11.UseVisualStyleBackColor = true;
+            // 
+            // label11
+            // 
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
+            this.label11.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label11.Location = new System.Drawing.Point(73, 208);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(50, 39);
+            this.label11.TabIndex = 64;
+            this.label11.Text = "1";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // Form1
             // 
@@ -855,6 +906,9 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Label label11;
     }
 }
 

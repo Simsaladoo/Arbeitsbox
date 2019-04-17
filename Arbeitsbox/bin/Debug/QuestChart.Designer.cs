@@ -40,6 +40,12 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.BasePanel = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.BasePanel.SuspendLayout();
@@ -105,7 +111,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(50, 39);
             this.label3.TabIndex = 60;
-            this.label3.Text = "40";
+            this.label3.Text = "1";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label2
@@ -136,6 +142,12 @@
             this.panel2.AutoSize = true;
             this.panel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.panel2.Controls.Add(this.checkBox1);
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.textBox1);
             this.panel2.Controls.Add(this.button4);
             this.panel2.Controls.Add(this.button3);
             this.panel2.Controls.Add(this.button6);
@@ -156,9 +168,9 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(1125, 733);
+            this.button4.Location = new System.Drawing.Point(1202, 733);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(182, 54);
+            this.button4.Size = new System.Drawing.Size(105, 54);
             this.button4.TabIndex = 60;
             this.button4.Text = "Cancel";
             this.button4.UseVisualStyleBackColor = true;
@@ -176,9 +188,9 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(1125, 673);
+            this.button3.Location = new System.Drawing.Point(1202, 673);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(182, 54);
+            this.button3.Size = new System.Drawing.Size(105, 54);
             this.button3.TabIndex = 59;
             this.button3.Text = "Save";
             this.button3.UseVisualStyleBackColor = true;
@@ -195,9 +207,9 @@
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(1125, 793);
+            this.button6.Location = new System.Drawing.Point(1202, 793);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(182, 54);
+            this.button6.Size = new System.Drawing.Size(105, 54);
             this.button6.TabIndex = 58;
             this.button6.Text = "Close All";
             this.button6.UseVisualStyleBackColor = true;
@@ -213,6 +225,64 @@
             this.BasePanel.Size = new System.Drawing.Size(1307, 882);
             this.BasePanel.TabIndex = 59;
             // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(37, 227);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(208, 32);
+            this.textBox1.TabIndex = 61;
+            this.textBox1.Text = "Unnamed";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.Coral;
+            this.label4.Location = new System.Drawing.Point(34, 201);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(90, 13);
+            this.label4.TabIndex = 62;
+            this.label4.Text = "Quest Name REF";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.Coral;
+            this.label5.Location = new System.Drawing.Point(33, 284);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(79, 13);
+            this.label5.TabIndex = 63;
+            this.label5.Text = "Force Dialogue";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.Coral;
+            this.label6.Location = new System.Drawing.Point(608, 435);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(90, 13);
+            this.label6.TabIndex = 64;
+            this.label6.Text = "Quest Name REF";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.Coral;
+            this.label7.Location = new System.Drawing.Point(608, 201);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(106, 13);
+            this.label7.TabIndex = 65;
+            this.label7.Text = "UIPanes Array Count";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(139, 285);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(15, 14);
+            this.checkBox1.TabIndex = 66;
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // QuestChart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -227,6 +297,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.BasePanel.ResumeLayout(false);
             this.BasePanel.PerformLayout();
             this.ResumeLayout(false);
@@ -245,5 +316,11 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
     }
 }

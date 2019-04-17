@@ -20,6 +20,7 @@ using Microsoft.WindowsAPICodePack.Dialogs;
 using System.Runtime.InteropServices;
 using System.IO.Compression;
 using System.Reflection;
+using LumenWorks.Framework.IO.Csv;
 
 namespace Arbeitsbox
 {
@@ -4441,10 +4442,47 @@ namespace Arbeitsbox
         public string startPath = "Game/";
         public string zipPath = "Game/cache/";
         public string extractPath = "Game/";
+        public string OutputBullshit = "Derp";
+
         public string path = Properties.Settings.Default.CSVpath;
         public string Questpath = Properties.Settings.Default.QuestPath;
+
         public string CurrentNation = "Natives";
-        public string CurrentQuestCSV = "Null";
+        public string CurrentQuestCSV = "MasterQuest_Natives.csv";
+
+        public string ReadSomeShit = " ";
+
+        public int RowLoopNum = 0; // start off as header row
+        public string nameColumnName = "QuestNameREF";
+        public string valueColumnName = "QuestNameREF";
+        public string rowName = "2";
+
+        public bool use0 = false;
+        public bool use1 = false;
+        public bool use2 = false;
+        public bool use3 = false;
+        public bool use4 = false;
+        public bool use5 = false;
+        public bool use6 = false;
+        public bool use7 = false;
+        public bool use8 = false;
+        public bool use9 = false;
+        public bool use10 = false;
+        public bool use11 = false;
+        public bool use12 = false;
+        public bool use13 = false;
+        public bool use14 = false;
+        public bool use15 = false;
+        public bool use16 = false;
+        public bool use17 = false;
+        public bool use18 = false;
+        public bool use19 = false;
+        public bool use20 = false;
+
+
+
+
+
 
 
 
@@ -4755,6 +4793,9 @@ namespace Arbeitsbox
 
 
 
+
+        // Post Load
+
         private void AfterLoading(object sender, EventArgs e)
         {
             Console.WriteLine("Post Load Completed");
@@ -4765,7 +4806,13 @@ namespace Arbeitsbox
                 Console.WriteLine("Multiple instances detected");
                 Application.Exit();
             }
+
         }
+
+
+
+
+
 
         private void CloseButton_Click(object sender, EventArgs e)
         {
@@ -4835,6 +4882,388 @@ namespace Arbeitsbox
         {
 
         }
+
+
+
+
+        public void ReadCsv()
+        {
+            //Properties.Settings.Default.QuestPath + "/" + 
+
+            // first row read looks like below:
+            //  Column0 = 0;ID = 0;Stage = 0;QuestNameREF = Off;ForceFirstPane = FALSE;UIPanes = (2,2,2,2);UIFreetingLines = ("Who are you?! What are you doing aboard my ship?","?  Well I can't blame you for that.  Where are you going?", "I suppose you can stay then.  We're heading to Rhougan Village to the SW, I'm sure you'll be able to charter a transport from there to wherever you're going.  It'll be a few hours, so you're free to grab a bunk and rest.", "What's your name?");UIResponseButtonLines = ("I stowed away here to escape the ","Just trying to get home","Ok, I will", "##Name##");UIResponseButtonActions = (BeginConversation,ContinueConversation,EndConvoChkSleep_MasterQuest);AnimationArray = (Idle01, Idle01, Idle01, Idle01);Vos = ();UIReminderPane = (2);UIReminderLines = ("Go ahead and grab a bunk.  I'll wake you when we have landed.");UIReminderButton = ("Ok");UIReminderAction = (EndConversation);ReminderAnim = (Idle01);ReminderVO = ;Notes = first line for the master quest.  Last button adds it to the instance struct.  Once in there, any followup 'talk to npc' will simply use the L-Q;HasSpottedAction = FALSE;SpottedAction = SpeakWalkFree;
+
+            using (CsvReader csv = new CsvReader(new StreamReader(CurrentQuestCSV), true)) // has headers = true
+            {
+                //int fieldCount = csv.FieldCount;      // reads number of columns from file
+
+                int nameColumnIndex = csv.GetFieldIndex(nameColumnName);  // get the column integer by name
+                int valueColumnIndex = csv.GetFieldIndex(valueColumnName);
+
+                int chosenRow = 1;
+                string user = "Null";
+
+                int fixedlength = 20;
+
+                string field0   = "NULL";
+                string field1   = "NULL";
+                string field2   = "NULL";
+                string field3   = "NULL";      // only reading field 3
+                string field4   = "NULL";
+                string field5   = "NULL";
+                string field6   = "NULL";
+                string field7   = "NULL";
+                string field8   = "NULL";
+                string field9   = "NULL";
+                string field10  = "NULL";
+                string field11  = "NULL";
+                string field12  = "NULL";
+                string field13  = "NULL";
+                string field14  = "NULL";
+                string field15  = "NULL";
+                string field16  = "NULL";
+                string field17  = "NULL";
+                string field18  = "NULL";
+                string field19  = "NULL";
+                string field20  = "NULL";
+
+                csv.MissingFieldAction = MissingFieldAction.ReplaceByNull;
+                // to replace by "" instead, then use the following action:
+                // csv.MissingFieldAction = MissingFieldAction.ReplaceByEmpty;
+
+
+                int fieldCount = csv.FieldCount;
+                string[] headers = csv.GetFieldHeaders();
+                while (csv.ReadNextRecord())
+                {
+                    for (int i = 0; i < fieldCount; i++)
+                    {
+                        if (i == 0) // Column A: no name column
+                        {
+                            field0 = (string.Format("{0} = {1};", headers[i], csv[i] == null ? "MISSING" : csv[i]));
+                        }
+
+                        if (i == 1) // Column B: ID     // useless
+                        {
+                            field1 = (string.Format("{0} = {1};", headers[i], csv[i] == null ? "MISSING" : csv[i]));
+                        }
+
+                        if (i == 2)// Column C: Stage
+                        {
+                            field2 = (string.Format("{0} = {1};", headers[i], csv[i] == null ? "MISSING" : csv[i]));
+                        }
+
+                        if (i == 3) // Column D: QuestNameREF
+                        {
+                            field3 = (string.Format("{0} = {1};", headers[i], csv[i] == null ? "MISSING" : csv[i]));
+
+                        }
+
+                        if (i == 4) // Column E: ForceFirstPane
+                        {
+                            field4 = (string.Format("{0} = {1};", headers[i], csv[i] == null ? "MISSING" : csv[i]));
+
+                        }
+
+                        if (i == 5) // Column F: UIPanes
+                        {
+                            field5 = (string.Format("{0} = {1};", headers[i], csv[i] == null ? "MISSING" : csv[i]));
+                        }
+
+                        if (i == 6) // Column G: UIFreetingLines
+                        {
+                            field6 = (string.Format("{0} = {1};", headers[i], csv[i] == null ? "MISSING" : csv[i]));
+                        }
+
+                        if (i == 7) // Column H: UIResponseButtonLines
+                        {
+                            field7 = (string.Format("{0} = {1};", headers[i], csv[i] == null ? "MISSING" : csv[i]));
+                        }
+
+                        if (i == 8) // Column I: 
+                        {
+                            field8 = (string.Format("{0} = {1};", headers[i], csv[i] == null ? "MISSING" : csv[i]));
+                        }
+
+                        if (i == 9) // Column J: 
+                        {
+                            field9 = (string.Format("{0} = {1};", headers[i], csv[i] == null ? "MISSING" : csv[i]));
+                        }
+
+                        if (i == 10) // Column K: 
+                        {
+                            field10 = (string.Format("{0} = {1};", headers[i], csv[i] == null ? "MISSING" : csv[i]));
+                        }
+
+                        if (i == 11) // Column L: 
+                        {
+                            field11 = (string.Format("{0} = {1};", headers[i], csv[i] == null ? "MISSING" : csv[i]));
+                        }
+
+                        if (i == 12) // Column M: 
+                        {
+                            field12 = (string.Format("{0} = {1};", headers[i], csv[i] == null ? "MISSING" : csv[i]));
+                        }
+
+                        if (i == 13) // Column N: 
+                        {
+                            field13 = (string.Format("{0} = {1};", headers[i], csv[i] == null ? "MISSING" : csv[i]));
+                        }
+
+                        if (i == 14) // Column O: 
+                        {
+                            field14 = (string.Format("{0} = {1};", headers[i], csv[i] == null ? "MISSING" : csv[i]));
+                        }
+
+                        if (i == 15) // Column P: 
+                        {
+                            field15 = (string.Format("{0} = {1};", headers[i], csv[i] == null ? "MISSING" : csv[i]));
+                        }
+
+                        if (i == 16) // Column Q: 
+                        {
+                            field16 = (string.Format("{0} = {1};", headers[i], csv[i] == null ? "MISSING" : csv[i]));
+                        }
+
+                        if (i == 17) // Column R: 
+                        {
+                            field17 = (string.Format("{0} = {1};", headers[i], csv[i] == null ? "MISSING" : csv[i]));
+                        }
+
+                        if (i == 18) // Column S: 
+                        {
+                            field18 = (string.Format("{0} = {1};", headers[i], csv[i] == null ? "MISSING" : csv[i]));
+                        }
+
+                        if (i == 19) // Column T: 
+                        {
+                            field19 = (string.Format("{0} = {1};", headers[i], csv[i] == null ? "MISSING" : csv[i]));
+                        }
+
+                        else
+                        {
+                            // fires after every read cell (as in row * column)
+
+                        }
+
+                        //Console.WriteLine(string.Format("{0} = {1};", headers[i], csv[i] == null ? "MISSING" : csv[i]));
+                    }
+
+
+                    //Console.WriteLine();   // preceeding
+
+                    // RowLoopNum works here
+                    user = ("" + RowLoopNum);       // user will be changed by the user derp -- it will pick the row
+                    if (use0 == true)
+                    {
+                        if (chosenRow == RowLoopNum)
+                        {
+                            Console.WriteLine(field0 + " Row " + user);
+                            OutputBullshit = (field0);
+                        }
+                    }
+                    if (use1 == true)
+                    {
+                        if (chosenRow == RowLoopNum)
+                        {
+                            Console.WriteLine(field1 + " Row " + user);
+                            OutputBullshit = (field1);
+                        }
+                    }
+
+                    if (use2 == true)
+                    {
+                        if (chosenRow == RowLoopNum)
+                        {
+                            Console.WriteLine(field2 + " Row " + user);
+                            OutputBullshit = (field2);
+                        }
+                    }
+
+                    if (use3 == true)
+                    {
+                        if (chosenRow == RowLoopNum)
+                        {
+                            Console.WriteLine(field3 + " Row " + user);
+                            OutputBullshit = (field3);
+                        }
+                    }
+
+                    if (use4 == true)
+                    {
+                        if (chosenRow == RowLoopNum)
+                        {
+                            Console.WriteLine(field4 + " Row " + user);
+                            OutputBullshit = (field4);
+                        }
+                    }
+                    if (use5 == true)
+                    {
+                        if (chosenRow == RowLoopNum)
+                        {
+                            Console.WriteLine(field5 + " Row " + user);
+                            OutputBullshit = (field5);
+                        }
+                    }
+                    if (use6 == true)
+                    {
+                        if (chosenRow == RowLoopNum)
+                        {
+                            Console.WriteLine(field6 + " Row " + user);
+                            OutputBullshit = (field6);
+                        }
+                    }
+                    if (use7 == true)
+                    {
+                        if (chosenRow == RowLoopNum)
+                        {
+                            Console.WriteLine(field7 + " Row " + user);
+                            OutputBullshit = (field7);
+                        }
+                    }
+                    if (use8 == true)
+                    {
+                        if (chosenRow == RowLoopNum)
+                        {
+                            Console.WriteLine(field8 + " Row " + user);
+                            OutputBullshit = (field8);
+                        }
+                    }
+                    if (use9 == true)
+                    {
+                        if (chosenRow == RowLoopNum)
+                        {
+                            Console.WriteLine(field9 + " Row " + user);
+                            OutputBullshit = (field9);
+                        }
+                    }
+                    if (use10 == true)
+                    {
+                        if (chosenRow == RowLoopNum)
+                        {
+                            Console.WriteLine(field10 + " Row " + user);
+                            OutputBullshit = (field10);
+                        }
+                    }
+                    if (use11 == true)
+                    {
+                        if (chosenRow == RowLoopNum)
+                        {
+                            Console.WriteLine(field11 + " Row " + user);
+                            OutputBullshit = (field11);
+                        }
+                    }
+                    if (use12 == true)
+                    {
+                        if (chosenRow == RowLoopNum)
+                        {
+                            Console.WriteLine(field12 + " Row " + user);
+                            OutputBullshit = (field12);
+                        }
+                    }
+                    if (use13 == true)
+                    {
+                        if (chosenRow == RowLoopNum)
+                        {
+                            Console.WriteLine(field13 + " Row " + user);
+                            OutputBullshit = (field13);
+                        }
+                    }
+                    if (use14 == true)
+                    {
+                        if (chosenRow == RowLoopNum)
+                        {
+                            Console.WriteLine(field14 + " Row " + user);
+                            OutputBullshit = (field14);
+                        }
+                    }
+                    if (use14 == true)
+                    {
+                        if (chosenRow == RowLoopNum)
+                        {
+                            Console.WriteLine(field15 + " Row " + user);
+                            OutputBullshit = (field15);
+                        }
+                    }
+                    if (use16 == true)
+                    {
+                        if (chosenRow == RowLoopNum)
+                        {
+                            Console.WriteLine(field16 + " Row " + user);
+                            OutputBullshit = (field16);
+                        }
+                    }
+                    if (use17 == true)
+                    {
+                        if (chosenRow == RowLoopNum)
+                        {
+                            Console.WriteLine(field17 + " Row " + user);
+                            OutputBullshit = (field17);
+                        }
+                    }
+                    if (use18 == true)
+                    {
+                        if (chosenRow == RowLoopNum)
+                        {
+                            Console.WriteLine(field18 + " Row " + user);
+                            OutputBullshit = (field18);
+                        }
+                    }
+                    if (use19 == true)
+                    {
+                        if (chosenRow == RowLoopNum)
+                        {
+                            Console.WriteLine(field19 + " Row " + user);
+                            OutputBullshit = (field19);
+                        }
+                    }
+                    if (use20 == true)
+                    {
+                        if (chosenRow == RowLoopNum)
+                        {
+                            Console.WriteLine(field20 + " Row " + user);
+                            OutputBullshit = (field20);
+                        }
+                    }
+
+
+
+                    // last thing to do is update for next row (this  is equal with stages count
+                    RowLoopNum = RowLoopNum + 1;
+                }
+
+                Console.WriteLine(OutputBullshit);
+                label7.Text = OutputBullshit;
+            
+
+            }
+
+            //reset chooser 
+            use0 = false;
+            use1 = false;
+            use2 = false;
+            use3 = false;
+            use4 = false;
+            use5 = false;
+            use6 = false;
+            use7 = false;
+            use8 = false;
+            use9 = false;
+            use10 = false;
+            use11 = false;
+            use12 = false;
+            use13 = false;
+            use14 = false;
+            use15 = false;
+            use16 = false;
+            use17 = false;
+            use18 = false;
+            use19 = false;
+            use20 = false;
+        }
+
+
+
 
 
 
@@ -10845,8 +11274,6 @@ namespace Arbeitsbox
                 // search for only CSVs
 
 
-                /////// https://stackoverflow.com/questions/18757097/writing-data-into-csv-file-in-c-sharp
-
                 if (filePath == null || filePath.Length == 0)
                 {
                     // nada found yo
@@ -10863,6 +11290,8 @@ namespace Arbeitsbox
 
                 }
                     Console.WriteLine("...ReadQuestDirectory Completed!");
+
+                ReadCsv();
 
             }
 

@@ -189,4 +189,5 @@ G:\UE4\Splash\Arbeitsbox\Arbeitsbox\bin\Release\Newtonsoft.Json.pdb
 G:\UE4\Splash\Arbeitsbox\Arbeitsbox\bin\Release\Remotion.Linq.xml
 G:\UE4\Splash\Arbeitsbox\Arbeitsbox\bin\Release\System.IO.Packaging.xml
 G:\UE4\Splash\Arbeitsbox\Arbeitsbox\bin\Release\System.ValueTuple.xml
-G:\UE4\Splash\Arbeitsbox\Arbeitsbox\obj\Release\Arbeitsbox.csprojAssemblyReference.cache
+G:\UE4\Splash\Arbeitsbox\Arbeitsbox\bin\Release\LumenWorks.Framework.IO.dll
+G:\UE4\Splash\Arbeitsbox\Arbeitsbox\bin\Release\LumenWorks.Framework.IO.xml

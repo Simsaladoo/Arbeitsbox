@@ -4457,6 +4457,27 @@ namespace Arbeitsbox
         public string valueColumnName = "QuestNameREF";
         public string rowName = "2";
 
+        public bool use0 = false;
+        public bool use1 = false;
+        public bool use2 = false;
+        public bool use3 = false;
+        public bool use4 = false;
+        public bool use5 = false;
+        public bool use6 = false;
+        public bool use7 = false;
+        public bool use8 = false;
+        public bool use9 = false;
+        public bool use10 = false;
+        public bool use11 = false;
+        public bool use12 = false;
+        public bool use13 = false;
+        public bool use14 = false;
+        public bool use15 = false;
+        public bool use16 = false;
+        public bool use17 = false;
+        public bool use18 = false;
+        public bool use19 = false;
+        public bool use20 = false;
 
 
 
@@ -4865,7 +4886,7 @@ namespace Arbeitsbox
 
 
 
-        void ReadCsv()
+        public void ReadCsv()
         {
             //Properties.Settings.Default.QuestPath + "/" + 
 
@@ -4880,28 +4901,6 @@ namespace Arbeitsbox
                 int valueColumnIndex = csv.GetFieldIndex(valueColumnName);
 
                 int chosenRow = 1;
-
-                bool use0   = false;
-                bool use1   = false;
-                bool use2   = false;
-                bool use3 = true;     // only 3
-                bool use4   = false;
-                bool use5   = false;
-                bool use6   = false;
-                bool use7   = false;
-                bool use8   = false;
-                bool use9   = false;
-                bool use10  = false;
-                bool use11  = false;
-                bool use12  = false;
-                bool use13  = false;
-                bool use14  = false;
-                bool use15  = false;
-                bool use16  = false;
-                bool use17  = false;
-                bool use18  = false;
-                bool use19  = false;
-                bool use20  = false;
                 string user = "Null";
 
                 int fixedlength = 20;
@@ -5237,7 +5236,30 @@ namespace Arbeitsbox
                 label7.Text = OutputBullshit;
             
 
-            }           
+            }
+
+            //reset chooser 
+            use0 = false;
+            use1 = false;
+            use2 = false;
+            use3 = false;
+            use4 = false;
+            use5 = false;
+            use6 = false;
+            use7 = false;
+            use8 = false;
+            use9 = false;
+            use10 = false;
+            use11 = false;
+            use12 = false;
+            use13 = false;
+            use14 = false;
+            use15 = false;
+            use16 = false;
+            use17 = false;
+            use18 = false;
+            use19 = false;
+            use20 = false;
         }
 
 
@@ -11251,8 +11273,6 @@ namespace Arbeitsbox
                 // how to select named CSV from array?
                 // search for only CSVs
 
-
-                /////// https://stackoverflow.com/questions/18757097/writing-data-into-csv-file-in-c-sharp
 
                 if (filePath == null || filePath.Length == 0)
                 {

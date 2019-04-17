@@ -37,7 +37,7 @@ namespace Arbeitsbox
         System.Drawing.Font myFont22;
         private System.Data.DataSet dataSet;
         public string Stage = "Stage 40";
-        public int StageINT = 40;
+        public int StageINT = 1;
         public bool isSaveNeeded = false;
         public string filepath = "null";
         public string tline = "null";
@@ -152,64 +152,21 @@ namespace Arbeitsbox
 
 
             ReadAllChapters();
-
-
         }
 
 
 
         public void ReadAllChapters()
         {
-            // read specific column within "principcalForm.CurrentQuestCSV;"
+
             var principcalForm = Application.OpenForms.OfType<Form1>().Single();
-            Console.WriteLine("Reading from: " + filepath);
-
-
-            // use o.Data -- this is the setup
-
-
-
-
-
-           using (StreamReader reader = new StreamReader(filepath))
-           {
-                int linecounter = 0;
-                int rowcounter = 0;
-                int rowmaths = 0;
-           
-               while ((tline = reader.ReadLine()) != null)
-               {
-                   //Define pattern
-                   Regex CSVParser = new Regex(",(?=(?:[^\"]*\"[^\"]*\")*(?![^\"]*\"))");
-           
-                   //Separating columns to array
-                   string[] CSVRows = CSVParser.Split(tline);
-           
-           
-                     foreach (string s in CSVRows)
-                    {
-                        linecounter = (linecounter) + 1;
-                        // say its own index point
-                        if (linecounter > sheetlength)
-                        {
-                            rowmaths = (linecounter) / 20;
-                            rowcounter = rowmaths;
-                            
-
-
-                        }
-                         Console.WriteLine(rowmaths + " " + " " + s); // each string written here is a cell, so divide by the number of columns--20-- to get each row
-                    }
-           
-               
-               }
-           }
+            principcalForm.use3 = true;
+            principcalForm.ReadCsv();
+            textBox1.Clear();
+            textBox1.AppendText(Environment.NewLine + principcalForm.OutputBullshit);
 
 
 
-
-
-            label2.Text = "Current Stage: " + tline; // name of all chapters in chosen cs
 
         }
 
