@@ -86,9 +86,6 @@ D:\Reposit\Arbeitsbox\Arbeitsbox\bin\Debug\LinqToExcel.dll
 D:\Reposit\Arbeitsbox\Arbeitsbox\bin\Debug\NAudio.dll
 D:\Reposit\Arbeitsbox\Arbeitsbox\bin\Debug\NAudio.GiawaFX.dll
 D:\Reposit\Arbeitsbox\Arbeitsbox\bin\Debug\Newtonsoft.Json.dll
-D:\Reposit\Arbeitsbox\Arbeitsbox\bin\Debug\Remotion.Data.Linq.dll
-D:\Reposit\Arbeitsbox\Arbeitsbox\bin\Debug\Remotion.dll
-D:\Reposit\Arbeitsbox\Arbeitsbox\bin\Debug\Remotion.Interfaces.dll
 D:\Reposit\Arbeitsbox\Arbeitsbox\bin\Debug\SpeechLib.Models.dll
 D:\Reposit\Arbeitsbox\Arbeitsbox\bin\Debug\SpeechLib.Recognition.dll
 D:\Reposit\Arbeitsbox\Arbeitsbox\bin\Debug\System.IO.Compression.ZipFile.dll
@@ -96,7 +93,6 @@ D:\Reposit\Arbeitsbox\Arbeitsbox\bin\Debug\System.Net.Http.Extensions.dll
 D:\Reposit\Arbeitsbox\Arbeitsbox\bin\Debug\System.Net.Http.Primitives.dll
 D:\Reposit\Arbeitsbox\Arbeitsbox\bin\Debug\HtmlAgilityPack.pdb
 D:\Reposit\Arbeitsbox\Arbeitsbox\bin\Debug\HtmlAgilityPack.xml
-D:\Reposit\Arbeitsbox\Arbeitsbox\bin\Debug\LinqToExcel.xml
 D:\Reposit\Arbeitsbox\Arbeitsbox\bin\Debug\NAudio.xml
 D:\Reposit\Arbeitsbox\Arbeitsbox\bin\Debug\Newtonsoft.Json.xml
 D:\Reposit\Arbeitsbox\Arbeitsbox\bin\Debug\System.Net.Http.Extensions.xml
@@ -119,7 +115,6 @@ D:\Reposit\Arbeitsbox\Arbeitsbox\bin\Debug\QuestChart.Designer.cs
 D:\Reposit\Arbeitsbox\Arbeitsbox\bin\Debug\packages.config
 D:\Reposit\Arbeitsbox\Arbeitsbox\obj\Debug\Arbeitsbox.NationChooser.resources
 D:\Reposit\Arbeitsbox\Arbeitsbox\obj\Debug\Arbeitsbox.QuestChart.resources
-D:\Reposit\Arbeitsbox\Arbeitsbox\obj\Debug\Arbeitsbox.csprojAssemblyReference.cache
 G:\UE4\Splash\Arbeitsbox\Arbeitsbox\bin\Debug\Resources\done.wav
 G:\UE4\Splash\Arbeitsbox\Arbeitsbox\bin\Debug\Resources\favicon2.ico
 G:\UE4\Splash\Arbeitsbox\Arbeitsbox\bin\Debug\Resources\android-icon-192x192.png
@@ -192,3 +187,18 @@ G:\UE4\Splash\Arbeitsbox\Arbeitsbox\bin\Debug\System.ValueTuple.xml
 G:\UE4\Splash\Arbeitsbox\Arbeitsbox\obj\Debug\Arbeitsbox.csprojAssemblyReference.cache
 G:\UE4\Splash\Arbeitsbox\Arbeitsbox\bin\Debug\LumenWorks.Framework.IO.dll
 G:\UE4\Splash\Arbeitsbox\Arbeitsbox\bin\Debug\LumenWorks.Framework.IO.xml
+D:\Reposit\Arbeitsbox\Arbeitsbox\bin\Debug\CsvHelper.dll
+D:\Reposit\Arbeitsbox\Arbeitsbox\bin\Debug\DocumentFormat.OpenXml.dll
+D:\Reposit\Arbeitsbox\Arbeitsbox\bin\Debug\LumenWorks.Framework.IO.dll
+D:\Reposit\Arbeitsbox\Arbeitsbox\bin\Debug\Remotion.Linq.dll
+D:\Reposit\Arbeitsbox\Arbeitsbox\bin\Debug\System.IO.FileSystem.Primitives.dll
+D:\Reposit\Arbeitsbox\Arbeitsbox\bin\Debug\System.IO.Packaging.dll
+D:\Reposit\Arbeitsbox\Arbeitsbox\bin\Debug\System.ValueTuple.dll
+D:\Reposit\Arbeitsbox\Arbeitsbox\bin\Debug\CsvHelper.xml
+D:\Reposit\Arbeitsbox\Arbeitsbox\bin\Debug\DocumentFormat.OpenXml.xml
+D:\Reposit\Arbeitsbox\Arbeitsbox\bin\Debug\LinqToExcel.pdb
+D:\Reposit\Arbeitsbox\Arbeitsbox\bin\Debug\LumenWorks.Framework.IO.xml
+D:\Reposit\Arbeitsbox\Arbeitsbox\bin\Debug\Newtonsoft.Json.pdb
+D:\Reposit\Arbeitsbox\Arbeitsbox\bin\Debug\Remotion.Linq.xml
+D:\Reposit\Arbeitsbox\Arbeitsbox\bin\Debug\System.IO.Packaging.xml
+D:\Reposit\Arbeitsbox\Arbeitsbox\bin\Debug\System.ValueTuple.xml

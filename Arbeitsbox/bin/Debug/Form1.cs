@@ -20,6 +20,7 @@ using Microsoft.WindowsAPICodePack.Dialogs;
 using System.Runtime.InteropServices;
 using System.IO.Compression;
 using System.Reflection;
+using LumenWorks.Framework.IO.Csv;
 
 namespace Arbeitsbox
 {
@@ -4441,10 +4442,25 @@ namespace Arbeitsbox
         public string startPath = "Game/";
         public string zipPath = "Game/cache/";
         public string extractPath = "Game/";
+
         public string path = Properties.Settings.Default.CSVpath;
         public string Questpath = Properties.Settings.Default.QuestPath;
+
         public string CurrentNation = "Natives";
         public string CurrentQuestCSV = "Null";
+
+        public string ReadSomeShit = " ";
+
+        public int RowLoopNum = 0; // start off as header row
+        public string nameColumnName = "QuestNameREF";
+        public string valueColumnName = "QuestNameREF";
+        public string rowName = "2";
+
+
+
+
+
+
 
 
 
@@ -4755,6 +4771,9 @@ namespace Arbeitsbox
 
 
 
+
+        // Post Load
+
         private void AfterLoading(object sender, EventArgs e)
         {
             Console.WriteLine("Post Load Completed");
@@ -4765,7 +4784,14 @@ namespace Arbeitsbox
                 Console.WriteLine("Multiple instances detected");
                 Application.Exit();
             }
+
+            ReadCsv();
         }
+
+
+
+
+
 
         private void CloseButton_Click(object sender, EventArgs e)
         {
@@ -4835,6 +4861,158 @@ namespace Arbeitsbox
         {
 
         }
+
+
+
+
+        void ReadCsv()
+        {
+
+            // first row read looks like below:
+            //  Column0 = 0;ID = 0;Stage = 0;QuestNameREF = Off;ForceFirstPane = FALSE;UIPanes = (2,2,2,2);UIFreetingLines = ("Who are you?! What are you doing aboard my ship?","?  Well I can't blame you for that.  Where are you going?", "I suppose you can stay then.  We're heading to Rhougan Village to the SW, I'm sure you'll be able to charter a transport from there to wherever you're going.  It'll be a few hours, so you're free to grab a bunk and rest.", "What's your name?");UIResponseButtonLines = ("I stowed away here to escape the ","Just trying to get home","Ok, I will", "##Name##");UIResponseButtonActions = (BeginConversation,ContinueConversation,EndConvoChkSleep_MasterQuest);AnimationArray = (Idle01, Idle01, Idle01, Idle01);Vos = ();UIReminderPane = (2);UIReminderLines = ("Go ahead and grab a bunk.  I'll wake you when we have landed.");UIReminderButton = ("Ok");UIReminderAction = (EndConversation);ReminderAnim = (Idle01);ReminderVO = ;Notes = first line for the master quest.  Last button adds it to the instance struct.  Once in there, any followup 'talk to npc' will simply use the L-Q;HasSpottedAction = FALSE;SpottedAction = SpeakWalkFree;
+
+            using (CsvReader csv = new CsvReader(new StreamReader(@"C:\Users\dmiller\Documents\Test\MasterQuest_Graata.csv"), true)) // has headers = true
+            {
+                //int fieldCount = csv.FieldCount;      // reads number of columns from file
+
+                int nameColumnIndex = csv.GetFieldIndex(nameColumnName);  // get the column integer by name
+                int valueColumnIndex = csv.GetFieldIndex(valueColumnName);
+
+                csv.MissingFieldAction = MissingFieldAction.ReplaceByNull;
+                // to replace by "" instead, then use the following action:
+                // csv.MissingFieldAction = MissingFieldAction.ReplaceByEmpty;
+
+
+                int fieldCount = csv.FieldCount;
+                string[] headers = csv.GetFieldHeaders();
+                while (csv.ReadNextRecord())
+                {
+                    for (int i = 0; i < fieldCount; i++)
+                    {
+                        if (i == 0) // Column A: no name column
+                        {
+                            // nothing for Column A
+                        }
+
+
+                        if (i == 1) // Column B: ID     // useless
+                        {
+                            //Console.Write(string.Format("{0} = {1};", headers[i], csv[i] == null ? "MISSING" : csv[i]));
+                        }
+
+                        if (i == 2)// Column C: Stage
+                        {
+                            Console.Write(string.Format("{0} = {1};", headers[i], csv[i] == null ? "MISSING" : csv[i]));
+                        }
+
+                        if (i == 3) // Column D: QuestNameREF
+                        {
+                            Console.Write(string.Format("{0} = {1};", headers[i], csv[i] == null ? "MISSING" : csv[i]));
+
+                        }
+
+                        if (i == 4) // Column E: ForceFirstPane
+                        {
+                            Console.Write(string.Format("{0} = {1};", headers[i], csv[i] == null ? "MISSING" : csv[i]));
+
+                            // reads the last value in column C (row 40 since we're looping) <-- this is working fine, but we need do limit it by row then we're gold
+                            ReadSomeShit = (string.Format("{0}", csv[i] == null ? "MISSING" : csv[i]));   
+                        }
+
+                        if (i == 5) // Column F: UIPanes
+                        {
+                            Console.Write(string.Format("{0} = {1};", headers[i], csv[i] == null ? "MISSING" : csv[i]));
+                        }
+
+                        if (i == 6) // Column G: UIFreetingLines
+                        {
+                            Console.Write(string.Format("{0} = {1};", headers[i], csv[i] == null ? "MISSING" : csv[i]));
+                        }
+
+                        if (i == 7) // Column H: UIResponseButtonLines
+                        {
+                            Console.Write(string.Format("{0} = {1};", headers[i], csv[i] == null ? "MISSING" : csv[i]));
+                        }
+
+                        if (i == 8) // Column I: 
+                        {
+                            Console.Write(string.Format("{0} = {1};", headers[i], csv[i] == null ? "MISSING" : csv[i]));
+                        }
+
+                        if (i == 9) // Column J: 
+                        {
+                            Console.Write(string.Format("{0} = {1};", headers[i], csv[i] == null ? "MISSING" : csv[i]));
+                        }
+
+                        if (i == 10) // Column K: 
+                        {
+                            Console.Write(string.Format("{0} = {1};", headers[i], csv[i] == null ? "MISSING" : csv[i]));
+                        }
+
+                        if (i == 11) // Column L: 
+                        {
+                            Console.Write(string.Format("{0} = {1};", headers[i], csv[i] == null ? "MISSING" : csv[i]));
+                        }
+
+                        if (i == 12) // Column M: 
+                        {
+                            Console.Write(string.Format("{0} = {1};", headers[i], csv[i] == null ? "MISSING" : csv[i]));
+                        }
+
+                        if (i == 13) // Column N: 
+                        {
+                            Console.Write(string.Format("{0} = {1};", headers[i], csv[i] == null ? "MISSING" : csv[i]));
+                        }
+
+                        if (i == 14) // Column O: 
+                        {
+                            Console.Write(string.Format("{0} = {1};", headers[i], csv[i] == null ? "MISSING" : csv[i]));
+                        }
+
+                        if (i == 15) // Column P: 
+                        {
+                            Console.Write(string.Format("{0} = {1};", headers[i], csv[i] == null ? "MISSING" : csv[i]));
+                        }
+
+                        if (i == 16) // Column Q: 
+                        {
+                            Console.Write(string.Format("{0} = {1};", headers[i], csv[i] == null ? "MISSING" : csv[i]));
+                        }
+
+                        if (i == 17) // Column R: 
+                        {
+                            Console.Write(string.Format("{0} = {1};", headers[i], csv[i] == null ? "MISSING" : csv[i]));
+                        }
+
+                        if (i == 18) // Column S: 
+                        {
+                            Console.Write(string.Format("{0} = {1};", headers[i], csv[i] == null ? "MISSING" : csv[i]));
+                        }
+
+                        if (i == 19) // Column T: 
+                        {
+                            Console.Write(string.Format("{0} = {1};", headers[i], csv[i] == null ? "MISSING" : csv[i]));
+                            RowLoopNum = RowLoopNum + 1;
+                        }
+
+                        else
+                        {
+                            // fires after every read cell (as in row * column)
+
+                        }
+
+                    }
+
+                    Console.WriteLine();   // preceeding
+                }
+
+            }
+            Console.WriteLine(RowLoopNum);
+            Console.WriteLine(ReadSomeShit);   // done reading through csv
+        }
+
+
+
 
 
 

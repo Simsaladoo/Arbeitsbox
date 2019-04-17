@@ -193,7 +193,7 @@ namespace Arbeitsbox
                         if (linecounter > sheetlength)
                         {
                             rowmaths = (linecounter) / 20;
-
+                            rowcounter = rowmaths;
                             
 
 
