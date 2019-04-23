@@ -63,7 +63,10 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.FoliagePanel = new System.Windows.Forms.Panel();
+            this.DialoguePanel = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
@@ -77,15 +80,12 @@
             this.FoliagePageTitle = new System.Windows.Forms.Label();
             this.Foliage_HeaderLabel = new System.Windows.Forms.Label();
             this.FoliageHLine = new System.Windows.Forms.Label();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
             this.MenuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.AudioPanel.SuspendLayout();
             this.GeneralPanel.SuspendLayout();
             this.FaunaPanel.SuspendLayout();
-            this.FoliagePanel.SuspendLayout();
+            this.DialoguePanel.SuspendLayout();
             this.OtherPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -582,23 +582,70 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // FoliagePanel
+            // DialoguePanel
             // 
-            this.FoliagePanel.Controls.Add(this.label11);
-            this.FoliagePanel.Controls.Add(this.button10);
-            this.FoliagePanel.Controls.Add(this.button11);
-            this.FoliagePanel.Controls.Add(this.button9);
-            this.FoliagePanel.Controls.Add(this.label7);
-            this.FoliagePanel.Controls.Add(this.button6);
-            this.FoliagePanel.Controls.Add(this.label8);
-            this.FoliagePanel.Controls.Add(this.label9);
-            this.FoliagePanel.Controls.Add(this.label10);
-            this.FoliagePanel.Controls.Add(this.MasterQuestNationText);
-            this.FoliagePanel.Controls.Add(this.button5);
-            this.FoliagePanel.Location = new System.Drawing.Point(65, 48);
-            this.FoliagePanel.Name = "FoliagePanel";
-            this.FoliagePanel.Size = new System.Drawing.Size(882, 374);
-            this.FoliagePanel.TabIndex = 42;
+            this.DialoguePanel.Controls.Add(this.label11);
+            this.DialoguePanel.Controls.Add(this.button10);
+            this.DialoguePanel.Controls.Add(this.button11);
+            this.DialoguePanel.Controls.Add(this.button9);
+            this.DialoguePanel.Controls.Add(this.label7);
+            this.DialoguePanel.Controls.Add(this.button6);
+            this.DialoguePanel.Controls.Add(this.label8);
+            this.DialoguePanel.Controls.Add(this.label9);
+            this.DialoguePanel.Controls.Add(this.label10);
+            this.DialoguePanel.Controls.Add(this.MasterQuestNationText);
+            this.DialoguePanel.Controls.Add(this.button5);
+            this.DialoguePanel.Location = new System.Drawing.Point(65, 48);
+            this.DialoguePanel.Name = "DialoguePanel";
+            this.DialoguePanel.Size = new System.Drawing.Size(882, 374);
+            this.DialoguePanel.TabIndex = 42;
+            // 
+            // label11
+            // 
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
+            this.label11.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label11.Location = new System.Drawing.Point(73, 208);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(50, 39);
+            this.label11.TabIndex = 64;
+            this.label11.Text = "1";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // button10
+            // 
+            this.button10.BackColor = System.Drawing.Color.Lime;
+            this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button10.FlatAppearance.BorderSize = 0;
+            this.button10.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.button10.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Chocolate;
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button10.ForeColor = System.Drawing.Color.White;
+            this.button10.Location = new System.Drawing.Point(126, 201);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(33, 52);
+            this.button10.TabIndex = 63;
+            this.button10.Text = ">";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
+            // button11
+            // 
+            this.button11.BackColor = System.Drawing.Color.Lime;
+            this.button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button11.FlatAppearance.BorderSize = 0;
+            this.button11.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.button11.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Chocolate;
+            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button11.ForeColor = System.Drawing.Color.White;
+            this.button11.Location = new System.Drawing.Point(38, 201);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(33, 52);
+            this.button11.TabIndex = 62;
+            this.button11.Text = "<";
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // button9
             // 
@@ -771,51 +818,6 @@
             this.FoliageHLine.Text = "_________________________________________________________________________________" +
     "_____________________________";
             // 
-            // button10
-            // 
-            this.button10.BackColor = System.Drawing.Color.Lime;
-            this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button10.FlatAppearance.BorderSize = 0;
-            this.button10.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.button10.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Chocolate;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.ForeColor = System.Drawing.Color.White;
-            this.button10.Location = new System.Drawing.Point(126, 201);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(33, 52);
-            this.button10.TabIndex = 63;
-            this.button10.Text = ">";
-            this.button10.UseVisualStyleBackColor = true;
-            // 
-            // button11
-            // 
-            this.button11.BackColor = System.Drawing.Color.Lime;
-            this.button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button11.FlatAppearance.BorderSize = 0;
-            this.button11.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.button11.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Chocolate;
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.ForeColor = System.Drawing.Color.White;
-            this.button11.Location = new System.Drawing.Point(38, 201);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(33, 52);
-            this.button11.TabIndex = 62;
-            this.button11.Text = "<";
-            this.button11.UseVisualStyleBackColor = true;
-            // 
-            // label11
-            // 
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
-            this.label11.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label11.Location = new System.Drawing.Point(73, 208);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(50, 39);
-            this.label11.TabIndex = 64;
-            this.label11.Text = "1";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -825,10 +827,10 @@
             this.ClientSize = new System.Drawing.Size(947, 561);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.MenuPanel);
-            this.Controls.Add(this.FoliagePanel);
-            this.Controls.Add(this.OtherPanel);
-            this.Controls.Add(this.GeneralPanel);
+            this.Controls.Add(this.DialoguePanel);
             this.Controls.Add(this.AudioPanel);
+            this.Controls.Add(this.GeneralPanel);
+            this.Controls.Add(this.OtherPanel);
             this.Controls.Add(this.FaunaPanel);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -849,8 +851,8 @@
             this.GeneralPanel.PerformLayout();
             this.FaunaPanel.ResumeLayout(false);
             this.FaunaPanel.PerformLayout();
-            this.FoliagePanel.ResumeLayout(false);
-            this.FoliagePanel.PerformLayout();
+            this.DialoguePanel.ResumeLayout(false);
+            this.DialoguePanel.PerformLayout();
             this.OtherPanel.ResumeLayout(false);
             this.OtherPanel.PerformLayout();
             this.ResumeLayout(false);
@@ -875,7 +877,7 @@
         private System.Windows.Forms.Panel GeneralPanel;
         private System.Windows.Forms.Panel FaunaPanel;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Panel FoliagePanel;
+        private System.Windows.Forms.Panel DialoguePanel;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Panel OtherPanel;

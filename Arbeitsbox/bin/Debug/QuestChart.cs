@@ -43,6 +43,131 @@ namespace Arbeitsbox
         public string tline = "null";
         public int sheetlength = 20;
 
+        public int choosingPaneforPanel = 0;
+        public int addingPaneEnum1 = 0;
+        public int addingPaneEnum2 = 0;
+        public int addingPaneEnum3 = 0;
+        public int addingPaneEnum4 = 0;
+        public int addingPaneEnum5 = 0;
+
+
+        enum FUIPanes
+
+        //for differeingint lengths of ladderts
+
+        {
+            IgnoreEntry,
+            DefaultPrompt,
+            Confirm,
+            BooleanQuestion,
+            MultipleResponseQuestion
+
+
+        };
+
+
+        enum EQuestGiverSpottedActions
+
+        {
+            // These are actions any Quest-giving AI can be doing when they spot the player -- very specific shit to a storyline, even quest markers.
+            SpeakFreeWalk,
+            SpeakSimplePrompt,
+            SpeakQuestionList,
+            SpeakBoolResponse,
+            ArmedFreeWalk,
+            ArmedApproachPlayer,
+            ArmedSimplePrompt,
+            ArmedQuestionList,
+            ArmedBoolResponse,
+            FollowPlayer,
+            MoveToQuestPoint,
+            GoToMountHorse,
+            BoardShip,
+            CommandShip,
+            BoardAirship,
+            CommandAirship,
+            SpawnQuestActor,
+            UpdateMasterQuest,
+            UpdateRegularQuest,
+            UpdateGuildQuest,
+            AttackPlayer,
+            AttackNPC,
+            DoNothing
+        };
+
+
+
+
+        enum EQuestActorType
+
+        {
+            // Type of quest actor to spawn, talking to an npc is ONE actor, a quest item or discovery area is one, etc...
+            Nothing,
+            BeginConversation,
+            BeginCameraConversation,
+            ContinueConversation,
+            ContinueCameraConversation,
+            EndConversation,
+            EndCameraConversation,
+            SpawnWorldActor,
+            SpawnWorldContainer,
+            SpawnCitizen,
+            SpawnAirship,
+            SpawnHorse,
+            SpawnShip,
+            TeleportJail,
+            GoToQuestPoint,
+            SpawnFauna,
+            SpawnVillageTraveller,
+            EndConvo_MasterQuest,
+            EndConvo_GuildQuest,
+            EndConvo_RegularQuest,
+            EndConvoSpawnWorldActor,
+            EndConvoSpawnWorldContainer,
+            EndConvoSpawnCitizen,
+            EndConvoSpawnAirship,
+            EndConvoSpawnHorse,
+            EndConvoSpawnShip,
+            EndConvoTeleportJail,
+            EndConvoGoToQuestPoint,
+            EndConvoSpawnFauna,
+            EndConvoChkSleep_MasterQuest,
+            EndConvoChkSleep_GuildQuest,
+            EndConvoChkSleep_RegularQuest,
+            EndConvoChkLeaveTown_MasterQuest,
+            EndConvoChkLeaveTown_GuildQuest,
+            EndConvoChkLeaveTown_RegularQuest,
+            DestroyActorAndGoToFight,
+            LoadMainMenu,
+            ReloadLastSavegame
+
+        };
+
+
+        enum FNPCAttitude
+
+        //for differeingint lengths of ladderts
+
+        {
+            DefaultNeutral,
+            Happy,
+            Sad,
+            Mad,
+            Annoyed,
+            Hurt,
+            Bored,
+            Suspicious,
+            Surprised,
+            Cautious,
+            Laughing,
+            Terrified
+
+
+        };
+
+
+
+
         //Quest struct import
 
         List<string> list_A = new List<string>();
@@ -225,6 +350,11 @@ namespace Arbeitsbox
             }
             label3.Text = StageINT.ToString();
             ReadAllChapters();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

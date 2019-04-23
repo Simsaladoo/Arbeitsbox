@@ -201,3 +201,5 @@ D:\Reposit\Arbeitsbox\Arbeitsbox\bin\Debug\Newtonsoft.Json.pdb
 D:\Reposit\Arbeitsbox\Arbeitsbox\bin\Debug\Remotion.Linq.xml
 D:\Reposit\Arbeitsbox\Arbeitsbox\bin\Debug\System.IO.Packaging.xml
 D:\Reposit\Arbeitsbox\Arbeitsbox\bin\Debug\System.ValueTuple.xml
+D:\Reposit\Arbeitsbox\Arbeitsbox\obj\Debug\Arbeitsbox.csprojAssemblyReference.cache
+D:\Reposit\Arbeitsbox\Arbeitsbox\obj\Debug\Arbeitsbox.PanelsChooser.resources
