@@ -199,8 +199,8 @@ namespace Arbeitsbox
 
             int startupNationINT = Properties.Settings.Default.Nation; // import that basic integer for chosen nation if we need it
             var principcalForm = Application.OpenForms.OfType<Form1>().Single();
-            filepath = principcalForm.CurrentQuestCSV;
-            label1.Text = principcalForm.CurrentQuestCSV; // filepath of current csv
+            filepath = principcalForm.OutputBullshit;
+            label1.Text = filepath; // filepath of current csv
 
                        // embedded font shit
             byte[] fontData = Properties.Resources.MorrisRomanAlternate_Black;
@@ -276,20 +276,19 @@ namespace Arbeitsbox
             oData.Rows.Add(_test);
 
 
-            ReadAllChapters();
+            UpdateChapter();
         }
 
 
 
-        public void ReadAllChapters()
+        public void UpdateChapter()
         {
-
             var principcalForm = Application.OpenForms.OfType<Form1>().Single();
             principcalForm.use3 = true;
             principcalForm.ReadCsv();
             textBox1.Clear();
             textBox1.AppendText(Environment.NewLine + principcalForm.OutputBullshit);
-
+            label3.Text = (principcalForm.ChosenChapterCSV.ToString());
 
 
 
@@ -338,7 +337,7 @@ namespace Arbeitsbox
                 StageINT = StageINT + 1;
             }
             label3.Text = StageINT.ToString();
-            ReadAllChapters();
+            UpdateChapter();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -349,12 +348,17 @@ namespace Arbeitsbox
                 StageINT = StageINT - 1;
             }
             label3.Text = StageINT.ToString();
-            ReadAllChapters();
+            UpdateChapter();
         }
 
         private void label5_Click(object sender, EventArgs e)
         {
+            // nothing
+        }
 
+        private void label3_Click(object sender, EventArgs e)
+        {
+            // nothing
         }
     }
 }

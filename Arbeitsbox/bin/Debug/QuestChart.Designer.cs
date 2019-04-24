@@ -121,6 +121,7 @@
             this.label3.TabIndex = 60;
             this.label3.Text = "1";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 

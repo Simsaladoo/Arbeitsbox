@@ -4893,12 +4893,12 @@ namespace Arbeitsbox
 
             // first row read looks like below:
             //  Column0 = 0;ID = 0;Stage = 0;QuestNameREF = Off;ForceFirstPane = FALSE;UIPanes = (2,2,2,2);UIFreetingLines = ("Who are you?! What are you doing aboard my ship?","?  Well I can't blame you for that.  Where are you going?", "I suppose you can stay then.  We're heading to Rhougan Village to the SW, I'm sure you'll be able to charter a transport from there to wherever you're going.  It'll be a few hours, so you're free to grab a bunk and rest.", "What's your name?");UIResponseButtonLines = ("I stowed away here to escape the ","Just trying to get home","Ok, I will", "##Name##");UIResponseButtonActions = (BeginConversation,ContinueConversation,EndConvoChkSleep_MasterQuest);AnimationArray = (Idle01, Idle01, Idle01, Idle01);Vos = ();UIReminderPane = (2);UIReminderLines = ("Go ahead and grab a bunk.  I'll wake you when we have landed.");UIReminderButton = ("Ok");UIReminderAction = (EndConversation);ReminderAnim = (Idle01);ReminderVO = ;Notes = first line for the master quest.  Last button adds it to the instance struct.  Once in there, any followup 'talk to npc' will simply use the L-Q;HasSpottedAction = FALSE;SpottedAction = SpeakWalkFree;
-            Console.WriteLine("Looking for CSV to read...");
+            //Console.WriteLine("Looking for CSV to read...");
             bool contains = CurrentQuestCSV.Contains("No CSV");
-            if (contains == false)
+            if (contains == false) // is a valid CSV
             {
 
-                Console.WriteLine("Reading file: " + CurrentQuestCSV + " Looking for: ChosenChapterCSV: " + ChosenChapterCSV);
+                //Console.WriteLine("Reading file: " + CurrentQuestCSV + " Looking for: ChosenChapterCSV: " + ChosenChapterCSV);
 
                 using (CsvReader csv = new CsvReader(new StreamReader(CurrentQuestCSV + ""), true)) // has headers = true
                 {
@@ -4907,15 +4907,15 @@ namespace Arbeitsbox
                     int nameColumnIndex = csv.GetFieldIndex(nameColumnName);  // get the column integer by name
                     int valueColumnIndex = csv.GetFieldIndex(valueColumnName);
 
-                    chosenRow = 1;
-                    string user = "Null";
+                    //chosenRow = 1;
+                    string user = "Null"; // another migrating variable
 
-                    int fixedlength = 20;
+                    int fixedlength = 20; // width of csv sheets (unchanged)
 
                     string field0 = "NULL";
                     string field1 = "NULL";
                     string field2 = "NULL";
-                    string field3 = "NULL";      // only reading field 3
+                    string field3 = "NULL";      // only reading field 3 -- these are just migrating variables
                     string field4 = "NULL";
                     string field5 = "NULL";
                     string field6 = "NULL";
@@ -4938,7 +4938,7 @@ namespace Arbeitsbox
                     // to replace by "" instead, then use the following action:
                     // csv.MissingFieldAction = MissingFieldAction.ReplaceByEmpty;
 
-                    Console.WriteLine("Reading chosen row: " + ChosenChapterCSV + "  returns: " + OutputBullshit);
+                    Console.WriteLine("Reading chosen Chapter: " + ChosenChapterCSV + "  returns: " + OutputBullshit);
 
                     int fieldCount = csv.FieldCount;
                     string[] headers = csv.GetFieldHeaders();
@@ -5057,11 +5057,13 @@ namespace Arbeitsbox
                             //Console.WriteLine(string.Format("{0} = {1};", headers[i], csv[i] == null ? "MISSING" : csv[i]));
                         }
 
-
                         //Console.WriteLine();   // preceeding
 
                         // RowLoopNum works here
-                        user = ("" + RowLoopNum);       // user will be changed by the user derp -- it will pick the row
+
+                        user = (RowLoopNum.ToString());       // user will be changed by the user derp -- it will pick the row
+                        //Console.WriteLine(user);
+
                         if (use0 == true)
                         {
                             if (ChosenChapterCSV == RowLoopNum)
@@ -5092,6 +5094,7 @@ namespace Arbeitsbox
                         {
                             if (ChosenChapterCSV == RowLoopNum)
                             {
+                                Console.WriteLine("Does " + chosenRow + " or " + user + " equal " + RowLoopNum);
                                 Console.WriteLine(field3 + " Row " + user);
                                 OutputBullshit = (field3);
                             }
@@ -5240,50 +5243,24 @@ namespace Arbeitsbox
                         RowLoopNum = RowLoopNum + 1;
                     }
 
-                    Console.WriteLine(OutputBullshit);
+                    //Console.WriteLine(OutputBullshit);
                     label7.Text = OutputBullshit;
-
-
+                    user = ("NULL");
+                    RowLoopNum = 0;
                 }
 
                 //reset chooser 
-
+                ResetChooser();
                 // The "use" booleans here act as flags, whichever one returned true LAST will be what outputs to the OutputBullshit string (the cell contents)
 
-                //Console.WriteLine("ReadCSV: Resetting Chooser");
-                use0 = false;
-                use1 = false;
-                use2 = false;
-                use3 = false;
-                use4 = false;
-                use5 = false;
-                use6 = false;
-                use7 = false;
-                use8 = false;
-                use9 = false;
-                use10 = false;
-                use11 = false;
-                use12 = false;
-                use13 = false;
-                use14 = false;
-                use15 = false;
-                use16 = false;
-                use17 = false;
-                use18 = false;
-                use19 = false;
-                use20 = false;
             }
 
             if (contains == true)
             {
-                Console.WriteLine("No contains found in file: " + CurrentQuestCSV + " Looking for: ChosenChapterCSV: " + ChosenChapterCSV);
+                Console.WriteLine("No contains found in file: " + CurrentQuestCSV + " While looking for Chapter: " + ChosenChapterCSV);
             }
 
-
-
-
             UpdateCurrentStage();
-
         }
 
 
@@ -11331,6 +11308,34 @@ namespace Arbeitsbox
 
         }
 
+
+        public void ResetChooser()
+        {
+
+            //Console.WriteLine("ReadCSV: Resetting Chooser");
+            use0 = false;
+            use1 = false;
+            use2 = false;
+            use3 = false;
+            use4 = false;
+            use5 = false;
+            use6 = false;
+            use7 = false;
+            use8 = false;
+            use9 = false;
+            use10 = false;
+            use11 = false;
+            use12 = false;
+            use13 = false;
+            use14 = false;
+            use15 = false;
+            use16 = false;
+            use17 = false;
+            use18 = false;
+            use19 = false;
+            use20 = false;
+        }
+
         private void button10_Click(object sender, EventArgs e)
         {
             if (ChosenChapterCSV < 40)
@@ -11338,7 +11343,7 @@ namespace Arbeitsbox
                 ChosenChapterCSV = (ChosenChapterCSV + 1);
 
             }
-
+            use3 = true;
             chosenRow = ChosenChapterCSV;
             label11.Text = ChosenChapterCSV.ToString();
             ReadCsv();
@@ -11353,7 +11358,7 @@ namespace Arbeitsbox
             {
                 ChosenChapterCSV = (ChosenChapterCSV - 1);
             }
-
+            use3 = true;
             chosenRow = ChosenChapterCSV;
             label11.Text = ChosenChapterCSV.ToString();
             ReadCsv();
