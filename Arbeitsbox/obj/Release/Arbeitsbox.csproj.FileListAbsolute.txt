@@ -191,3 +191,4 @@ G:\UE4\Splash\Arbeitsbox\Arbeitsbox\bin\Release\System.IO.Packaging.xml
 G:\UE4\Splash\Arbeitsbox\Arbeitsbox\bin\Release\System.ValueTuple.xml
 G:\UE4\Splash\Arbeitsbox\Arbeitsbox\bin\Release\LumenWorks.Framework.IO.dll
 G:\UE4\Splash\Arbeitsbox\Arbeitsbox\bin\Release\LumenWorks.Framework.IO.xml
+G:\UE4\Splash\Arbeitsbox\Arbeitsbox\obj\Release\Arbeitsbox.csprojAssemblyReference.cache
