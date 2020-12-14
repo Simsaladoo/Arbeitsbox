@@ -4690,10 +4690,10 @@ namespace Arbeitsbox
         private void button6_Click(object sender, EventArgs e)
         {
             Console.WriteLine("Audio Processing... doing nothing");
-            richTextBox1.AppendText(Environment.NewLine + "Audio Processing...");
-            richTextBox1.Focus();
-            richTextBox1.SelectionStart = richTextBox1.Text.Length;
-            richTextBox1.ScrollToCaret();
+            OutputLog_richTextBox1.AppendText(Environment.NewLine + "Audio Processing...");
+            OutputLog_richTextBox1.Focus();
+            OutputLog_richTextBox1.SelectionStart = OutputLog_richTextBox1.Text.Length;
+            OutputLog_richTextBox1.ScrollToCaret();
 
             Console.WriteLine("Audio Spoken");
         }
@@ -4772,7 +4772,7 @@ namespace Arbeitsbox
 
             ProcessAudioButton.Font = myFont12;
             AudioVisualizerButton.Font = myFont12;
-            richTextBox1.Font = myFont12;
+            OutputLog_richTextBox1.Font = myFont12;
 
             MasterQuestNationText.Font = myFont22;
 
@@ -4784,9 +4784,9 @@ namespace Arbeitsbox
         /* Any updates to richTextBox1 reenable focus so it'll scroll */
         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
-            richTextBox1.Focus();
-            richTextBox1.SelectionStart = richTextBox1.Text.Length;
-            richTextBox1.ScrollToCaret();
+            OutputLog_richTextBox1.Focus();
+            OutputLog_richTextBox1.SelectionStart = OutputLog_richTextBox1.Text.Length;
+            OutputLog_richTextBox1.ScrollToCaret();
 
         }
 
@@ -5301,7 +5301,7 @@ namespace Arbeitsbox
         private void button3_Click(object sender, EventArgs e)
         {
             Console.WriteLine("Writing 12s clicked...");
-            richTextBox1.AppendText(Environment.NewLine + "Writing 12s clicked...");
+            OutputLog_richTextBox1.AppendText(Environment.NewLine + "Writing 12s clicked...");
             int x, y;
             DataTable dta = new DataTable();
             dta.Columns.Add(" ");
@@ -5325,10 +5325,10 @@ namespace Arbeitsbox
             FileInfo[] files = di.GetFiles(searchPattern, SearchOption.TopDirectoryOnly);
 
             Console.WriteLine("Searching for files that begin with the letter \"A\" in {0}", path);
-            richTextBox1.AppendText(Environment.NewLine + "Searching for files that begin with the letter A in " + path);
-            richTextBox1.Focus();
-            richTextBox1.SelectionStart = richTextBox1.Text.Length;
-            richTextBox1.ScrollToCaret();
+            OutputLog_richTextBox1.AppendText(Environment.NewLine + "Searching for files that begin with the letter A in " + path);
+            OutputLog_richTextBox1.Focus();
+            OutputLog_richTextBox1.SelectionStart = OutputLog_richTextBox1.Text.Length;
+            OutputLog_richTextBox1.ScrollToCaret();
 
 
             // loop through the directory for files and begin processing
@@ -5352,7 +5352,7 @@ namespace Arbeitsbox
 
                     }
                     Console.WriteLine(file + " ... processing ...");
-                    richTextBox1.AppendText(Environment.NewLine + file + " ... processing ...");
+                    OutputLog_richTextBox1.AppendText(Environment.NewLine + file + " ... processing ...");
                     // richTextBox1.Focus();
                     // richTextBox1.SelectionStart = richTextBox1.Text.Length;
                     // richTextBox1.ScrollToCaret();
@@ -5758,10 +5758,10 @@ namespace Arbeitsbox
                     { Application.Exit(); }
                     if (result == DialogResult.No)
                     { Console.WriteLine("Ignoring error '" + caption + "'"); }
-                    richTextBox1.AppendText(Environment.NewLine + "not applicable");
-                    richTextBox1.Focus();
-                    richTextBox1.SelectionStart = richTextBox1.Text.Length;
-                    richTextBox1.ScrollToCaret();
+                    OutputLog_richTextBox1.AppendText(Environment.NewLine + "not applicable");
+                    OutputLog_richTextBox1.Focus();
+                    OutputLog_richTextBox1.SelectionStart = OutputLog_richTextBox1.Text.Length;
+                    OutputLog_richTextBox1.ScrollToCaret();
 
                 }
 
@@ -5825,7 +5825,7 @@ namespace Arbeitsbox
                 {
                     // name csv from images, this goes off for every file converted --commented out the richtextbox updater for performance
                     System.IO.File.WriteAllText(path + file + ".csv", sb.ToString());
-                    richTextBox1.AppendText(Environment.NewLine + file + " Written...");
+                    OutputLog_richTextBox1.AppendText(Environment.NewLine + file + " Written...");
                     // richTextBox1.Focus();
                     // richTextBox1.SelectionStart = richTextBox1.Text.Length;
                     // richTextBox1.ScrollToCaret();
@@ -5849,16 +5849,16 @@ namespace Arbeitsbox
 
             }
 
-            richTextBox1.AppendText(Environment.NewLine + "... Finished Writing All CSVs!");
+            OutputLog_richTextBox1.AppendText(Environment.NewLine + "... Finished Writing All CSVs!");
 
 
             // Play a little tune when we're done processing
             System.Media.SoundPlayer sp = (completesong);
             sp.Play();
 
-            richTextBox1.Focus();
-            richTextBox1.SelectionStart = richTextBox1.Text.Length;
-            richTextBox1.ScrollToCaret();
+            OutputLog_richTextBox1.Focus();
+            OutputLog_richTextBox1.SelectionStart = OutputLog_richTextBox1.Text.Length;
+            OutputLog_richTextBox1.ScrollToCaret();
         }
 
 
@@ -5896,7 +5896,7 @@ namespace Arbeitsbox
 
 
             Console.WriteLine("Writing 64s clicked...");
-            richTextBox1.AppendText(Environment.NewLine + "Writing 64s clicked...");
+            OutputLog_richTextBox1.AppendText(Environment.NewLine + "Writing 64s clicked...");
             int x, y;
             DataTable dta = new DataTable();
             dta.Columns.Add(" ");
@@ -5974,10 +5974,10 @@ namespace Arbeitsbox
             FileInfo[] files = di.GetFiles(searchPattern, SearchOption.TopDirectoryOnly);
 
             Console.WriteLine("Searching for files that begin with the letter \"A\" in {0}", path);
-            richTextBox1.AppendText(Environment.NewLine + "Searching for files that begin with the letter A in " + path);
-            richTextBox1.Focus();
-            richTextBox1.SelectionStart = richTextBox1.Text.Length;
-            richTextBox1.ScrollToCaret();
+            OutputLog_richTextBox1.AppendText(Environment.NewLine + "Searching for files that begin with the letter A in " + path);
+            OutputLog_richTextBox1.Focus();
+            OutputLog_richTextBox1.SelectionStart = OutputLog_richTextBox1.Text.Length;
+            OutputLog_richTextBox1.ScrollToCaret();
 
 
 
@@ -10694,10 +10694,10 @@ namespace Arbeitsbox
                     { Application.Exit(); }
                     if (result == DialogResult.No)
                     { Console.WriteLine("Ignoring error '" + caption + "'"); }
-                    richTextBox1.AppendText(Environment.NewLine + "not applicable");
-                    richTextBox1.Focus();
-                    richTextBox1.SelectionStart = richTextBox1.Text.Length;
-                    richTextBox1.ScrollToCaret();
+                    OutputLog_richTextBox1.AppendText(Environment.NewLine + "not applicable");
+                    OutputLog_richTextBox1.Focus();
+                    OutputLog_richTextBox1.SelectionStart = OutputLog_richTextBox1.Text.Length;
+                    OutputLog_richTextBox1.ScrollToCaret();
 
                 }
 
@@ -10845,16 +10845,16 @@ namespace Arbeitsbox
 
             }
 
-            richTextBox1.AppendText(Environment.NewLine + "... Finished Writing All CSVs!");
+            OutputLog_richTextBox1.AppendText(Environment.NewLine + "... Finished Writing All CSVs!");
 
 
             // Play a little tune when we're done processing
             System.Media.SoundPlayer sp = (completesong);
             sp.Play();
 
-            richTextBox1.Focus();
-            richTextBox1.SelectionStart = richTextBox1.Text.Length;
-            richTextBox1.ScrollToCaret();
+            OutputLog_richTextBox1.Focus();
+            OutputLog_richTextBox1.SelectionStart = OutputLog_richTextBox1.Text.Length;
+            OutputLog_richTextBox1.ScrollToCaret();
         }
 
         private void button26_Click(object sender, EventArgs e)
@@ -10906,10 +10906,10 @@ namespace Arbeitsbox
 
                     System.Threading.Thread.Sleep(200);
                     Console.WriteLine("Done with loop " + i + "/" + loopnum);
-                    richTextBox1.AppendText(Environment.NewLine + "Done with loop " + i + "/" + loopnum);
-                    richTextBox1.Focus();
-                    richTextBox1.SelectionStart = richTextBox1.Text.Length;
-                    richTextBox1.ScrollToCaret();
+                    OutputLog_richTextBox1.AppendText(Environment.NewLine + "Done with loop " + i + "/" + loopnum);
+                    OutputLog_richTextBox1.Focus();
+                    OutputLog_richTextBox1.SelectionStart = OutputLog_richTextBox1.Text.Length;
+                    OutputLog_richTextBox1.ScrollToCaret();
                 }
             }
 
@@ -10963,10 +10963,10 @@ namespace Arbeitsbox
 
                     System.Threading.Thread.Sleep(200);
                     Console.WriteLine("Done with loop " + i + "/" + loopnum);
-                    richTextBox1.AppendText(Environment.NewLine + "Done with loop " + i + "/" + loopnum);
-                    richTextBox1.Focus();
-                    richTextBox1.SelectionStart = richTextBox1.Text.Length;
-                    richTextBox1.ScrollToCaret();
+                    OutputLog_richTextBox1.AppendText(Environment.NewLine + "Done with loop " + i + "/" + loopnum);
+                    OutputLog_richTextBox1.Focus();
+                    OutputLog_richTextBox1.SelectionStart = OutputLog_richTextBox1.Text.Length;
+                    OutputLog_richTextBox1.ScrollToCaret();
                 }
             }
         }
@@ -11146,40 +11146,40 @@ namespace Arbeitsbox
                 // set to Null
                 Console.WriteLine("Update Nation set to Null");
                 CurrentNation = "Null";
-                richTextBox1.AppendText(Environment.NewLine + "Using Nation: " + CurrentNation);
-                richTextBox1.Focus();
-                richTextBox1.SelectionStart = richTextBox1.Text.Length;
-                richTextBox1.ScrollToCaret();
+                OutputLog_richTextBox1.AppendText(Environment.NewLine + "Using Nation: " + CurrentNation);
+                OutputLog_richTextBox1.Focus();
+                OutputLog_richTextBox1.SelectionStart = OutputLog_richTextBox1.Text.Length;
+                OutputLog_richTextBox1.ScrollToCaret();
             }
             if (Properties.Settings.Default.Nation == 1)
             {
                 // set to Natives
                 Console.WriteLine("Using Natives Nation");
                 CurrentNation = "Natives";
-                richTextBox1.AppendText(Environment.NewLine + "Using Nation: " + CurrentNation);
-                richTextBox1.Focus();
-                richTextBox1.SelectionStart = richTextBox1.Text.Length;
-                richTextBox1.ScrollToCaret();
+                OutputLog_richTextBox1.AppendText(Environment.NewLine + "Using Nation: " + CurrentNation);
+                OutputLog_richTextBox1.Focus();
+                OutputLog_richTextBox1.SelectionStart = OutputLog_richTextBox1.Text.Length;
+                OutputLog_richTextBox1.ScrollToCaret();
             }
             if (Properties.Settings.Default.Nation == 2)
             {
                 // set to Rowani
                 Console.WriteLine("Using Rowani Nation");
                 CurrentNation = "Rowani";
-                richTextBox1.AppendText(Environment.NewLine + "Using Nation: " + CurrentNation);
-                richTextBox1.Focus();
-                richTextBox1.SelectionStart = richTextBox1.Text.Length;
-                richTextBox1.ScrollToCaret();
+                OutputLog_richTextBox1.AppendText(Environment.NewLine + "Using Nation: " + CurrentNation);
+                OutputLog_richTextBox1.Focus();
+                OutputLog_richTextBox1.SelectionStart = OutputLog_richTextBox1.Text.Length;
+                OutputLog_richTextBox1.ScrollToCaret();
             }
             if (Properties.Settings.Default.Nation == 3)
             {
                 // set to Graata
                 Console.WriteLine("Using Graata Nation");
                 CurrentNation = "Graata";
-                richTextBox1.AppendText(Environment.NewLine + "Using Nation: " + CurrentNation);
-                richTextBox1.Focus();
-                richTextBox1.SelectionStart = richTextBox1.Text.Length;
-                richTextBox1.ScrollToCaret();
+                OutputLog_richTextBox1.AppendText(Environment.NewLine + "Using Nation: " + CurrentNation);
+                OutputLog_richTextBox1.Focus();
+                OutputLog_richTextBox1.SelectionStart = OutputLog_richTextBox1.Text.Length;
+                OutputLog_richTextBox1.ScrollToCaret();
             }
 
             if (Properties.Settings.Default.Nation == 4)
@@ -11187,20 +11187,20 @@ namespace Arbeitsbox
                 // set to Neagese
                 Console.WriteLine("Using Neagese Nation");
                 CurrentNation = "Neagese";
-                richTextBox1.AppendText(Environment.NewLine + "Using Nation: " + CurrentNation);
-                richTextBox1.Focus();
-                richTextBox1.SelectionStart = richTextBox1.Text.Length;
-                richTextBox1.ScrollToCaret();
+                OutputLog_richTextBox1.AppendText(Environment.NewLine + "Using Nation: " + CurrentNation);
+                OutputLog_richTextBox1.Focus();
+                OutputLog_richTextBox1.SelectionStart = OutputLog_richTextBox1.Text.Length;
+                OutputLog_richTextBox1.ScrollToCaret();
             }
             if (Properties.Settings.Default.Nation == 5)
             {
                 // set to Mons
                 Console.WriteLine("Using Mons Nation");
                 CurrentNation = "Mons";
-                richTextBox1.AppendText(Environment.NewLine + "Using Nation: " + CurrentNation);
-                richTextBox1.Focus();
-                richTextBox1.SelectionStart = richTextBox1.Text.Length;
-                richTextBox1.ScrollToCaret();
+                OutputLog_richTextBox1.AppendText(Environment.NewLine + "Using Nation: " + CurrentNation);
+                OutputLog_richTextBox1.Focus();
+                OutputLog_richTextBox1.SelectionStart = OutputLog_richTextBox1.Text.Length;
+                OutputLog_richTextBox1.ScrollToCaret();
             }
 
             else
@@ -11246,10 +11246,10 @@ namespace Arbeitsbox
                         {
                             // use this file
                             Console.WriteLine(CurrentNation + " was found within file: " + s);
-                            richTextBox1.AppendText(Environment.NewLine + CurrentNation + " was found within file: " + s);
-                            richTextBox1.Focus();
-                            richTextBox1.SelectionStart = richTextBox1.Text.Length;
-                            richTextBox1.ScrollToCaret();
+                            OutputLog_richTextBox1.AppendText(Environment.NewLine + CurrentNation + " was found within file: " + s);
+                            OutputLog_richTextBox1.Focus();
+                            OutputLog_richTextBox1.SelectionStart = OutputLog_richTextBox1.Text.Length;
+                            OutputLog_richTextBox1.ScrollToCaret();
                             CurrentQuestCSV = s;
 
                         }
@@ -11277,10 +11277,10 @@ namespace Arbeitsbox
                     // nada found yo
                     Console.WriteLine("No CSVs Found!");
                     CurrentQuestCSV = "No CSVs were found in " + Properties.Settings.Default.QuestPath;
-                    richTextBox1.AppendText(Environment.NewLine + "No CSVs Found!");
-                    richTextBox1.Focus();
-                    richTextBox1.SelectionStart = richTextBox1.Text.Length;
-                    richTextBox1.ScrollToCaret();
+                    OutputLog_richTextBox1.AppendText(Environment.NewLine + "No CSVs Found!");
+                    OutputLog_richTextBox1.Focus();
+                    OutputLog_richTextBox1.SelectionStart = OutputLog_richTextBox1.Text.Length;
+                    OutputLog_richTextBox1.ScrollToCaret();
                 }
 
                 else
@@ -11299,10 +11299,10 @@ namespace Arbeitsbox
 
                 Console.WriteLine("Not a valid directory!");
                 MessageBox.Show("Choose a directory first!", "Please Choose a Directory", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                richTextBox1.AppendText(Environment.NewLine + "Not a valid directory!");
-                richTextBox1.Focus();
-                richTextBox1.SelectionStart = richTextBox1.Text.Length;
-                richTextBox1.ScrollToCaret();
+                OutputLog_richTextBox1.AppendText(Environment.NewLine + "Not a valid directory!");
+                OutputLog_richTextBox1.Focus();
+                OutputLog_richTextBox1.SelectionStart = OutputLog_richTextBox1.Text.Length;
+                OutputLog_richTextBox1.ScrollToCaret();
             }
 
 

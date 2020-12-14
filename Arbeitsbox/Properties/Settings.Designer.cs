@@ -37,7 +37,7 @@ namespace Arbeitsbox.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("G:\\UE4\\Tailwind_R E B U I L D\\Environment\\World Machine 93e\\PNGs\\12\\BMPs")]
+        [global::System.Configuration.DefaultSettingValueAttribute("E:\\UE4\\Tailwind_R E B U I L D\\Worldmap\\World Machine 94d\\PNGs\\12\\BMPs")]
         public string CSVpath {
             get {
                 return ((string)(this["CSVpath"]));
@@ -49,7 +49,7 @@ namespace Arbeitsbox.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("G:\\UE4\\Tailwind_R E B U I L D\\Environment\\World Machine 93e\\PNGs\\12\\BMPs")]
+        [global::System.Configuration.DefaultSettingValueAttribute("E:\\UE4\\Tailwind_R E B U I L D\\Worldmap\\World Machine 94d\\PNGs\\12\\BMPs")]
         public string Destination {
             get {
                 return ((string)(this["Destination"]));
@@ -73,7 +73,7 @@ namespace Arbeitsbox.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("G:\\UE4\\Tailwind_R E B U I L D\\Environment\\QuestData")]
+        [global::System.Configuration.DefaultSettingValueAttribute("E:\\UE4\\Tailwind_R E B U I L D\\Environment\\QuestData")]
         public string QuestPath {
             get {
                 return ((string)(this["QuestPath"]));

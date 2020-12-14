@@ -42,7 +42,7 @@
             this.waveformPainter1 = new NAudio.Gui.WaveformPainter();
             this.ProcessAudioButton = new System.Windows.Forms.Button();
             this.AudioVisualizerButton = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.OutputLog_richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -80,6 +80,7 @@
             this.FoliagePageTitle = new System.Windows.Forms.Label();
             this.Foliage_HeaderLabel = new System.Windows.Forms.Label();
             this.FoliageHLine = new System.Windows.Forms.Label();
+            this.Reminder_textBox1 = new System.Windows.Forms.TextBox();
             this.MenuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.AudioPanel.SuspendLayout();
@@ -107,15 +108,16 @@
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImage = global::Arbeitsbox.Properties.Resources.android_icon_192x1921;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 457);
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 458);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(57, 57);
+            this.pictureBox1.Size = new System.Drawing.Size(65, 57);
             this.pictureBox1.TabIndex = 44;
             this.pictureBox1.TabStop = false;
             // 
             // AudioButton
             // 
-            this.AudioButton.BackColor = System.Drawing.Color.BlueViolet;
+            this.AudioButton.BackColor = System.Drawing.Color.MidnightBlue;
             this.AudioButton.FlatAppearance.BorderSize = 0;
             this.AudioButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
             this.AudioButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
@@ -133,7 +135,7 @@
             // 
             // GeneralButton
             // 
-            this.GeneralButton.BackColor = System.Drawing.Color.Orange;
+            this.GeneralButton.BackColor = System.Drawing.Color.DarkOliveGreen;
             this.GeneralButton.FlatAppearance.BorderSize = 0;
             this.GeneralButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
             this.GeneralButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
@@ -150,7 +152,7 @@
             // 
             // FaunaButton
             // 
-            this.FaunaButton.BackColor = System.Drawing.Color.Cyan;
+            this.FaunaButton.BackColor = System.Drawing.Color.DarkSlateGray;
             this.FaunaButton.FlatAppearance.BorderSize = 0;
             this.FaunaButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
             this.FaunaButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
@@ -185,7 +187,7 @@
             // 
             // OtherButton
             // 
-            this.OtherButton.BackColor = System.Drawing.Color.RoyalBlue;
+            this.OtherButton.BackColor = System.Drawing.Color.Purple;
             this.OtherButton.FlatAppearance.BorderSize = 0;
             this.OtherButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
             this.OtherButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
@@ -202,13 +204,14 @@
             // 
             // AudioPanel
             // 
+            this.AudioPanel.AutoSize = true;
             this.AudioPanel.Controls.Add(this.label6);
             this.AudioPanel.Controls.Add(this.waveformPainter1);
             this.AudioPanel.Controls.Add(this.ProcessAudioButton);
             this.AudioPanel.Controls.Add(this.AudioVisualizerButton);
             this.AudioPanel.Location = new System.Drawing.Point(65, 48);
             this.AudioPanel.Name = "AudioPanel";
-            this.AudioPanel.Size = new System.Drawing.Size(882, 374);
+            this.AudioPanel.Size = new System.Drawing.Size(885, 375);
             this.AudioPanel.TabIndex = 2;
             // 
             // label6
@@ -268,19 +271,19 @@
             this.AudioVisualizerButton.UseVisualStyleBackColor = true;
             this.AudioVisualizerButton.Click += new System.EventHandler(this.button7_Click);
             // 
-            // richTextBox1
+            // OutputLog_richTextBox1
             // 
-            this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextBox1.BackColor = System.Drawing.Color.Black;
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Cursor = System.Windows.Forms.Cursors.No;
-            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.ForeColor = System.Drawing.SystemColors.Info;
-            this.richTextBox1.Location = new System.Drawing.Point(66, 424);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(881, 138);
-            this.richTextBox1.TabIndex = 37;
-            this.richTextBox1.Text = "Arbeitsbox opened...";
+            this.OutputLog_richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.OutputLog_richTextBox1.BackColor = System.Drawing.Color.Black;
+            this.OutputLog_richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.OutputLog_richTextBox1.Cursor = System.Windows.Forms.Cursors.No;
+            this.OutputLog_richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OutputLog_richTextBox1.ForeColor = System.Drawing.SystemColors.Info;
+            this.OutputLog_richTextBox1.Location = new System.Drawing.Point(66, 424);
+            this.OutputLog_richTextBox1.Name = "OutputLog_richTextBox1";
+            this.OutputLog_richTextBox1.Size = new System.Drawing.Size(881, 138);
+            this.OutputLog_richTextBox1.TabIndex = 37;
+            this.OutputLog_richTextBox1.Text = "Arbeitsbox opened...";
             // 
             // notifyIcon1
             // 
@@ -324,13 +327,14 @@
             // 
             // GeneralPanel
             // 
+            this.GeneralPanel.AutoSize = true;
             this.GeneralPanel.Controls.Add(this.label5);
             this.GeneralPanel.Controls.Add(this.waveformPainter2);
             this.GeneralPanel.Controls.Add(this.button1);
             this.GeneralPanel.Controls.Add(this.button2);
             this.GeneralPanel.Location = new System.Drawing.Point(65, 48);
             this.GeneralPanel.Name = "GeneralPanel";
-            this.GeneralPanel.Size = new System.Drawing.Size(882, 374);
+            this.GeneralPanel.Size = new System.Drawing.Size(885, 375);
             this.GeneralPanel.TabIndex = 40;
             // 
             // label5
@@ -415,7 +419,7 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(116, 71);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(1109, 20);
+            this.label3.Size = new System.Drawing.Size(890, 21);
             this.label3.TabIndex = 51;
             this.label3.Text = "_________________________________________________________________________________" +
     "_____________________________";
@@ -584,6 +588,7 @@
             // 
             // DialoguePanel
             // 
+            this.DialoguePanel.AutoSize = true;
             this.DialoguePanel.Controls.Add(this.label11);
             this.DialoguePanel.Controls.Add(this.button10);
             this.DialoguePanel.Controls.Add(this.button11);
@@ -597,7 +602,7 @@
             this.DialoguePanel.Controls.Add(this.button5);
             this.DialoguePanel.Location = new System.Drawing.Point(65, 48);
             this.DialoguePanel.Name = "DialoguePanel";
-            this.DialoguePanel.Size = new System.Drawing.Size(882, 374);
+            this.DialoguePanel.Size = new System.Drawing.Size(882, 376);
             this.DialoguePanel.TabIndex = 42;
             // 
             // label11
@@ -671,7 +676,7 @@
             this.label7.ForeColor = System.Drawing.SystemColors.Control;
             this.label7.Location = new System.Drawing.Point(223, 275);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(122, 20);
+            this.label7.Size = new System.Drawing.Size(115, 21);
             this.label7.TabIndex = 58;
             this.label7.Text = "Current Stage";
             // 
@@ -723,7 +728,7 @@
             this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(71, 36);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(889, 20);
+            this.label10.Size = new System.Drawing.Size(714, 21);
             this.label10.TabIndex = 55;
             this.label10.Text = "_________________________________________________________________________________" +
     "_______";
@@ -734,7 +739,7 @@
             this.MasterQuestNationText.ForeColor = System.Drawing.SystemColors.Control;
             this.MasterQuestNationText.Location = new System.Drawing.Point(224, 329);
             this.MasterQuestNationText.Name = "MasterQuestNationText";
-            this.MasterQuestNationText.Size = new System.Drawing.Size(70, 20);
+            this.MasterQuestNationText.Size = new System.Drawing.Size(68, 21);
             this.MasterQuestNationText.TabIndex = 37;
             this.MasterQuestNationText.Text = "Not Set";
             // 
@@ -774,6 +779,7 @@
             // 
             // OtherPanel
             // 
+            this.OtherPanel.AutoSize = true;
             this.OtherPanel.Controls.Add(this.FoliagePageTitle);
             this.OtherPanel.Controls.Add(this.Foliage_HeaderLabel);
             this.OtherPanel.Controls.Add(this.FoliageHLine);
@@ -781,7 +787,7 @@
             this.OtherPanel.Controls.Add(this.button8);
             this.OtherPanel.Location = new System.Drawing.Point(65, 48);
             this.OtherPanel.Name = "OtherPanel";
-            this.OtherPanel.Size = new System.Drawing.Size(882, 374);
+            this.OtherPanel.Size = new System.Drawing.Size(1015, 375);
             this.OtherPanel.TabIndex = 43;
             // 
             // FoliagePageTitle
@@ -813,10 +819,22 @@
             this.FoliageHLine.ForeColor = System.Drawing.Color.White;
             this.FoliageHLine.Location = new System.Drawing.Point(122, 71);
             this.FoliageHLine.Name = "FoliageHLine";
-            this.FoliageHLine.Size = new System.Drawing.Size(1109, 20);
+            this.FoliageHLine.Size = new System.Drawing.Size(890, 21);
             this.FoliageHLine.TabIndex = 46;
             this.FoliageHLine.Text = "_________________________________________________________________________________" +
     "_____________________________";
+            // 
+            // Reminder_textBox1
+            // 
+            this.Reminder_textBox1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.Reminder_textBox1.Font = new System.Drawing.Font("Segoe UI Semilight", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Reminder_textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.Reminder_textBox1.Location = new System.Drawing.Point(336, 163);
+            this.Reminder_textBox1.Name = "Reminder_textBox1";
+            this.Reminder_textBox1.Size = new System.Drawing.Size(226, 22);
+            this.Reminder_textBox1.TabIndex = 65;
+            this.Reminder_textBox1.Text = "Pick a Tool from Menu on the Left";
+            this.Reminder_textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Form1
             // 
@@ -825,16 +843,17 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(947, 561);
-            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.MenuPanel);
             this.Controls.Add(this.DialoguePanel);
             this.Controls.Add(this.AudioPanel);
             this.Controls.Add(this.GeneralPanel);
             this.Controls.Add(this.OtherPanel);
             this.Controls.Add(this.FaunaPanel);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Controls.Add(this.Reminder_textBox1);
+            this.Controls.Add(this.OutputLog_richTextBox1);
+            this.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1920, 1080);
             this.MinimumSize = new System.Drawing.Size(963, 600);
             this.Name = "Form1";
@@ -856,6 +875,7 @@
             this.OtherPanel.ResumeLayout(false);
             this.OtherPanel.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -866,7 +886,7 @@
         private System.Windows.Forms.Panel AudioPanel;
         private System.Windows.Forms.Button ProcessAudioButton;
         private System.Windows.Forms.Button AudioVisualizerButton;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox OutputLog_richTextBox1;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.Button GeneralButton;
         private System.Windows.Forms.Button FaunaButton;
@@ -911,6 +931,7 @@
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox Reminder_textBox1;
     }
 }
 
